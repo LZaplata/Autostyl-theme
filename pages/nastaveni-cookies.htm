@@ -1,0 +1,24 @@
+title = "Nastavení cookies"
+layout = "default"
+url = "/nastaveni-cookies"
+==
+{% set items = {
+    "cookies": {
+        "title": "Nastavení cookies",
+        "active": true,
+    }
+} %}
+
+{% partial "breadcrumb" items=items %}
+
+<div class="container-fluid pb-5" id="labs">
+    <div class="container-lg py-xl-4">
+        <h1 class="mb-4 mb-xl-5 col-xl-10 offset-xl-1">
+            Nastavení cookies
+        </h1>
+
+        <div class="post-content">
+            {% component "cookiesmanage" %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{% set image = post.featured_images.first %}
+{% set category = post.categories.first %}
+
+{% if image %}
+    <p class="img mb-4">
+        <a href="{{ post.url }}" class="position-relative d-flex rounded-3">
+            <img src="{{ image.thumb(435, 250, {"mode": "crop"}) }}" alt="{{ image.description }}" class="img-fluid w-100">
+
+            {% if loop.first %}
+                <span class="badge text-bg-success position-absolute start-0 top-0 ms-3 mt-3">
+                    Nejnovější
+                </span>
+            {% endif %}
+        </a>
+    </p>
+{% endif %}
+
+{% if category %}
+    <p class="category fs-6 fw-semibold text-uppercase mb-2 {% if category.slug == 'skoda' %}text-success{% endif %}">
+        {{ category.name }}
+    </p>
+{% endif %}
+
+<h3 class="title fw-bold mb-3">
+    <a href="{{ post.url }}">
+        {{ post.title }}
+    </a>
+</h3>
+
+<div class="excerpt fw-medium text-dark fs-4 mb-3">
+    {{ post.excerpt|raw }}
+</div>
+
+<p class="date mb-0 d-flex align-items-center text-dark fs-6">
+    <i class="ph ph-calendar me-2"></i>
+
+    {{ post.published_date|date("j. n. Y") }}
+</p>

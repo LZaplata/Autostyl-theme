@@ -1,0 +1,67 @@
+name: Autostyl
+description: 'Theme for Autostyl company from Trutnov.'
+author: 'Lukáš Záplata'
+homepage: ''
+authorCode: LZaplata
+code: autostyl
+parent: ''
+database: '0'
+require:
+    - initbiz.seostorm
+    - rainlab.pages
+    - rainlab.blog
+    - janvince.smallgdpr
+    - lzaplata.extensions
+form:
+    tabs:
+        fields:
+            facebook:
+                label: Facebook
+                type: text
+                span: left
+                tab: Sociální sítě
+            instagram:
+                label: Instagram
+                type: text
+                span: right
+                tab: Sociální sítě
+            youtube:
+                label: Youtube
+                type: text
+                span: left
+                tab: Sociální sítě
+            phone:
+                label: Telefon
+                type: text
+                span: left
+                tab: Kontakt
+            email:
+                label: E-mail
+                type: text
+                span: right
+                tab: Kontakt
+            street:
+                label: Ulice
+                type: text
+                span: left
+                tab: Kontakt
+            street_no:
+                label: Číslo domu
+                type: text
+                span: right
+                tab: Kontakt
+            city:
+                label: Město
+                type: text
+                span: left
+                tab: Kontakt
+            zip:
+                label: PSČ
+                type: text
+                span: right
+                tab: Kontakt
+            map_link:
+                label: Odkaz na mapu
+                type: text
+                span: left
+                tab: Kontakt

@@ -1,0 +1,294 @@
+url = "/"
+layout = "default"
+title = "Úvod"
+
+[collection slider]
+handle = "Slider\Slide"
+
+[global slider_settings]
+handle = "Slider\Settings"
+
+[collection partners]
+handle = "Partners\Partner"
+
+[staticMenu brandmenu]
+
+[blogPosts eventshp]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "Nenalezeny žádné příspěvky"
+sortOrder = "published_at asc"
+categoryPage = "aktualita"
+postPage = "aktualita"
+==
+{% if slider.getIterator().count %}
+    <div class="swiper slider-swiper">
+        <div class="swiper-wrapper">
+            {% for slide in slider %}
+                <div class="swiper-slide">
+                    {% if slide.link %}
+                        <a href="{{ slide.link }}">
+                    {% endif %}
+                            <picture>
+                                <source media="(min-width:768px)" srcset="{{ slide.image_lg.thumb(slider_settings.image_lg_width, slider_settings.image_lg_height, {"mode": "crop"}) }}">
+
+                                <img src="{{ slide.image_sm.thumb(slider_settings.image_sm_width, slider_settings.image_sm_height, {"mode": "crop"}) }}" alt="{{ slide.image_sm.description }}" class="img-fluid w-100">
+                            </picture>
+                    {% if slide.link %}
+                        </a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="swiper-button-next d-none d-md-flex">
+            <i class="ph ph-caret-right icon"></i>
+        </div>
+
+        <div class="swiper-button-prev d-none d-md-flex">
+            <i class="ph ph-caret-left icon"></i>
+        </div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+{% endif %}
+
+<div class="container-fluid p-0" id="skoda-toyota">
+    <div class="row row-cols-1 g-0 row-cols-sm-2">
+        <div class="col skoda p-5 d-md-flex justify-content-md-end">
+            <div class="links px-xl-5 py-xl-4">
+                <h2 class="text-uppercase fw-bold mb-4">
+                    škoda
+                </h2>
+
+                {% component "brandmenu" code="menu-skoda" %}
+            </div>
+        </div>
+
+        <div class="col toyota p-5">
+            <div class="links px-xl-5 py-xl-4">
+                <h2 class="text-uppercase fw-bold mb-4">
+                    Toyota
+                </h2>
+
+                {{ brandmenu.resetMenu("brandmenu") }}
+
+                {% component "brandmenu" code="menu-toyota" %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5" id="events">
+    <div class="container-lg py-xl-4">
+        <div class="d-flex flex-column flex-md-row align-items-md-center">
+            <h2 class="fw-bold mb-0">
+                Akce
+            </h2>
+
+            <div class="dropdown mt-4 d-md-none">
+                <a class="btn btn-outline-light dropdown-toggle w-100 text-start d-flex align-items-center justify-content-between" href="#" data-bs-toggle="dropdown">
+                    <span>
+                        Akce Škoda
+                    </span>
+
+                    <i class="ph ph-caret-down"></i>
+                </a>
+
+                <ul class="dropdown-menu" role="tablist">
+                    <li>
+                        <a href="#events-skoda" class="dropdown-item active" data-bs-toggle="pill">
+                            Akce Škoda
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#events-toyota" class="dropdown-item" data-bs-toggle="pill">
+                            Akce Toyota
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#events-autostyl" class="dropdown-item" data-bs-toggle="pill">
+                            Akce Autostylu
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="nav nav-pills d-none gap-5 d-md-flex">
+                <li class="nav-item">
+                    <a href="#events-skoda" class="nav-link active fw-semibold" data-bs-toggle="pill">
+                        Akce Škoda
+                    </a>
+                </li>
+
+                <li class="nav-item ms-4">
+                    <a href="#events-toyota" class="nav-link fw-semibold" data-bs-toggle="pill">
+                        Akce Toyota
+                    </a>
+                </li>
+
+                <li class="nav-item ms-4">
+                    <a href="#events-autostyl" class="nav-link fw-semibold" data-bs-toggle="pill">
+                        Akce Autostylu
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content mt-5">
+            <div class="tab-pane fade show active" id="events-skoda" role="tabpanel">
+                <div class="swiper events-swiper events">
+                    <div class="swiper-wrapper">
+                        {% component "eventshp" categoryFilter="skoda" %}
+                    </div>
+
+                    <div class="swiper-scrollbar"></div>
+                </div>
+
+                <p class="mb-0 mt-4 text-md-center mt-lg-5">
+                    <a href="" class="btn btn-primary d-flex justify-content-center d-md-inline-flex">
+                        Další novinky Škoda
+                    </a>
+                </p>
+            </div>
+
+            <div class="tab-pane fade" id="events-toyota" role="tabpanel">
+                <div class="swiper events-swiper events">
+                    <div class="swiper-wrapper">
+                        {% component "eventshp" categoryFilter="toyota" %}
+                    </div>
+
+                    <div class="swiper-scrollbar"></div>
+                </div>
+
+                <p class="mb-0 mt-4 text-md-center mt-lg-5">
+                    <a href="" class="btn btn-primary d-flex justify-content-center d-md-inline-flex">
+                        Další novinky Toyota
+                    </a>
+                </p>
+            </div>
+
+            <div class="tab-pane fade" id="events-autostyl" role="tabpanel">
+                <div class="swiper events-swiper events">
+                    <div class="swiper-wrapper">
+                        {% component "eventshp" categoryFilter="autostyl" %}
+                    </div>
+
+                    <div class="swiper-scrollbar"></div>
+                </div>
+
+                <p class="mb-0 mt-4 text-md-center mt-lg-5">
+                    <a href="" class="btn btn-primary d-flex justify-content-center d-md-inline-flex">
+                        Další novinky Autostylu
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-4 ps-md-0 pe-xl-0 overflow-hidden" id="about-us">
+    <div class="container-fluid ps-md-0 pe-xl-0">
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col d-flex col-md-5 col-xl pe-xl-0">
+                <img src="{{ 'assets/images/autostyl.png'|theme }}" alt="Autostyl" class="img-fluid rounded-3 object-fit-md-cover">
+            </div>
+
+            <div class="col mt-4 col-md-7 mt-md-0 d-md-flex align-items-md-center col-xl ps-xl-0">
+                <div class="my-md-4 mx-xl-5 px-xxl-5">
+                    <h2 class="pb-2 mb-3">
+                        Autostyl Trutnov
+                    </h2>
+
+                    <p class="fw-bold">
+                        Autorizovaný prodej a servis nových vozů Škoda a Toyota
+                    </p>
+
+                    <p class="text-dark fs-4">
+                        Společnost Autostyl Trutnov působí na trhu od prosince 1992 jako nástupnická společnost po
+                        bývalém autodružstvu Náchod, které zde provozovalo opravy vozů Škoda od roku 1975. Záruční i
+                        pozáruční servis byl v roce 1994 rozšířen o prodej nových vozů Škoda a tím byla zahájena nová
+                        etapa v zastoupení značky v regionu Trutnov. S ohledem na smluvní spojení se Škoda Auto je naše
+                        společnost certifikačním místem TÜV SÜD Management Service GmbH a ročně certifikována v
+                        používání systému managementu jakosti v oboru Servis a Prodej Škoda dle požadavku normy
+                        <span class="fw-medium">ISO 9001:2015</span>.
+                    </p>
+
+                    <ul class="list-unstyled mt-4 mb-4 fs-4 text-dark d-flex flex-column gap-2">
+                        <li class="d-flex align-items-center">
+                            <i class="ph ph-check-circle text-primary me-2 fs-2"></i>
+
+                            Prodej nových vozů Škoda a Toyota
+                        </li>
+
+                        <li class="d-flex align-items-center">
+                            <i class="ph ph-check-circle text-primary me-2 fs-2"></i>
+
+                            Autorizovaný servis Toyota
+                        </li>
+
+                        <li class="d-flex align-items-center">
+                            <i class="ph ph-check-circle text-primary me-2 fs-2"></i>
+
+                            Záruční i pozáruční servis
+                        </li>
+
+                        <li class="d-flex align-items-center">
+                            <i class="ph ph-check-circle text-primary me-2 fs-2"></i>
+
+                            Poskytovatel vlastních operativních leasingů
+                        </li>
+
+                        <li class="d-flex align-items-center">
+                            <i class="ph ph-check-circle text-primary me-2 fs-2"></i>
+
+                            Prodeji originálních dílů
+                        </li>
+                    </ul>
+
+                    <div class="row row-cols-1 g-3 mt-4 row-cols-sm-2">
+                        <div class="col">
+                            <a href="" class="btn btn-primary w-100">
+                                Společnost Autostyl
+                            </a>
+                        </div>
+
+                        <div class="col">
+                            <a href="" class="btn btn-primary w-100">
+                                O nás
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5" id="partners">
+    <div class="container-lg pt-xl-4">
+        <h2 class="text-center mb-4">
+            Partneři
+        </h2>
+
+        <div class="swiper partners-swiper partners">
+            <div class="swiper-wrapper">
+                {% for partner in partners %}
+                    <div class="swiper-slide">
+                        {% if partner.link %}
+                            <a href="{{ partner.link }}">
+                        {% endif %}
+                                <img src="{{ partner.logo.path }}" alt="{{ partner.logo.description }}">
+                        {% if partner.link %}
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+</div>

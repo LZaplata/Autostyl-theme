@@ -1,0 +1,27 @@
+title = "GDPR"
+layout = "default"
+url = "/gdpr"
+
+[section content]
+handle = "GDPR\Content"
+==
+{% set items = {
+    "gdpr": {
+        "title": "GDPR",
+        "active": true,
+    }
+} %}
+
+{% partial "breadcrumb" items=items %}
+
+<div class="container-fluid pb-5" id="gdpr">
+    <div class="container-lg py-xl-4">
+        <h1 class="mb-4 mb-xl-5 col-xl-10 offset-xl-1">
+            {{ content.title }}
+        </h1>
+
+        <div class="post-content">
+            {{ content.text|raw }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,179 @@
+<footer>
+    <div class="top container-fluid pt-5 pb-sm-5">
+        <div class="container-lg">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5">
+                <div class="col">
+                    <p class="mb-0 d-flex justify-content-between align-items-center">
+                        <a href="{{ 'homepage'|page }}" class="mi mi-logo"></a>
+
+                        <a href="#footer-1" data-bs-toggle="collapse" class="toggler text-decoration-none d-sm-none">
+                            <i class="ph ph-caret-up fs-2"></i>
+                        </a>
+                    </p>
+
+                    <div class="collapse show" id="footer-1">
+                        <div class="contact pt-5 d-flex flex-row justify-content-between gap-3 flex-sm-column">
+                            {% if this.theme.phone or this.theme.email %}
+                                <p class="mb-0 d-flex flex-column">
+                                    {% if this.theme.phone %}
+                                        <a href="tel:{{ this.theme.phone }}" target="_blank" class="phone">
+                                            {{ this.theme.phone }}
+                                        </a>
+                                    {% endif %}
+
+                                    {% if this.theme.email %}
+                                        <a href="mailto:{{ this.theme.email }}" target="_blank" class="email">
+                                            {{ this.theme.email }}
+                                        </a>
+                                    {% endif %}
+                                </p>
+                            {% endif %}
+
+                            {% if this.theme.street or this.theme.city %}
+                                <p class="mb-0 d-flex flex-column">
+                                    {% if this.theme.street %}
+                                        <span>
+                                        {{ this.theme.street }} {{ this.theme.street_no }}
+                                    </span>
+                                    {% endif %}
+
+                                    {% if this.theme.city %}
+                                        <span>
+                                        {{ this.theme.zip }} {{ this.theme.city }}
+                                    </span>
+                                    {% endif %}
+
+                                    {% if this.theme.map_link %}
+                                        <a href="{{ this.theme.map_link }}" target="_blank">
+                                            Ukázat na mapě
+                                        </a>
+                                    {% endif %}
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-white border-opacity-25 mt-sm-0 pt-sm-0">
+                        <h3 class="text-white mb-0">
+                            Menu
+                        </h3>
+
+                        <a href="#footer-2" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
+                            <i class="ph ph-caret-up"></i>
+                        </a>
+                    </div>
+
+                    <div class="collapse" id="footer-2">
+                        <div class="pt-4">
+                            fff
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-light border-opacity-25 mt-md-0 pt-md-0">
+                        <h3 class="text-white mb-0">
+                            Menu
+                        </h3>
+
+                        <a href="#footer-3" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
+                            <i class="ph ph-caret-up"></i>
+                        </a>
+                    </div>
+
+                    <div class="collapse" id="footer-3">
+                        <div class="pt-4">
+                            fff
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-light border-opacity-25 mt-xl-0 pt-xl-0">
+                        <h3 class="text-white mb-0">
+                            Menu
+                        </h3>
+
+                        <a href="#footer-4" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
+                            <i class="ph ph-caret-up"></i>
+                        </a>
+                    </div>
+
+                    <div class="collapse" id="footer-4">
+                        <div class="pt-4">
+                            fff
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-light border-opacity-25 mt-xl-0 pt-xl-0">
+                        <h3 class="text-white mb-0">
+                            Dealerské stránky
+                        </h3>
+
+                        <a href="#footer-5" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
+                            <i class="ph ph-caret-up"></i>
+                        </a>
+                    </div>
+
+                    <div class="collapse" id="footer-5">
+                        <div class="pt-4 brands d-inline-flex flex-column gap-3">
+                            <a href="https://www.skoda-auto.cz/" target="_blank">
+                                <img src="{{ 'assets/images/logo-skoda.svg'|theme }}" alt="Škoda">
+                            </a>
+
+                            <a href="https://www.toyota.cz/" target="_blank">
+                                <img src="{{ 'assets/images/logo-toyota.svg'|theme }}" alt="Toyota">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom container-fluid pt-4 pt-sm-0">
+        <div class="container-lg">
+            <div class="border-top border-1 border-light border-opacity-25 py-4">
+                <div class="row row-cols-2 d-flex align-items-center row-cols-md-3">
+                    <div class="col order-1 mt-4 col-md mt-md-0">
+                        <div class="socials d-inline-flex align-items-center gap-2 justify-content-end">
+                            {% if this.theme.facebook %}
+                                <a href="{{ this.theme.facebook }}" target="_blank" class="d-inline-flex text-decoration-none">
+                                    {#                                <i class="ph ph-facebook-logo icon"></i>#}
+                                    <i class="mi mi-facebook icon"></i>
+                                </a>
+                            {% endif %}
+
+                            {% if this.theme.instagram %}
+                                <a href="{{ this.theme.instagram }}" target="_blank" class="d-inline-flex text-decoration-none">
+                                    {#                                <i class="ph ph-instagram-logo icon"></i>#}
+                                    <i class="mi mi-instagram icon"></i>
+                                </a>
+                            {% endif %}
+
+                            {% if this.theme.youtube %}
+                                <a href="{{ this.theme.youtube }}" target="_blank" class="d-inline-flex text-decoration-none">
+                                    <i class="ph ph-youtube-logo icon"></i>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="col-12 order-0 d-flex justify-content-center col-md order-md-1">
+                        &copy; {{ "now"|date("Y") }}, Autostyl a.s.
+                    </div>
+
+                    <div class="col order-1 mt-4 col-md mt-md-0">
+                        <p class="mb-0 text-end">
+                            <a href="https://www.hucr.cz" target="_blank" class="mi-signature"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

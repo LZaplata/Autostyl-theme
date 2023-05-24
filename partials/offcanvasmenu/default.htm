@@ -1,0 +1,5 @@
+{% if __SELF__.menuItems %}
+    <ul class="nav flex-column w-100 root gap-4">
+        {% partial __SELF__ ~ "::items" items=__SELF__.menuItems level=1 %}
+    </ul>
+{% endif %}

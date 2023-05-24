@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "~bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$enable-negative-margins:               true;
+
+$min-contrast-ratio:                    2.5;
+
+$black:                                 #222D32;
+$white:                                 #FFFFFF;
+
+$red:                                   #CC0033;
+$red-100:                               #F2C7C9;
+
+$green-500:                             #419468;
+
+$gray-500:                              #5D6368;
+$gray-300:                              #CED7DE;
+$gray-200:                              #EDF3F5;
+
+$primary:                               $red;
+$dark:                                  $gray-500;
+$light:                                 $gray-200;
+$success:                               $green-500;
+
+$body-color:                            $black;
+
+$font-family-sans-serif:                "Nunito Sans", sans-serif;
+$font-family-base:                      $font-family-sans-serif;
+
+$font-weight-bold:                      700;
+$font-weight-semibold:                  600;
+$font-weight-medium:                    500;
+
+$font-size-base:                        1rem;       // 16px
+$font-size-sm:                          .75rem;     // 12px
+
+$font-sizes: (
+    2:                                  1.25rem,        // 20px
+    4:                                  .9375rem,       // 15px
+    6:                                  $font-size-sm,  // 12px
+);
+
+$line-height-base:                      1.5;
+
+$headings-font-family:                  $font-family-base;
+$headings-font-weight:                  $font-weight-bold;
+$headings-color:                        $black;
+
+$h1-font-size:                          2.5rem;         // 40px
+$h2-font-size:                          2rem;           // 32px
+$h3-font-size:                          1.0625rem;      // 17px
+
+$link-color:                            $primary;
+$link-hover-color:                      $black;
+
+$nav-link-color:                        $black;
+$nav-link-hover-color:                  $black;
+$nav-link-after-height:                 1px;        // 0 for turn off
+$nav-link-padding-x:                    0;
+$nav-link-padding-y:                    0;
+$nav-link-font-weight:                  $font-weight-semibold;
+$nav-link-font-size:                    $font-size-base;
+$nav-link-submenu-toggler-color:        $black;
+$nav-link-submenu-toggler-font-size:    $font-size-sm;
+
+$nav-pills-link-active-color:           $primary;
+$nav-pills-link-active-bg:              transparent;
+
+$nav-level-1-bg:                        $white;
+$nav-level-1-box-shadow:                0px 20px 40px rgba(34, 45, 50, 0.1);        // false for turn off
+$nav-level-1-max-height:                400px;
+$nav-level-1-min-width:                 false;      // false for fluid
+$nav-level-1-padding-x:                 0;
+$nav-level-1-padding-y:                 40px;
+$nav-level-1-link-font-size:            $nav-link-font-size;
+$nav-level-1-link-font-weight:          $font-weight-bold;
+$nav-level-1-link-color:                $nav-link-color;
+$nav-level-1-link-hover-color:          $black;
+$nav-level-1-link-hover-bg:             transparent;
+$nav-level-1-link-active-color:         $black;
+$nav-level-1-link-active-bg:            transparent;
+$nav-level-1-link-padding-x:            0;
+$nav-level-1-link-padding-y:            0;
+
+$nav-level-2-padding-x:                 0;
+$nav-level-2-padding-y:                 0;
+$nav-level-2-link-font-size:            0.9375rem;      // 15px
+$nav-level-2-link-font-weight:          $font-weight-medium;
+$nav-level-2-link-color:                $black;
+$nav-level-2-link-hover-color:          $primary;
+$nav-level-2-link-hover-bg:             transparent;
+$nav-level-2-link-active-color:         $primary;
+$nav-level-2-link-active-bg:            transparent;
+$nav-level-2-link-padding-x:            0;
+$nav-level-2-link-padding-y:            3px;
+$nav-level-2-link-after-height:         1px;        // 0 for turn off
+
+$header-socials-icon-color:             $black;
+$header-socials-icon-hover-color:       $primary;
+
+$border-radius-lg:                      15px;
+$border-radius:                         10px;
+$border-radius-sm:                      8px;
+
+$card-border-width:                     0;
+$card-border-radius:                    $border-radius;
+
+$offcanvas-toggler-font-size:           $font-size-sm;
+$offcanvas-toggler-color:               $black;
+$offcanvas-toggler-icon-font-size:      $h2-font-size;
+$offcanvas-toggler-close-color:         $white;
+$offcanvas-bg-color:                    $primary;
+$offcanvas-socials-icon-color:          $white;
+
+$offcanvas-nav-link-color:              $white;
+$offcanvas-nav-link-font-size:          $h3-font-size;
+$offcanvas-nav-link-font-weight:        $font-weight-bold;
+
+$offcanvas-nav-level-1-link-color:          $offcanvas-nav-link-color;
+$offcanvas-nav-level-1-link-font-size:      map-get($font-sizes, 4);
+$offcanvas-nav-level-1-link-font-weight:    $font-weight-medium;
+$offcanvas-nav-level-1-icon-font-weight:    $font-size-sm;
+
+$slider-navigation-color:               $black;
+$slider-navigation-bg:                  $white;
+$slider-navigation-font-size:           map-get($font-sizes, 2);
+$slider-navigation-width:               40px;
+$slider-navigation-height:              $slider-navigation-width;
+$slider-navigation-sides-offset:        40px;
+$slider-navigation-hover-color:         $slider-navigation-color;
+$slider-navigation-hover-bg:            $gray-200;
+
+$slider-pagination-bg:                  $white;
+$slider-pagination-inactive-bg:         $white;
+$slider-pagination-width:               40px;
+$slider-pagination-inactive-width:      20px;
+$slider-pagination-height:              5px;
+$slider-pagination-border-radius:       10px;
+
+$btn-border-radius:                     $border-radius-sm;
+$btn-border-width:                      1.5px;
+$btn-font-weight:                       $font-weight-semibold;
+$btn-font-size:                         map-get($font-sizes, 4);
+$btn-padding-x:                         24px;
+$btn-padding-y:                         12px;
+
+$dropdown-bg:                           $white;
+$dropdown-border-color:                 $gray-300;
+$dropdown-border-width:                 $btn-border-width;
+$dropdown-color:                        $black;
+$dropdown-font-size:                    $btn-font-size;
+$dropdown-min-width:                    100%;
+$dropdown-item-padding-x:               $btn-padding-x;
+$dropdown-item-padding-y:               7px;
+$dropdown-link-active-bg:               $gray-200;
+$dropdown-link-active-color:            $black;
+
+$badge-font-size:                       $font-size-sm;
+$badge-font-weight:                     $font-weight-semibold;
+$badge-padding-x:                       10px;
+$badge-padding-y:                       6px;
+$badge-border-radius:                   30px;
+
+$footer-font-size:                      $font-size-sm;
+$footer-color:                          $gray-300;
+$footer-bg:                             $black;
+
+$footer-logo-bg:                        $gray-300;
+$footer-logo-hover-bg:                  $red;
+
+$footer-contact-font-size:              map-get($font-sizes, 4);
+$footer-contact-link-color:             $red;
+$footer-contact-link-hover-color:       $red;
+$footer-contact-phone-font-size:        $h3-font-size;
+$footer-contact-email-font-size:        $footer-contact-phone-font-size;
+
+$footer-toggler-color:                  $white;
+
+$footer-bottom-bg:                      $footer-bg;
+$footer-bottom-font-size:               $footer-font-size;
+$footer-bottom-color:                   $footer-color;
+
+$footer-socials-icon-color:             $gray-300;
+$footer-socials-icon-hover-color:       $primary;
+
+$footer-signature-color:                $gray-300;
+$footer-signature-hover-color:          $primary;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/offcanvas";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/badge";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "~bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
+.text-decoration-none-w-hover {
+    text-decoration: underline;
+    transition: $transition-base;
+    text-decoration-color: transparent !important;
+    text-underline-offset: 3px;
+
+    &:hover {
+        text-decoration-color: inherit !important
+    }
+}
+
+@mixin mask-image($image, $width: 24, $height: 24) {
+    mask-image: url("../images/#{$image}.svg");
+    -webkit-mask-image: url("../images/#{$image}.svg");
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    width: #{$width}px;
+    height: #{$height}px;
+    display: inline-block;
+}
+
+.mi {
+    &-facebook {
+        @include mask-image("icons/facebook", 12, 13);
+    }
+
+    &-instagram {
+        @include mask-image("icons/instagram", 12, 13);
+    }
+
+    &-youtube {
+        @include mask-image("icons/youtube");
+    }
+
+    &-logo {
+        @include mask-image("logo", 98, 29);
+    }
+
+    &-signature {
+        @include mask-image("signature", 85, 25);
+    }
+
+    &-12 {
+        width: 12px;
+        height: 12px;
+    }
+
+    &.link-primary {
+        background-color: $primary;
+        transition: $transition-base;
+
+        &:hover {
+            background-color: $black;
+        }
+    }
+}
+
+.btn {
+    &.btn-primary {
+        --bs-btn-hover-color: #{$black};
+        --bs-btn-hover-bg: transparent;
+        --bs-btn-hover-border-color: #{$red-100};
+    }
+
+    &.btn-outline-light {
+        --bs-btn-color: #{$black};
+        --bs-btn-bg: transparent;
+        --bs-btn-border-color: #{$gray-300};
+        --bs-btn-hover-color: #{$black};
+        --bs-btn-hover-bg: #{$gray-300};
+        --bs-btn-hover-border-color: #{$gray-300};
+    }
+}

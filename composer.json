@@ -1,0 +1,8 @@
+{
+    "name": "lzaplata/autostyl-theme",
+    "type": "october-theme",
+    "description": "Theme for Autostyl company from Trutnov.",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

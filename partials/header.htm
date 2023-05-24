@@ -1,0 +1,59 @@
+<header>
+    <div class="container-fluid">
+        <div class="container-lg">
+            <div class="d-flex align-items-center justify-content-between row row-cols-lg-3">
+                <div class="col d-flex py-3">
+                    <a href="{{ 'homepage'|page }}" class="d-flex align-items-center">
+                        <img src="{{ 'assets/images/logo.svg'|theme }}" alt="logo">
+                    </a>
+                </div>
+
+                <div class="col d-none d-lg-flex justify-content-center align-self-stretch">
+                    {% component "mainmenu" %}
+                </div>
+
+                <div class="col d-none d-lg-flex align-items-center justify-content-end">
+                    <div class="brands d-inline-flex align-items-center gap-3 me-3">
+                        <a href="https://www.skoda-auto.cz/" target="_blank">
+                            <img src="{{ 'assets/images/logo-skoda.svg'|theme }}" alt="Škoda">
+                        </a>
+
+                        <a href="https://www.toyota.cz/" target="_blank">
+                            <img src="{{ 'assets/images/logo-toyota.svg'|theme }}" alt="Toyota">
+                        </a>
+                    </div>
+
+                    <div class="socials d-inline-flex align-items-center gap-2 justify-content-end">
+                        {% if this.theme.facebook %}
+                            <a href="{{ this.theme.facebook }}" target="_blank" class="d-inline-flex text-decoration-none">
+{#                                <i class="ph ph-facebook-logo icon"></i>#}
+                                <i class="mi mi-facebook icon"></i>
+                            </a>
+                        {% endif %}
+
+                        {% if this.theme.instagram %}
+                            <a href="{{ this.theme.instagram }}" target="_blank" class="d-inline-flex text-decoration-none">
+{#                                <i class="ph ph-instagram-logo icon"></i>#}
+                                <i class="mi mi-instagram icon"></i>
+                            </a>
+                        {% endif %}
+
+                        {% if this.theme.youtube %}
+                            <a href="{{ this.theme.youtube }}" target="_blank" class="d-inline-flex text-decoration-none">
+                                <i class="ph ph-youtube-logo icon"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col text-end d-lg-none">
+                    <a href="#offcanvas" data-bs-toggle="offcanvas" class="d-inline-flex align-items-center offcanvas-toggler text-decoration-none">
+                        Menu
+
+                        <i class="ph ph-list ms-2 icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

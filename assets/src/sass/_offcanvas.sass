@@ -1,0 +1,44 @@
+.offcanvas
+    &-toggler
+        font-size: $offcanvas-toggler-font-size
+
+        .icon
+            font-size: $offcanvas-toggler-icon-font-size
+
+        &.offcanvas-close
+            color: $offcanvas-toggler-close-color
+
+
+    .nav
+        &.root
+            & > li
+                & > div
+                    & > a
+                        position: relative
+                        color: $offcanvas-nav-link-color
+                        font-size: $offcanvas-nav-link-font-size
+                        font-weight: $offcanvas-nav-link-font-weight
+
+                ul
+                    li
+                        a
+                            color: $offcanvas-nav-level-1-link-color
+                            font-size: $offcanvas-nav-level-1-link-font-size
+                            font-weight: $offcanvas-nav-level-1-link-font-weight
+
+                            .icon
+                                font-size: $offcanvas-nav-level-1-icon-font-weight
+                                position: absolute
+                                left: -20px
+
+            .submenu-toggler
+                transition: $transition-base
+                display: inline-block
+
+                &.collapsed
+                    transform: rotate(180deg)
+
+    .socials
+        a
+            .icon
+                background-color: $offcanvas-socials-icon-color

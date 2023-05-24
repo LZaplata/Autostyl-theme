@@ -1,0 +1,11 @@
+{% for item in items %}
+    {% if not item.viewBag.isHidden %}
+        <li class="nav-item d-inline-flex align-items-center {{ item.viewBag.cssClass }}">
+            <i class="ph ph-caret-circle-right me-2 icon text-primary"></i>
+
+            <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link position-relative d-inline-flex align-items-center {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
+                {{ item.title }}
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}

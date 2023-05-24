@@ -1,0 +1,38 @@
+.slider-swiper
+    --swiper-navigation-sides-offset: #{$slider-navigation-sides-offset}
+    --swiper-pagination-color: #{$slider-pagination-bg}
+    --swiper-pagination-bullet-inactive-color: #{$slider-pagination-inactive-bg}
+    --swiper-pagination-bullet-inactive-opacity: .44
+    --swiper-pagination-bullet-width: #{$slider-pagination-inactive-width}
+    --swiper-pagination-bullet-height: #{$slider-pagination-height}
+    --swiper-pagination-bullet-border-radius: #{$slider-pagination-border-radius}
+
+    .swiper-button-next, .swiper-button-prev
+        background-color: $slider-navigation-bg
+        border-radius: 50%
+        width: $slider-navigation-width
+        height: $slider-navigation-height
+        transition: $transition-base
+
+        .icon
+            color: $slider-navigation-color
+            font-size: $slider-navigation-font-size
+            transition: $transition-base
+
+        &:after
+            content: none
+
+        &:hover
+            background-color: $slider-navigation-hover-bg
+
+            .icon
+                color: $slider-navigation-hover-color
+
+    .swiper-button-disabled
+        opacity: 1 !important
+
+    .swiper-pagination-bullet
+        transition: $transition-base
+
+        &-active
+            width: $slider-pagination-width

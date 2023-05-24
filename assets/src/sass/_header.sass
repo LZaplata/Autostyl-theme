@@ -1,0 +1,157 @@
+header
+    @if $nav-level-1-min-width == false
+        position: relative
+
+    .nav
+        &.root
+            & > li
+                @if $nav-level-1-min-width
+                    position: relative
+
+                & > a, & > span
+                    position: relative
+
+                    &:after
+                        content: ""
+                        position: absolute
+                        bottom: 0
+                        left: 0
+                        width: 0
+                        height: $nav-link-after-height
+                        transition: $transition-base
+                        background-color: $nav-link-hover-color
+
+                    &:not(.active)
+                        &:hover
+                            &:after
+                                width: 100%
+
+                & > span
+                    cursor: default
+
+                .submenu-toggler
+                    color: $nav-link-submenu-toggler-color
+                    font-size: $nav-link-submenu-toggler-font-size
+                    transition: $transition-base
+
+                &:hover
+                    & > .submenu
+                        max-height: $nav-level-1-max-height
+
+                    .submenu-toggler
+                        transform: rotate(180deg)
+
+                & > .submenu
+                    position: absolute
+                    top: 100%
+                    background-color: $nav-level-1-bg
+                    max-height: 0
+                    overflow: hidden
+                    transition: $transition-base
+                    z-index: 1000
+
+                    @if $nav-level-1-min-width
+                        min-width: $nav-level-1-min-width
+                    @else
+                        width: 100%
+                        left: 0
+
+                    @if $nav-level-1-box-shadow
+                        box-shadow: $nav-level-1-box-shadow
+
+                    & > .container-lg
+                        @if $nav-level-1-min-width
+                            padding-left: 0
+                            padding-right: 0
+
+                        & > ul
+                            padding: $nav-level-1-padding-y $nav-level-1-padding-x $nav-level-1-padding-y $nav-level-1-padding-x
+
+                            & > li
+                                & > a, & > span
+                                    font-size: $nav-level-1-link-font-size
+                                    font-weight: $nav-level-1-link-font-weight
+                                    color: $nav-level-1-link-color
+                                    padding: $nav-level-1-link-padding-y $nav-level-1-link-padding-x $nav-level-1-link-padding-y $nav-level-1-link-padding-x
+
+                                    @if $nav-level-1-min-width
+                                        width: 100%
+                                    @else
+                                        width: max-content
+
+                                    &:not(.active)
+                                        &:hover
+                                            color: $nav-level-1-link-hover-color
+                                            background-color: $nav-level-1-link-hover-bg
+
+                                    &.active
+                                        color: $nav-level-1-link-active-color
+                                        background-color: $nav-level-1-link-active-bg
+
+                                & > span
+                                    cursor: default
+
+                                & > .submenu
+                                    @if $nav-level-1-min-width
+                                        position: absolute
+                                    @else
+                                        position: relative
+
+                                    & > .container-lg
+                                        padding-left: 0
+                                        padding-right: 0
+
+                                        & > ul
+                                            padding: $nav-level-2-padding-y $nav-level-2-padding-x $nav-level-2-padding-y $nav-level-2-padding-x
+
+                                            & > li
+                                                & > a, & > span
+                                                    font-size: $nav-level-2-link-font-size
+                                                    font-weight: $nav-level-2-link-font-weight
+                                                    color: $nav-level-2-link-color
+                                                    padding: $nav-level-2-link-padding-y $nav-level-2-link-padding-x $nav-level-2-link-padding-y $nav-level-2-link-padding-x
+
+                                                    &:not(.active)
+                                                        &:hover
+                                                            color: $nav-level-2-link-hover-color
+                                                            background-color: $nav-level-2-link-hover-bg
+
+                                                    &.active
+                                                        color: $nav-level-2-link-active-color
+                                                        background-color: $nav-level-2-link-active-bg
+
+                                                    &:after
+                                                        content: ""
+                                                        position: absolute
+                                                        bottom: $nav-level-2-link-padding-y
+                                                        left: 0
+                                                        width: 100%
+                                                        height: $nav-level-2-link-after-height
+                                                        transition: $transition-base
+                                                        background-color: transparent
+
+                                                    &:not(.active)
+                                                        &:hover
+                                                            &:after
+                                                                background-color: $nav-level-2-link-hover-color
+
+                                                & > span
+                                                    cursor: default
+
+    .socials
+        a
+            .icon
+                background-color: $header-socials-icon-color
+                transition: $transition-base
+
+            &:hover
+                .icon
+                    background-color: $header-socials-icon-hover-color
+
+    .offcanvas
+        &-toggler
+            font-size: $offcanvas-toggler-font-size
+            color: $offcanvas-toggler-color
+
+            .icon
+                font-size: $offcanvas-toggler-icon-font-size

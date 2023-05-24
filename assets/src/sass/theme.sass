@@ -1,0 +1,669 @@
+@import "custom"
+@import "header"
+@import "offcanvas"
+@import "slider"
+@import "footer"
+
+header
+    .nav
+        .level-1
+           & > .submenu
+               & > .container-lg
+                   & > ul
+                       --bs-gutter-x: 80px
+
+        .level-2
+            & > a, & > span
+                padding-bottom: 4px !important
+                margin-bottom: 10px
+
+                &:after
+                    content: ""
+                    width: 20px
+                    height: 2px
+                    background: $primary
+                    position: absolute
+                    bottom: 0
+                    left: 0
+
+        .contact-support
+            font-size: 15px
+
+    .socials
+        a
+            background: $gray-200
+            padding: 6px
+            border-radius: 3px
+
+.offcanvas
+    .socials
+        a
+            background: transparentize($white, .7)
+            padding: 6px
+            border-radius: 3px
+
+#skoda-toyota
+    .row
+        .col
+            &.skoda
+                background-color: #F0F0F0
+
+                @include media-breakpoint-up(md)
+                    background-image: url("../images/skoda.png")
+                    background-position-x: left
+                    background-position-y: bottom
+                    background-repeat: no-repeat
+                    background-size: 40%
+
+                @include media-breakpoint-up(lg)
+                    background-size: 50%
+
+                @include media-breakpoint-up(xl)
+                    background-size: 60%
+
+                @include media-breakpoint-up(xxl)
+                    background-size: auto
+
+                .links
+                    .nav
+                        li
+                            .icon
+                                color: $green-500 !important
+
+                            a
+                                &:not(.active)
+                                    &:hover
+                                        color: $green-500
+
+                                        &:after
+                                            background-color: $green-500
+
+            &.toyota
+                background-color: #E8E8E8
+
+                @include media-breakpoint-up(md)
+                    background-image: url("../images/toyota.png")
+                    background-position-x: right
+                    background-position-y: bottom
+                    background-repeat: no-repeat
+                    background-size: 40%
+
+                @include media-breakpoint-up(lg)
+                    background-size: 50%
+
+                @include media-breakpoint-up(xl)
+                    background-size: 60%
+
+                @include media-breakpoint-up(xxl)
+                    background-size: auto
+
+            .links
+                width: max-content
+
+                .nav
+                    li
+                        a
+                            &:after
+                                content: ""
+                                position: absolute
+                                bottom: $nav-level-2-link-padding-y
+                                left: 0
+                                width: 100%
+                                height: $nav-level-2-link-after-height
+                                transition: $transition-base
+                                background-color: transparent
+
+                            &:not(.active)
+                                &:hover
+                                    color: $primary
+
+                                    &:after
+                                        background-color: $primary
+
+#events
+    h2
+        @include media-breakpoint-up(md)
+            border-right: 1px solid $gray-300
+            padding-right: 30px
+            margin-right: 30px
+
+    .nav
+        li
+            a
+                position: relative
+
+                &:after
+                    content: ""
+                    position: absolute
+                    bottom: $nav-level-2-link-padding-y
+                    left: 0
+                    width: 100%
+                    height: $nav-level-2-link-after-height
+                    transition: $transition-base
+                    background-color: transparent
+
+                &:not(.active)
+                    &:hover
+                        color: $primary
+
+                        &:after
+                            background-color: $primary
+
+.dropdown-toggle
+    &:after
+        content: none
+
+.events
+    --swiper-scrollbar-sides-offset: 0%
+    --swiper-scrollbar-bottom: 0
+    --swiper-scrollbar-size: 6px
+    --swiper-scrollbar-bg-color: #{$gray-200}
+    --swiper-scrollbar-drag-bg-color: #{$black}
+    padding-bottom: 25px !important
+
+    @include media-breakpoint-up(md)
+        padding-bottom: 0 !important
+
+    .event
+        &.swiper-slide
+            width: 70%
+
+            @include media-breakpoint-down(md)
+                &:not(.swiper-slide-active)
+                    opacity: .5
+                    transition: $transition-base
+
+        .img
+            a
+                overflow: hidden
+
+                img
+                    transition: $transition-base
+
+            a
+                &:hover
+                    img
+                        transform: scale(1.03)
+
+        .title
+            a
+                color: $black
+                text-decoration: none
+                position: relative
+                display: inline-block
+                line-height: $line-height-base
+
+                &:after
+                    content: ""
+                    position: absolute
+                    bottom: $nav-level-2-link-padding-y
+                    left: 0
+                    width: 100%
+                    height: $nav-level-2-link-after-height
+                    transition: $transition-base
+                    background-color: transparent
+
+                &:hover
+                    color: $primary
+
+                    &:after
+                        background-color: $primary
+
+#about-us
+    h2
+        position: relative
+
+        &:after
+            content: ""
+            width: 24px
+            height: 3px
+            background: $primary
+            position: absolute
+            bottom: -1.5px
+            left: 0
+
+    img
+        @include media-breakpoint-up(md)
+            border-top-left-radius: 0 !important
+            border-bottom-left-radius: 0 !important
+
+#partners
+    .partners
+        --swiper-scrollbar-sides-offset: 0%
+        --swiper-scrollbar-bottom: 0
+        --swiper-scrollbar-size: 6px
+        --swiper-scrollbar-bg-color: #{$gray-200}
+        --swiper-scrollbar-drag-bg-color: #{$black}
+        padding-bottom: 20px !important
+
+footer
+    .top
+        .row
+            .col
+                & > div
+                    @include media-breakpoint-up(sm)
+                        border-top: none !important
+
+    .bottom
+        .socials
+            a
+                background: $gray-500
+                padding: 4px
+                border-radius: 3px
+
+//.text-decoration-underline-w-hover
+//    text-decoration: underline
+//    transition: $transition-base
+//    text-decoration-color: inherit !important
+//    text-underline-offset: 2px
+//
+//    &:hover
+//        text-decoration-color: transparent !important
+//
+//h1, .h1
+//    letter-spacing: -.5px
+//
+//h2, .h2
+//    letter-spacing: -.4px
+//
+//h3, .h3
+//    letter-spacing: -.2px
+//
+//h4, .h4
+//    letter-spacing: -.1px
+//
+//header
+    .top
+        .nav
+            li
+                a
+                    position: relative
+
+                    &:after
+                        content: ""
+                        position: absolute
+                        bottom: -12px
+                        left: 0
+                        right: 0
+                        height: 1px
+                        background: transparent
+                        transition: $transition-base
+
+                    &:hover
+                        &:after
+                            background: var(--bs-primary)
+
+                    &.active
+                        &:after
+                            background: var(--bs-tertiary)
+
+    .middle
+        .mi-logo
+            @include media-breakpoint-down(md)
+                width: 90px
+                height: 55px
+
+        .search
+            button
+                top: map-get($spacers, 2)
+                bottom: map-get($spacers, 2)
+
+    .bottom
+        .nav
+            li
+                &.eshop
+                    a
+                        padding-left: 28px
+
+                        &:before
+                            content: ""
+                            background: url("../images/icons/shopping-cart.svg")
+                            width: 20px
+                            height: 20px
+                            position: absolute
+                            display: inline-block
+                            left: 0
+                            top: 50%
+                            transform: translateY(-50%)
+
+//.offcanvas
+    .mi-logo
+        width: 60px
+        height: 36px
+
+    .nav
+        li
+            &.eshop
+                a
+                    padding-left: 28px
+
+                    &:before
+                        content: ""
+                        background: url("../images/icons/shopping-cart.svg")
+                        width: 20px
+                        height: 20px
+                        position: absolute
+                        display: inline-block
+                        left: 0
+                        top: 50%
+                        transform: translateY(-50%)
+
+//.slider-swiper
+    .swiper-button-prev, .swiper-button-next
+        width: 35px
+        height: 35px
+        background: rgba(var(--bs-white-rgb), .2) !important
+        left: 25px
+
+        &:hover
+            background: rgba(var(--bs-white-rgb), 1) !important
+
+            span
+                background-color: var(--bs-secondary)
+
+        &:after
+            content: none
+
+        &.swiper-button-disabled
+            opacity: 1
+
+        span
+            @include mask-image("icons/caret-left", 16, 16)
+            background-color: var(--bs-white)
+            transition: $transition-base
+
+    .swiper-button-next
+        left: auto !important
+        right: 25px
+
+        span
+            @include mask-image("icons/caret-right", 16, 16)
+
+    @include media-breakpoint-up(md)
+        .swiper-button-prev, .swiper-button-next
+            width: 56px
+            height: 56px
+            left: 50px
+
+        .swiper-button-next
+            right: 50px
+
+    @include media-breakpoint-down(md)
+        .swiper-button-prev, .swiper-button-next
+            top: auto
+            bottom: 25px
+
+//#categories
+    .categories
+        .category
+            a
+                .img
+                    .gradient
+                        background-image: linear-gradient(to bottom, transparent 0%, rgba(var(--bs-black-rgb), .5) 100%)
+
+                h3
+                    @extend .text-decoration-none-w-hover
+
+                &:hover
+                    margin-top: -10px
+                    box-shadow: 0 .5rem 1.5rem rgba(var(--bs-black-rgb), .4) !important
+
+                    h3
+                        text-decoration-color: inherit !important
+
+//#map-wrapper
+    #map
+        height: 600px
+
+        *, ::before, ::after
+            box-sizing: unset !important
+
+        .cluster
+            div
+                background-color: var(--bs-secondary)
+                border: solid 4px rgba(var(--bs-white-rgb), 0.35)
+
+                span
+                    font-weight: map-get($font-weights, "medium")
+                    font-size: map-get($font-sizes, 12)
+                    font-family: $font-family-inter
+                    color: var(--bs-white)
+
+                img
+                    display: none !important
+
+        .card
+            padding: map-get($spacers, 4)
+
+        .hud
+            .zoom, .compass
+                z-index: 200
+
+                @include media-breakpoint-only(xs)
+                    display: none
+
+    #map-input-wrapper
+        z-index: 100
+
+//.posts
+    .post
+        .img
+            .overlay
+                background: rgba(var(--bs-black-rgb), .55)
+                opacity: 0
+
+        .title
+            @extend .text-decoration-none-w-hover
+
+        .more
+            & > span
+                background-color: rgba(var(--bs-secondary-rgb), .1) !important
+                width: 14px
+                height: 14px
+
+        &:hover
+            .img
+                .overlay
+                    background: rgba(var(--bs-black-rgb), .55)
+                    opacity: 1
+
+            .title
+                color: var(--bs-primary)
+                text-decoration-color: inherit !important
+
+            .excerpt
+                opacity: 1 !important
+
+
+//.post-content
+    &:not(.fluid)
+        @include media-breakpoint-up(xl)
+            @include make-col(10)
+            @include make-col-offset(1)
+
+    h2, .h2, h3, .h3, h4, .h4
+        margin-bottom: map-get($spacers, 4)
+
+    p
+        letter-spacing: -.2px
+        line-height: map-get($line-heights, 24)
+        color: map-get($theme-colors, "tertiary-55")
+
+        &:last-child
+            margin-bottom: 0
+
+    ul, ol
+        padding-left: 15px
+
+        li
+            color: rgba(var(--bs-tertiary-rgb), .76)
+            line-height: map-get($line-heights, 24)
+
+    *
+        & + h2, .h2
+            margin-top: map-get($spacers, 5)
+
+        & + h3, .h3
+            margin-top: map-get($spacers, 5)
+
+        & + h4, .h4
+            margin-top: map-get($spacers, 5)
+
+    a
+        @extend .text-decoration-underline-w-hover
+
+        strong
+            color: var(--bs-primary)
+
+        &:hover
+            strong
+                color: var(--bs-tertiary)
+
+    strong
+        color: rgba(var(--bs-tertiary-rgb), 1)
+
+//footer
+    #footer
+        .heading
+            position: relative
+
+            &:after
+                content: ""
+                width: 20px
+                height: 2px
+                background: var(--bs-white)
+                position: absolute
+                bottom: -1px
+                left: 0
+
+//#subcategories
+    .categories
+        .category
+            a
+                &:hover
+                    border-color: var(--bs-secondary) !important
+
+//.pagination
+    .page-item
+        .page-link
+            @extend .text-decoration-none-w-hover
+
+            &.active
+                text-decoration-color: inherit !important
+
+//.products-swiper
+    .swiper-slide
+        a
+            .title
+                @extend .text-decoration-none-w-hover
+
+            &:hover
+                .title
+                    color: var(--bs-primary) !important
+                    text-decoration-color: inherit !important
+
+//#contacts
+    .regions
+        .region
+            a
+                &:hover
+                    border-color: var(--bs-secondary) !important
+
+    .category
+        .contact
+            &:last-child
+                & > div
+                    padding-bottom: 0 !important
+
+            @include media-breakpoint-only(sm)
+                &:nth-last-child(-n+2)
+                    & > div
+                        padding-bottom: 0 !important
+
+            @include media-breakpoint-between(md, xl)
+                &:nth-last-child(-n+3)
+                    & > div
+                        padding-bottom: 0 !important
+
+            @include media-breakpoint-up(xl)
+                &:nth-last-child(-n+4)
+                    & > div
+                        padding-bottom: 0 !important
+
+        &:not(.with-name)
+            .contact
+                &:first-child
+                    & > div
+                        padding-top: 0 !important
+
+                @include media-breakpoint-only(xs)
+                    & > div
+                        padding-left: 0 !important
+                        padding-right: 0 !important
+
+                @include media-breakpoint-only(sm)
+                    &:nth-child(2n+1)
+                        & > div
+                            padding-left: 0 !important
+
+                    &:nth-child(-n+2)
+                        & > div
+                            padding-top: 0 !important
+
+                @include media-breakpoint-between(md, xl)
+                    &:nth-child(3n+1)
+                        & > div
+                            padding-left: 0 !important
+
+                    &:nth-child(-n+3)
+                        & > div
+                            padding-top: 0 !important
+
+                @include media-breakpoint-up(xl)
+                    &:nth-child(4n+1)
+                        & > div
+                            padding-left: 0 !important
+
+                    &:nth-child(-n+4)
+                        & > div
+                            padding-top: 0 !important
+
+        &.with-name
+            .col
+                @include media-breakpoint-only(xs)
+                    &:nth-child(2)
+                        margin-top: map-get($spacers, 4) !important
+
+                @include media-breakpoint-only(sm)
+                    &:nth-child(3n), &:nth-child(4n)
+                        margin-top: map-get($spacers, 4) !important
+
+                @include media-breakpoint-between(md, xl)
+                    &:nth-child(4n), &:nth-child(5n), &:nth-child(6n)
+                        margin-top: map-get($spacers, 4) !important
+
+//#product
+    .product
+        .warning
+            img
+                margin-top: 1px
+
+//#cookies-bar
+    @include media-breakpoint-down(md)
+        left: 20px !important
+
+//#sg-settings-modal-cookiesbar
+    .modal-dialog
+        .modal-content
+            padding: 40px
+
+            .modal-header
+                padding: 0
+                border-bottom: none
+
+            .modal-body
+                padding: 0
+
+            .modal-footer
+                padding: 0
+                border-top: none
