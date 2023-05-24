@@ -1,0 +1,50 @@
+uuid: lzaplata_slider_settings
+handle: Slider\Settings
+type: global
+name: Nastavení slideru
+
+navigation:
+    parent: Slider\Slide
+    icon: icon-cog
+    order: 20
+    label: Nastavení
+
+fields:
+    _image_sm:
+        type: section
+        label: Malý obrázek
+        tab: Obrázky
+        comment: Obrázek, který se bude zobrazovat na mobilních zařízeních a menších tabletech. Měl by mít rozměr 640x640px.
+    image_sm_width:
+        label: Šířka
+        type: number
+        tab: Obrázky
+        default: 640
+        span: left
+        min: 200
+    image_sm_height:
+        label: Výška
+        type: number
+        tab: Obrázky
+        default: 640
+        span: right
+        min: 200
+    _image_lg:
+        type: section
+        label: Velký obrázek
+        tab: Obrázky
+        comment: Obrázek, který se bude zobrazovat na větších zařízeních. Měl by mít rozměr 1920x550px.
+    image_lg_width:
+        label: Šířka
+        type: number
+        tab: Obrázky
+        default: 1920
+        span: left
+        min: 1920
+    image_lg_height:
+        label: Výška
+        type: number
+        tab: Obrázky
+        default: 550
+        span: right
+        min: 500

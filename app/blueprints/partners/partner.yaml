@@ -1,0 +1,38 @@
+uuid: lzaplata_partners
+handle: Partners\Partner
+type: structure
+name: Partner
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Partneři
+    icon: icon-handshake-o
+    order: 0
+
+navigation:
+    label: Partner
+    icon: icon-list-ul
+    parent: Partners\Partner
+    order: 10
+
+fields:
+    logo:
+        label: Logo
+        span: left
+        type: fileupload
+        maxFiles: 1
+        mode: image
+        fileTypes: png,jpg,jpeg,webp
+        column: false
+        scope: false
+        required: true
+    link:
+        label: Odkaz
+        span: right
+        type: text

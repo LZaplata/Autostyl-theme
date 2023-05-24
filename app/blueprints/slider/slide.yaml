@@ -1,0 +1,48 @@
+uuid: lzaplata_slider_slides
+handle: Slider\Slide
+type: structure
+name: Slide
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Slider
+    icon: icon-picture-o
+    order: 0
+
+navigation:
+    label: Slide
+    icon: icon-list-ul
+    parent: Slider\Slide
+    order: 10
+
+fields:
+    image_sm:
+        label: Malý obrázek
+        span: left
+        type: fileupload
+        maxFiles: 1
+        mode: image
+        fileTypes: png,jpg,jpeg,webp
+        column: false
+        scope: false
+        required: true
+    image_lg:
+        label: Velký obrázek
+        span: right
+        type: fileupload
+        maxFiles: 1
+        mode: image
+        fileTypes: png,jpg,jpeg,webp
+        column: false
+        scope: false
+        required: true
+    link:
+        label: Odkaz
+        span: left
+        type: text
