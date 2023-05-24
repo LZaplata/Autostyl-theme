@@ -1,0 +1,34 @@
+#post
+    .content
+        p
+            margin-bottom: map-get($spacers, 4)
+
+            & + h2
+                margin-top: map-get($spacers, 5)
+
+            & + h3
+                margin-top: map-get($spacers, 5)
+
+            & + h4
+                margin-top: map-get($spacers, 5)
+
+            & + h5
+                margin-top: map-get($spacers, 5)
+
+        h2, h3, h4, h5
+            margin-bottom: map-get($spacers, 4)
+
+        strong
+            font-weight: $post-font-weight-bold
+
+        ul
+            padding-left: 0
+            margin-bottom: map-get($spacers, 4)
+
+            li
+                list-style-type: none
+
+                &:before
+                    content: "•"
+                    position: relative
+                    margin-right: 10px

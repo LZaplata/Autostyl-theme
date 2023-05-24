@@ -14,8 +14,13 @@ items:
             isExternal: '0'
     -
         title: Služby
+        nesting: null
         type: header
+        url: null
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -31,31 +36,15 @@ items:
                     isExternal: '0'
                 items:
                     -
-                        title: 'Servis Škoda'
-                        type: url
-                        url: /sluzby/sluzby-servisu/servis-skoda
+                        title: 'Služby Škoda'
+                        type: entry-lzaplata_pages
                         code: ''
+                        reference: '3'
+                        cmsPage: stranka
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
-                    -
-                        title: 'Servis Toyota'
-                        type: url
-                        url: /sluzby/sluzby-servisu/servis-toyota
-                        code: ''
-                        viewBag:
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-            -
-                title: 'Ostatní služby'
-                type: header
-                code: ''
-                viewBag:
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
     -
         title: Kontakt
         nesting: null

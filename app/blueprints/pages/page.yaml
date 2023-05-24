@@ -1,0 +1,47 @@
+uuid: lzaplata_pages
+handle: Pages\Page
+type: structure
+name: Stránka
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+structure:
+    maxDepth: 3
+
+primaryNavigation:
+    label: Stránky
+    icon: icon-sitemap
+    order: 0
+
+navigation:
+    label: Stránky
+    icon: icon-list-ul
+    parent: Pages\Page
+    order: 10
+
+fields:
+    banner_sm:
+        label: Malý banner
+        span: left
+        type: fileupload
+        maxFiles: 1
+        mode: image
+        fileTypes: png,jpg,jpeg,webp
+        column: false
+        scope: false
+    banner_lg:
+        label: Velký banner
+        span: right
+        type: fileupload
+        maxFiles: 1
+        mode: image
+        fileTypes: png,jpg,jpeg,webp
+        column: false
+        scope: false
+    content:
+        label: Obsah
+        type: richeditor
+        size: huge
+        column: false

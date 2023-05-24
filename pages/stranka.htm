@@ -1,0 +1,33 @@
+url = "/:fullslug*"
+layout = "default"
+title = "Stránka"
+
+[section page]
+handle = "Pages\Page"
+entrySlug = "{{ :fullslug }}"
+entryColumn = "fullslug"
+
+[global page_settings]
+handle = "Pages\Settings"
+==
+<div class="container-fluid py-5" id="post">
+    <div class="container-lg">
+        {% if page.banner_sm and page.banner_lg %}
+            <div class="banner mb-5">
+                <picture>
+                    <source media="(min-width:768px)" srcset="{{ page.banner_lg.thumb(page_settings.banner_lg_width, page_settings.banner_lg_height, {"mode": "crop"}) }}">
+
+                    <img src="{{ page.banner_sm.thumb(page_settings.banner_sm_width, page_settings.banner_sm_height, {"mode": "crop"}) }}" alt="{{ page.banner_sm.description }}" class="img-fluid w-100 rounded-3">
+                </picture>
+            </div>
+        {% endif %}
+
+        <h1 class="mb-5">
+            {{ page.title }}
+        </h1>
+
+        <div class="content">
+            {{ page.content|raw }}
+        </div>
+    </div>
+</div>

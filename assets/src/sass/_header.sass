@@ -2,6 +2,9 @@ header
     @if $nav-level-1-min-width == false
         position: relative
 
+    &:not(.homepage)
+        border-bottom: $header-border-width solid $header-border-color
+
     .nav
         &.root
             & > li
@@ -21,10 +24,14 @@ header
                         transition: $transition-base
                         background-color: $nav-link-hover-color
 
-                    &:not(.active)
+                    &:hover
+                        &:after
+                            width: 100%
+
+                    &.active
                         &:hover
                             &:after
-                                width: 100%
+                                background-color: $nav-pills-link-active-color
 
                 & > span
                     cursor: default

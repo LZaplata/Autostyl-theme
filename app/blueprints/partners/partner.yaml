@@ -16,7 +16,7 @@ primaryNavigation:
     order: 0
 
 navigation:
-    label: Partner
+    label: Partneři
     icon: icon-list-ul
     parent: Partners\Partner
     order: 10

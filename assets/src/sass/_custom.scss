@@ -49,12 +49,16 @@ $headings-font-family:                  $font-family-base;
 $headings-font-weight:                  $font-weight-bold;
 $headings-color:                        $black;
 
+$header-border-color:                   $gray-300;
+$header-border-width:                   1px;
+
 $h1-font-size:                          2.5rem;         // 40px
 $h2-font-size:                          2rem;           // 32px
 $h3-font-size:                          1.0625rem;      // 17px
 
 $link-color:                            $primary;
 $link-hover-color:                      $black;
+$link-decoration:                       none;
 
 $nav-link-color:                        $black;
 $nav-link-hover-color:                  $black;
@@ -188,6 +192,8 @@ $footer-socials-icon-hover-color:       $primary;
 
 $footer-signature-color:                $gray-300;
 $footer-signature-hover-color:          $primary;
+
+$post-font-weight-bold:                 $font-weight-bold;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/variables";
