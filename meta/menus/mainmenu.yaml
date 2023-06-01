@@ -2,8 +2,8 @@ items:
     -
         title: Autostyl
         nesting: null
-        type: url
-        url: /
+        type: header
+        url: null
         code: ''
         reference: null
         cmsPage: null
@@ -12,6 +12,33 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+        items:
+            -
+                title: Kariéra
+                nesting: null
+                type: url
+                url: /
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Novinky
+                nesting: null
+                type: url
+                url: /
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: Služby
         nesting: null
@@ -28,8 +55,13 @@ items:
         items:
             -
                 title: 'Služby servisu'
+                nesting: null
                 type: header
+                url: null
                 code: ''
+                reference: null
+                cmsPage: null
+                replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -37,19 +69,191 @@ items:
                 items:
                     -
                         title: 'Služby Škoda'
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '3'
+                        cmsPage: stranka
+                        replace: null
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Služby Toyota'
+                        nesting: null
+                        type: entry-lzaplata_pages
+                        url: null
+                        code: ''
+                        reference: '4'
+                        cmsPage: stranka
+                        replace: null
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Klempírna a lakovna'
+                        nesting: null
+                        type: entry-lzaplata_pages
+                        url: null
+                        code: ''
+                        reference: '5'
+                        cmsPage: stranka
+                        replace: null
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: Pneuservis
+                        nesting: null
+                        type: entry-lzaplata_pages
+                        url: null
+                        code: ''
+                        reference: '6'
+                        cmsPage: stranka
+                        replace: null
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Geometrie a diagnostika'
+                        nesting: null
+                        type: entry-lzaplata_pages
+                        url: null
+                        code: ''
+                        reference: '7'
+                        cmsPage: stranka
+                        replace: null
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Servis klimatizace'
+                        nesting: null
+                        type: entry-lzaplata_pages
+                        url: null
+                        code: ''
+                        reference: '8'
+                        cmsPage: stranka
+                        replace: null
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+            -
+                title: 'Ostatní služby'
+                nesting: null
+                type: header
+                url: null
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                items:
+                    -
+                        title: 'Ojeté vozy Škoda Plus'
+                        type: entry-lzaplata_pages
+                        code: ''
+                        reference: '10'
+                        cmsPage: stranka
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Operativní leasing Rentstyl'
+                        type: entry-lzaplata_pages
+                        code: ''
+                        reference: '11'
+                        cmsPage: stranka
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Financování Škoda'
+                        type: entry-lzaplata_pages
+                        code: ''
+                        reference: '12'
+                        cmsPage: stranka
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Financování Toyota'
+                        type: entry-lzaplata_pages
+                        code: ''
+                        reference: '13'
+                        cmsPage: stranka
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: Autopůjčovna
+                        type: entry-lzaplata_pages
+                        code: ''
+                        reference: '14'
+                        cmsPage: stranka
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Fleet centrum'
+                        type: entry-lzaplata_pages
+                        code: ''
+                        reference: '15'
+                        cmsPage: stranka
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: Pojištění
+                        type: entry-lzaplata_pages
+                        code: ''
+                        reference: '16'
+                        cmsPage: stranka
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Půjčovna příslušenství'
+                        type: entry-lzaplata_pages
+                        code: ''
+                        reference: '17'
+                        cmsPage: stranka
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: Myčka
+                        type: entry-lzaplata_pages
+                        code: ''
+                        reference: '18'
                         cmsPage: stranka
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
     -
-        title: Kontakt
+        title: Kontakty
         nesting: null
-        type: url
-        url: /kontakt
+        type: header
+        url: null
         code: ''
         reference: null
         cmsPage: null
@@ -58,4 +262,44 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+        items:
+            -
+                title: 'Kontakty Autostyl'
+                nesting: null
+                type: url
+                url: /
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Kontaky Škoda'
+                nesting: null
+                type: url
+                url: /
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Kontakty Toyota'
+                nesting: null
+                type: url
+                url: /
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
 name: 'Main Menu'
