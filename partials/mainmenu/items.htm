@@ -22,7 +22,7 @@
 
                         <!-- Uncomment below while using fluid submenu and columns + comment above -->
 
-                        <ul class="nav row row-cols-lg-4">
+                        <ul class="nav row {% if item.code != 'contacts' %}row-cols-lg-4{% endif %} {{ item.code }}">
                             {% partial __SELF__ ~ "::items-fluid-autostyl" items=item.items level=2 %}
                         </ul>
                     </div>

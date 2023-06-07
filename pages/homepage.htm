@@ -18,8 +18,35 @@ pageNumber = "{{ :page }}"
 postsPerPage = 3
 noPostsMessage = "Nenalezeny žádné příspěvky"
 sortOrder = "published_at asc"
-categoryPage = "aktualita"
-postPage = "aktualita"
+categoryPage = "novinky"
+postPage = "novinka"
+
+[blogPosts eventshpskoda]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+categoryFilter = "skoda"
+noPostsMessage = "Nenalezeny žádné příspěvky"
+sortOrder = "published_at asc"
+categoryPage = "novinky"
+postPage = "novinka"
+
+[blogPosts eventshptoyota]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+categoryFilter = "toyota"
+noPostsMessage = "Nenalezeny žádné příspěvky"
+sortOrder = "published_at asc"
+categoryPage = "novinky"
+postPage = "novinka"
+
+[blogPosts eventshpautostyl]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+categoryFilter = "autostyl"
+noPostsMessage = "Nenalezeny žádné příspěvky"
+sortOrder = "published_at asc"
+categoryPage = "novinky"
+postPage = "novinka"
 ==
 {% if slider.getIterator().count %}
     <div class="swiper slider-swiper">
@@ -89,7 +116,7 @@ postPage = "aktualita"
             <div class="dropdown mt-4 d-md-none">
                 <a class="btn btn-outline-light dropdown-toggle w-100 text-start d-flex align-items-center justify-content-between" href="#" data-bs-toggle="dropdown">
                     <span>
-                        Škoda
+                        Vše
                     </span>
 
                     <i class="ph ph-caret-down"></i>
@@ -98,6 +125,12 @@ postPage = "aktualita"
                 <ul class="dropdown-menu" role="tablist">
                     <li>
                         <a href="#events-skoda" class="dropdown-item active" data-bs-toggle="pill">
+                            Vše
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#events-skoda" class="dropdown-item" data-bs-toggle="pill">
                             Škoda
                         </a>
                     </li>
@@ -118,7 +151,13 @@ postPage = "aktualita"
 
             <ul class="nav nav-pills d-none gap-5 d-md-flex">
                 <li class="nav-item">
-                    <a href="#events-skoda" class="nav-link active fw-semibold" data-bs-toggle="pill">
+                    <a href="#events-all" class="nav-link active fw-semibold" data-bs-toggle="pill">
+                        Vše
+                    </a>
+                </li>
+
+                <li class="nav-item ms-4">
+                    <a href="#events-skoda" class="nav-link fw-semibold" data-bs-toggle="pill">
                         Škoda
                     </a>
                 </li>
@@ -138,17 +177,33 @@ postPage = "aktualita"
         </div>
 
         <div class="tab-content mt-5">
-            <div class="tab-pane fade show active" id="events-skoda" role="tabpanel">
+            <div class="tab-pane fade show active" id="events-all" role="tabpanel">
                 <div class="swiper events-swiper events">
                     <div class="swiper-wrapper">
-                        {% component "eventshp" categoryFilter="skoda" %}
+                        {% component "eventshp" %}
                     </div>
 
                     <div class="swiper-scrollbar"></div>
                 </div>
 
                 <p class="mb-0 mt-4 text-md-center mt-lg-5">
-                    <a href="" class="btn btn-primary d-flex justify-content-center d-md-inline-flex">
+                    <a href="{{ 'novinky'|page }}" class="btn btn-primary d-flex justify-content-center d-md-inline-flex">
+                        Další novinky
+                    </a>
+                </p>
+            </div>
+
+            <div class="tab-pane fade" id="events-skoda" role="tabpanel">
+                <div class="swiper events-swiper events">
+                    <div class="swiper-wrapper">
+                        {% component "eventshpskoda" %}
+                    </div>
+
+                    <div class="swiper-scrollbar"></div>
+                </div>
+
+                <p class="mb-0 mt-4 text-md-center mt-lg-5">
+                    <a href="{{ 'novinky-kategorie'|page({slug: "skoda"}) }}" class="btn btn-primary d-flex justify-content-center d-md-inline-flex">
                         Další novinky Škoda
                     </a>
                 </p>
@@ -157,14 +212,14 @@ postPage = "aktualita"
             <div class="tab-pane fade" id="events-toyota" role="tabpanel">
                 <div class="swiper events-swiper events">
                     <div class="swiper-wrapper">
-                        {% component "eventshp" categoryFilter="toyota" %}
+                        {% component "eventshptoyota" %}
                     </div>
 
                     <div class="swiper-scrollbar"></div>
                 </div>
 
                 <p class="mb-0 mt-4 text-md-center mt-lg-5">
-                    <a href="" class="btn btn-primary d-flex justify-content-center d-md-inline-flex">
+                    <a href="{{ 'novinky-kategorie'|page({slug: "toyota"}) }}" class="btn btn-primary d-flex justify-content-center d-md-inline-flex">
                         Další novinky Toyota
                     </a>
                 </p>
@@ -173,14 +228,14 @@ postPage = "aktualita"
             <div class="tab-pane fade" id="events-autostyl" role="tabpanel">
                 <div class="swiper events-swiper events">
                     <div class="swiper-wrapper">
-                        {% component "eventshp" categoryFilter="autostyl" %}
+                        {% component "eventshpautostyl" %}
                     </div>
 
                     <div class="swiper-scrollbar"></div>
                 </div>
 
                 <p class="mb-0 mt-4 text-md-center mt-lg-5">
-                    <a href="" class="btn btn-primary d-flex justify-content-center d-md-inline-flex">
+                    <a href="{{ 'novinky-kategorie'|page({slug: "autostyl"}) }}" class="btn btn-primary d-flex justify-content-center d-md-inline-flex">
                         Další novinky Autostylu
                     </a>
                 </p>

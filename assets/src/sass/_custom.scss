@@ -270,6 +270,14 @@ $post-font-weight-bold:                 $font-weight-bold;
         @include mask-image("signature", 85, 25);
     }
 
+    &-skoda {
+        @include mask-image("logo-skoda", 74, 10);
+    }
+
+    &-toyota {
+        @include mask-image("logo-toyota", 73, 20);
+    }
+
     &-12 {
         width: 12px;
         height: 12px;

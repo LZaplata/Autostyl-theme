@@ -14,63 +14,76 @@ items:
             isExternal: '0'
     -
         title: 'Ojeté vozy Toyota'
+        nesting: null
         type: url
         url: /
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'Operativní leasing Toyota'
-        type: url
-        url: /
+        type: entry-lzaplata_pages
         code: ''
+        reference: '11'
+        cmsPage: stranka
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Financování
-        type: url
-        url: /
+        type: entry-lzaplata_pages
         code: ''
+        reference: '13'
+        cmsPage: stranka
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Pojištění
-        type: url
-        url: /
+        type: entry-lzaplata_pages
         code: ''
+        reference: '16'
+        cmsPage: stranka
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'Servis Toyota'
-        type: url
-        url: /
+        type: entry-lzaplata_pages
         code: ''
+        reference: '4'
+        cmsPage: stranka
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'Náhradní díly Toyota'
+        nesting: null
         type: url
         url: /
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Kontakty
-        type: url
-        url: /
+        type: entry-lzaplata_contacts_categories
         code: ''
+        reference: '2'
+        cmsPage: kontakty
         viewBag:
             isHidden: '0'
             cssClass: ''

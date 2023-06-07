@@ -1,0 +1,24 @@
+url = "/autostyl/novinky/:page?|^[0-9]+$"
+layout = "default"
+title = "Novinky"
+
+[blogPosts events]
+pageNumber = "{{ :page }}"
+postsPerPage = 12
+noPostsMessage = "Nenalezeny žádné příspěvky"
+sortOrder = "published_at asc"
+categoryPage = "novinky-kategorie"
+postPage = "novinka"
+exceptCategories = "kariera"
+==
+<div class="container-fluid py-5" id="post">
+    <div class="container-lg pb-xl-4">
+        <h1 class="mb-5">
+            {{ this.page.title }}
+        </h1>
+
+        <div class="events row row-cols-1 gy-5 row-cols-sm-2 row-cols-lg-3">
+            {% component "events" %}
+        </div>
+    </div>
+</div>

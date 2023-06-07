@@ -16,29 +16,81 @@ items:
             -
                 title: Kariéra
                 nesting: null
-                type: url
-                url: /
+                type: cms-page
+                url: null
                 code: ''
-                reference: null
+                reference: kariera
                 cmsPage: null
                 replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
+                items:
+                    -
+                        title: 'Volné pozice'
+                        type: category-blog-posts
+                        code: ''
+                        reference: '4'
+                        cmsPage: novinka
+                        replace: 1
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
             -
                 title: Novinky
                 nesting: null
-                type: url
-                url: /
+                type: cms-page
+                url: null
                 code: ''
-                reference: null
+                reference: novinky
                 cmsPage: null
                 replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
+                items:
+                    -
+                        title: Škoda
+                        nesting: 0
+                        type: blog-category
+                        url: null
+                        code: ''
+                        reference: '1'
+                        cmsPage: novinky-kategorie
+                        replace: 0
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: Toyota
+                        nesting: 0
+                        type: blog-category
+                        url: null
+                        code: ''
+                        reference: '2'
+                        cmsPage: novinky-kategorie
+                        replace: 0
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: Autostyl
+                        nesting: 0
+                        type: blog-category
+                        url: null
+                        code: ''
+                        reference: '3'
+                        cmsPage: novinky-kategorie
+                        replace: 0
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
     -
         title: Služby
         nesting: null
@@ -161,90 +213,117 @@ items:
                 items:
                     -
                         title: 'Ojeté vozy Škoda Plus'
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '10'
                         cmsPage: stranka
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
                     -
                         title: 'Operativní leasing Rentstyl'
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '11'
                         cmsPage: stranka
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
                     -
                         title: 'Financování Škoda'
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '12'
                         cmsPage: stranka
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
                     -
                         title: 'Financování Toyota'
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '13'
                         cmsPage: stranka
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
                     -
                         title: Autopůjčovna
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '14'
                         cmsPage: stranka
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
                     -
                         title: 'Fleet centrum'
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '15'
                         cmsPage: stranka
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
                     -
                         title: Pojištění
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '16'
                         cmsPage: stranka
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
                     -
                         title: 'Půjčovna příslušenství'
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '17'
                         cmsPage: stranka
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
                     -
                         title: Myčka
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '18'
                         cmsPage: stranka
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
@@ -254,7 +333,7 @@ items:
         nesting: null
         type: header
         url: null
-        code: ''
+        code: contacts
         reference: null
         cmsPage: null
         replace: null
@@ -264,39 +343,39 @@ items:
             isExternal: '0'
         items:
             -
-                title: 'Kontakty Autostyl'
+                title: Autostyl
                 nesting: null
-                type: url
-                url: /
+                type: entry-lzaplata_contacts_categories
+                url: null
                 code: ''
-                reference: null
-                cmsPage: null
+                reference: '3'
+                cmsPage: kontakty
                 replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
-                title: 'Kontaky Škoda'
+                title: Škoda
                 nesting: null
-                type: url
-                url: /
+                type: entry-lzaplata_contacts_categories
+                url: null
                 code: ''
-                reference: null
-                cmsPage: null
+                reference: '1'
+                cmsPage: kontakty
                 replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
-                title: 'Kontakty Toyota'
+                title: Toyota
                 nesting: null
-                type: url
-                url: /
+                type: entry-lzaplata_contacts_categories
+                url: null
                 code: ''
-                reference: null
-                cmsPage: null
+                reference: '2'
+                cmsPage: kontakty
                 replace: null
                 viewBag:
                     isHidden: '0'
