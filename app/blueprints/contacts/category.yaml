@@ -1,0 +1,26 @@
+uuid: lzaplata_contacts_categories
+handle: Contacts\Category
+type: structure
+name: Kategorie kontaktů
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+structure:
+    maxDepth: 2
+
+navigation:
+    label: Kategorie
+    icon: icon-folder-o
+    parent: Contacts\Contact
+    order: 20
+
+fields:
+    contacts:
+        type: entries
+        source: Contacts\Contact
+        inverse: categories
+        hidden: true
+        column: false
+        scope: false

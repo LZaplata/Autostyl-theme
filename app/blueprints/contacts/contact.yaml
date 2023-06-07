@@ -1,0 +1,56 @@
+uuid: lzaplata_contacts
+handle: Contacts\Contact
+type: stream
+name: Kontakty
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+primaryNavigation:
+    label: Kontakty
+    icon: icon-users
+    order: 0
+
+navigation:
+    label: Kontakty
+    icon: icon-list-ul
+    parent: Contacts\Contact
+    order: 10
+
+fields:
+    job:
+        label: Pozice
+        type: text
+        span: left
+        column: false
+        scope: false
+
+    mobile:
+        label: Mobil
+        type: text
+        span: left
+        column: false
+        scope: false
+
+    phone:
+        label: Telefon
+        type: text
+        span: right
+        column: false
+        scope: false
+
+    email:
+        label: E-mail
+        type: text
+        span: left
+        column: false
+        scope: false
+
+    categories:
+        label: Kategorie
+        type: entries
+        source: Contacts\Category
+        span: left
+        column: false
+        scope: false
