@@ -1,6 +1,6 @@
 uuid: lzaplata_contacts
 handle: Contacts\Contact
-type: stream
+type: structure
 name: Kontakty
 drafts: false
 showImport: false
