@@ -33,6 +33,7 @@ $font-family-base:                      $font-family-sans-serif;
 $font-weight-bold:                      700;
 $font-weight-semibold:                  600;
 $font-weight-medium:                    500;
+$font-weight-regular:                   400;
 
 $font-size-base:                        1rem;       // 16px
 $font-size-sm:                          .75rem;     // 12px
@@ -150,6 +151,8 @@ $btn-font-weight:                       $font-weight-semibold;
 $btn-font-size:                         map-get($font-sizes, 4);
 $btn-padding-x:                         24px;
 $btn-padding-y:                         12px;
+$btn-padding-x-sm:                      20px;
+$btn-padding-y-sm:                      10px;
 
 $dropdown-bg:                           $white;
 $dropdown-border-color:                 $gray-300;
@@ -193,6 +196,11 @@ $footer-socials-icon-hover-color:       $primary;
 $footer-signature-color:                $gray-300;
 $footer-signature-hover-color:          $primary;
 
+$footer-nav-link-color:                 $white;
+$footer-nav-link-font-weight:           $font-weight-regular;
+$footer-nav-link-font-size:             map-get($font-sizes, 4);
+$footer-nav-link-hover-color:           $primary;
+
 $post-font-weight-bold:                 $font-weight-bold;
 
 // 3. Include remainder of required Bootstrap stylesheets
@@ -223,6 +231,7 @@ $post-font-weight-bold:                 $font-weight-bold;
 @import "~bootstrap/scss/card";
 @import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/modal";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "~bootstrap/scss/utilities/api";

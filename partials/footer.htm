@@ -93,7 +93,7 @@
                 <div class="col">
                     <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-light border-opacity-25 mt-xl-0 pt-xl-0">
                         <h3 class="text-white mb-0">
-                            Menu
+                            Užitečné odkazy
                         </h3>
 
                         <a href="#footer-4" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
@@ -103,7 +103,9 @@
 
                     <div class="collapse" id="footer-4">
                         <div class="pt-4">
-                            fff
+                            {{ brandmenu.resetMenu("footermenu") }}
+
+                            {% component "footermenu" code="uzitecne-odkazy" %}
                         </div>
                     </div>
                 </div>

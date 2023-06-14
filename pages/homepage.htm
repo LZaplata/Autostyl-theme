@@ -12,6 +12,7 @@ handle = "Slider\Settings"
 handle = "Partners\Partner"
 
 [staticMenu brandmenu]
+code = "menu-toyota"
 
 [blogPosts eventshp]
 pageNumber = "{{ :page }}"
@@ -23,8 +24,8 @@ postPage = "novinka"
 
 [blogPosts eventshpskoda]
 pageNumber = "{{ :page }}"
-postsPerPage = 3
 categoryFilter = "skoda"
+postsPerPage = 3
 noPostsMessage = "Nenalezeny žádné příspěvky"
 sortOrder = "published_at asc"
 categoryPage = "novinky"
@@ -32,8 +33,8 @@ postPage = "novinka"
 
 [blogPosts eventshptoyota]
 pageNumber = "{{ :page }}"
-postsPerPage = 3
 categoryFilter = "toyota"
+postsPerPage = 3
 noPostsMessage = "Nenalezeny žádné příspěvky"
 sortOrder = "published_at asc"
 categoryPage = "novinky"
@@ -41,12 +42,14 @@ postPage = "novinka"
 
 [blogPosts eventshpautostyl]
 pageNumber = "{{ :page }}"
-postsPerPage = 3
 categoryFilter = "autostyl"
+postsPerPage = 3
 noPostsMessage = "Nenalezeny žádné příspěvky"
 sortOrder = "published_at asc"
 categoryPage = "novinky"
 postPage = "novinka"
+
+[staticMenu footermenu]
 ==
 {% if slider.getIterator().count %}
     <div class="swiper slider-swiper">

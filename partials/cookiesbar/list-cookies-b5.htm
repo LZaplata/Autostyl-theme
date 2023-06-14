@@ -8,13 +8,13 @@
             <input class="form-check-input float-none ms-0 opacity-100 me-2 {{ cookie.required ? 'disabled' : ''  }}" type="checkbox"
                    id="sg-cookies{{ sgCookiesLocalePrefix ? sgCookiesLocalePrefix }}-{{cookie.slug}}{{customId}}"
                    {{ sgCookies[cookie.slug] or (cookie.required) ? 'checked' : '' }} {{ cookie.required ? 'disabled' : ''  }}>
-            <label class="form-check-label text-tertiary fw-semibold opacity-100" for="sg-cookies{{ sgCookiesLocalePrefix ? sgCookiesLocalePrefix }}-{{cookie.slug}}{{customId}}">
+            <label class="form-check-label fw-bold opacity-100" for="sg-cookies{{ sgCookiesLocalePrefix ? sgCookiesLocalePrefix }}-{{cookie.slug}}{{customId}}">
                 {{ cookie.title }}
             </label>
         </div>
 
         {% if cookie.description %}
-        <div class="text-tertiary-55">
+        <div>
             {{ cookie.description|raw }}
         </div>
         {% endif %}

@@ -3,7 +3,7 @@ items:
         title: 'Nové vozy Škoda'
         nesting: null
         type: url
-        url: /
+        url: 'https://autostyl.skoda-auto.cz/skladove-vozy'
         code: ''
         reference: null
         cmsPage: null
@@ -11,76 +11,91 @@ items:
         viewBag:
             isHidden: '0'
             cssClass: ''
-            isExternal: '0'
+            isExternal: '1'
     -
         title: 'Ojeté vozy Škoda Plus'
-        type: entry-lzaplata_pages
+        nesting: null
+        type: url
+        url: 'https://www.skodaplus.cz/list/?carsOrderBy=FIRST_REGISTRATION_DESC&dealers=Dealer-23'
         code: ''
-        reference: '10'
-        cmsPage: stranka
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
-            isExternal: '0'
+            isExternal: '1'
     -
         title: 'Operativní leasing Škoda'
-        type: entry-lzaplata_pages
+        nesting: null
+        type: url
+        url: 'https://www.rentstyl.cz/'
         code: ''
-        reference: '11'
-        cmsPage: stranka
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
-            isExternal: '0'
+            isExternal: '1'
     -
         title: Financování
+        nesting: null
         type: entry-lzaplata_pages
+        url: null
         code: ''
         reference: '12'
         cmsPage: stranka
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Pojištění
+        nesting: null
         type: entry-lzaplata_pages
+        url: null
         code: ''
         reference: '16'
         cmsPage: stranka
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: 'Servis Škoda'
-        type: entry-lzaplata_pages
-        code: ''
-        reference: '3'
-        cmsPage: stranka
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: 'Náhradní díly Škoda'
-        nesting: null
-        type: url
-        url: /
-        code: ''
-        reference: null
-        cmsPage: null
         replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
+        title: 'Servis Škoda'
+        nesting: null
+        type: entry-lzaplata_pages
+        url: null
+        code: ''
+        reference: '3'
+        cmsPage: stranka
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Náhradní díly Škoda'
+        type: entry-lzaplata_pages
+        code: ''
+        reference: '20'
+        cmsPage: stranka
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
         title: Kontakty
+        nesting: null
         type: entry-lzaplata_contacts_categories
+        url: null
         code: ''
         reference: '1'
         cmsPage: kontakty
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''

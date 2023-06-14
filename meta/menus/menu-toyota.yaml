@@ -3,7 +3,7 @@ items:
         title: 'Nové vozy Toyota'
         nesting: null
         type: url
-        url: /
+        url: 'https://proverenevozy.toyota.cz/dealer/AST'
         code: ''
         reference: null
         cmsPage: null
@@ -11,12 +11,12 @@ items:
         viewBag:
             isHidden: '0'
             cssClass: ''
-            isExternal: '0'
+            isExternal: '1'
     -
         title: 'Ojeté vozy Toyota'
         nesting: null
         type: url
-        url: /
+        url: 'https://proverenevozy.toyota.cz/dealer/AST'
         code: ''
         reference: null
         cmsPage: null
@@ -24,66 +24,78 @@ items:
         viewBag:
             isHidden: '0'
             cssClass: ''
-            isExternal: '0'
+            isExternal: '1'
     -
         title: 'Operativní leasing Toyota'
-        type: entry-lzaplata_pages
+        nesting: null
+        type: url
+        url: 'https://www.rentstyl.cz/'
         code: ''
-        reference: '11'
-        cmsPage: stranka
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
-            isExternal: '0'
+            isExternal: '1'
     -
         title: Financování
+        nesting: null
         type: entry-lzaplata_pages
+        url: null
         code: ''
         reference: '13'
         cmsPage: stranka
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Pojištění
+        nesting: null
         type: entry-lzaplata_pages
+        url: null
         code: ''
         reference: '16'
         cmsPage: stranka
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: 'Servis Toyota'
-        type: entry-lzaplata_pages
-        code: ''
-        reference: '4'
-        cmsPage: stranka
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: 'Náhradní díly Toyota'
-        nesting: null
-        type: url
-        url: /
-        code: ''
-        reference: null
-        cmsPage: null
         replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
+        title: 'Servis Toyota'
+        nesting: null
+        type: entry-lzaplata_pages
+        url: null
+        code: ''
+        reference: '4'
+        cmsPage: stranka
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Náhradní díly Toyota'
+        type: entry-lzaplata_pages
+        code: ''
+        reference: '21'
+        cmsPage: stranka
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
         title: Kontakty
+        nesting: null
         type: entry-lzaplata_contacts_categories
+        url: null
         code: ''
         reference: '2'
         cmsPage: kontakty
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''

@@ -29,7 +29,9 @@ items:
                 items:
                     -
                         title: 'Volné pozice'
+                        nesting: null
                         type: category-blog-posts
+                        url: null
                         code: ''
                         reference: '4'
                         cmsPage: novinka
@@ -197,6 +199,26 @@ items:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
+                    -
+                        title: 'Náhradní díly Škoda'
+                        type: entry-lzaplata_pages
+                        code: ''
+                        reference: '20'
+                        cmsPage: stranka
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Náhradní díly Toyota'
+                        type: entry-lzaplata_pages
+                        code: ''
+                        reference: '21'
+                        cmsPage: stranka
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
             -
                 title: 'Ostatní služby'
                 nesting: null
@@ -214,29 +236,29 @@ items:
                     -
                         title: 'Ojeté vozy Škoda Plus'
                         nesting: null
-                        type: entry-lzaplata_pages
-                        url: null
+                        type: url
+                        url: 'https://www.skodaplus.cz/list/?carsOrderBy=FIRST_REGISTRATION_DESC&dealers=Dealer-23'
                         code: ''
-                        reference: '10'
-                        cmsPage: stranka
+                        reference: null
+                        cmsPage: null
                         replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
-                            isExternal: '0'
+                            isExternal: '1'
                     -
                         title: 'Operativní leasing Rentstyl'
                         nesting: null
-                        type: entry-lzaplata_pages
-                        url: null
+                        type: url
+                        url: 'https://www.rentstyl.cz/'
                         code: ''
-                        reference: '11'
-                        cmsPage: stranka
+                        reference: null
+                        cmsPage: null
                         replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
-                            isExternal: '0'
+                            isExternal: '1'
                     -
                         title: 'Financování Škoda'
                         nesting: null

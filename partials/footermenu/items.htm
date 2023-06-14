@@ -2,8 +2,8 @@
     {% if not item.viewBag.isHidden %}
         <li class="nav-item {{ item.viewBag.cssClass }}">
             {% if item.url %}
-                <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link text-white opacity-65 opacity-100-hover transition d-inline-flex align-items-center text-decoration-none-w-hover {{ item.isActive ? 'active opacity-100' : '' }} {{ item.isChildActive ? 'active opacity-100' : '' }}">
-                    <span class="mi-caret-right mi-10 bg-white opacity-65 me-1"></span> {{ item.title }}
+                <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
+                    {{ item.title }}
                 </a>
             {% else %}
                 <span>{{ item.title }}</span>
