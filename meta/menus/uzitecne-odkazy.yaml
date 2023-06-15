@@ -1,9 +1,23 @@
 items:
     -
         title: 'Nastavení cookies'
+        nesting: null
         type: cms-page
+        url: null
         code: ''
         reference: nastaveni-cookies
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: GDPR
+        type: entry-lzaplata_pages
+        code: ''
+        reference: '19'
+        cmsPage: stranka
         viewBag:
             isHidden: '0'
             cssClass: ''
