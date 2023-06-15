@@ -1,0 +1,32 @@
+items:
+    -
+        title: Autostyl
+        type: entry-lzaplata_contacts_categories
+        code: ''
+        reference: '3'
+        cmsPage: kontakty
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Škoda
+        type: entry-lzaplata_contacts_categories
+        code: ''
+        reference: '1'
+        cmsPage: kontakty
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Toyota
+        type: entry-lzaplata_contacts_categories
+        code: ''
+        reference: '2'
+        cmsPage: kontakty
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: Kontakty

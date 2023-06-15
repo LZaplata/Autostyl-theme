@@ -1,0 +1,13 @@
+items:
+    -
+        title: 'Volné pozice'
+        type: category-blog-posts
+        code: ''
+        reference: '4'
+        cmsPage: novinka
+        replace: 1
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: Kariéra

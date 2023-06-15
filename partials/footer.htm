@@ -57,7 +57,7 @@
                 <div class="col">
                     <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-white border-opacity-25 mt-sm-0 pt-sm-0">
                         <h3 class="text-white mb-0">
-                            Menu
+                            Kariéra
                         </h3>
 
                         <a href="#footer-2" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
@@ -67,7 +67,9 @@
 
                     <div class="collapse" id="footer-2">
                         <div class="pt-4">
-                            fff
+                            {{ footermenu.resetMenu("footermenu") }}
+
+                            {% component "footermenu" code="kariera" %}
                         </div>
                     </div>
                 </div>
@@ -75,7 +77,7 @@
                 <div class="col">
                     <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-light border-opacity-25 mt-md-0 pt-md-0">
                         <h3 class="text-white mb-0">
-                            Menu
+                            Kontakty
                         </h3>
 
                         <a href="#footer-3" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
@@ -85,7 +87,9 @@
 
                     <div class="collapse" id="footer-3">
                         <div class="pt-4">
-                            fff
+                            {{ footermenu.resetMenu("footermenu") }}
+
+                            {% component "footermenu" code="kontakty" %}
                         </div>
                     </div>
                 </div>
@@ -103,7 +107,7 @@
 
                     <div class="collapse" id="footer-4">
                         <div class="pt-4">
-                            {{ brandmenu.resetMenu("footermenu") }}
+                            {{ footermenu.resetMenu("footermenu") }}
 
                             {% component "footermenu" code="uzitecne-odkazy" %}
                         </div>
