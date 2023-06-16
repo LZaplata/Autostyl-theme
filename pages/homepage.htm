@@ -64,9 +64,11 @@ exceptCategories = "kariera"
                         <a href="{{ slide.link }}">
                     {% endif %}
                             <picture>
-                                <source media="(min-width:768px)" srcset="{{ slide.image_lg.thumb(slider_settings.image_lg_width, slider_settings.image_lg_height, {"mode": "crop"}) }}">
+{#                                <source media="(min-width:768px)" srcset="{{ slide.image_lg.thumb(slider_settings.image_lg_width, slider_settings.image_lg_height, {"mode": "crop"}) }}">#}
+                                <source media="(min-width:768px)" srcset="{{ slide.image_lg.path }}">
 
-                                <img src="{{ slide.image_sm.thumb(slider_settings.image_sm_width, slider_settings.image_sm_height, {"mode": "crop"}) }}" alt="{{ slide.image_sm.description }}" class="img-fluid w-100">
+{#                                <img src="{{ slide.image_sm.thumb(slider_settings.image_sm_width, slider_settings.image_sm_height, {"mode": "crop"}) }}" alt="{{ slide.image_sm.description }}" class="img-fluid w-100">#}
+                                <img src="{{ slide.image_sm.path }}" alt="{{ slide.image_sm.description }}" class="img-fluid w-100">
                             </picture>
                     {% if slide.link %}
                         </a>
