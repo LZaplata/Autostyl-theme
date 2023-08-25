@@ -1,0 +1,33 @@
+{% set pricelist = __SELF__.pricelist %}
+
+<div class="pricelist pricelist-{{ pricelist.slug }}">
+    <div class="row g-0">
+        <div class="col-6 p-2 border-bottom border-1 border-black px-md-3 fw-bold col-sm-8">
+
+        </div>
+
+        <div class="col-3 p-2 border-bottom border-1 border-black px-md-3 fw-bold col-sm-2">
+            bez DPH
+        </div>
+
+        <div class="col-3 p-2 border-bottom border-1 border-black px-md-3 fw-bold col-sm-2">
+            s DPH
+        </div>
+    </div>
+
+    {% for item in pricelist.items %}
+        <div class="row g-0">
+            <div class="col-6 p-2 border-bottom border-1 border-black px-md-3 col-sm-8">
+                {{ item.title }}
+            </div>
+
+            <div class="col-3 p-2 border-bottom border-1 border-black px-md-3 col-sm-2">
+                {{ item.price|number_format(0, ",", " ") }} Kč
+            </div>
+
+            <div class="col-3 p-2 border-bottom border-1 border-black px-md-3 col-sm-2">
+                {{ item.price_vat|number_format(0, ",", " ") }} Kč
+            </div>
+        </div>
+    {% endfor %}
+</div>
