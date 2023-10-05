@@ -201,20 +201,26 @@ items:
                             isExternal: '0'
                     -
                         title: 'Náhradní díly Škoda'
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '20'
                         cmsPage: stranka
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
                     -
                         title: 'Náhradní díly Toyota'
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '21'
                         cmsPage: stranka
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
@@ -261,17 +267,13 @@ items:
                             isExternal: '1'
                     -
                         title: 'Financování Škoda'
-                        nesting: null
-                        type: entry-lzaplata_pages
-                        url: null
+                        type: url
+                        url: 'https://autostyl.skoda-auto.cz/financovani-a-pojisteni'
                         code: ''
-                        reference: '12'
-                        cmsPage: stranka
-                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
-                            isExternal: '0'
+                            isExternal: '1'
                     -
                         title: 'Financování Toyota'
                         nesting: null
