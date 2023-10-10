@@ -1,7 +1,13 @@
 {% for item in items %}
     {% if not item.viewBag.isHidden %}
-        <li role="presentation" class="col nav-item d-flex flex-column level-{{ level }} {{ item.viewBag.cssClass }}">
-            <img src="{{ ['assets/images/menu/', item.title|slug, '.png']|join|theme }}" alt="{{ item.title }}" class="img-fluid w-100 mb-4">
+        <li role="presentation" class="col {{ parent == 'contacts' ? 'col-lg-2' }} nav-item d-flex flex-column level-{{ level }} {{ item.viewBag.cssClass }}">
+            {% if parent == "contacts" and item.url %}
+                <a href="{{ item.url }}" class="w-100 pb-0 mb-0">
+            {% endif %}
+                    <img src="{{ ['assets/images/menu/', item.title|slug, '.png']|join|theme }}" alt="{{ item.title }}" class="img-fluid w-100 mb-4">
+            {% if parent == "contacts" and item.url %}
+                </a>
+            {% endif %}
 
             {% if item.url %}
                 <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link position-relative {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
