@@ -2,23 +2,23 @@
     <div class="container-fluid">
         <div class="container-lg">
             <div class="d-flex align-items-center justify-content-between row row-cols-lg-3">
-                <div class="col d-flex py-3">
+                <div class="col d-flex py-3 py-xxl-0">
                     <a href="{{ 'homepage'|page }}" class="d-flex align-items-center">
                         <img src="{{ 'assets/images/logo.svg'|theme }}" alt="logo">
                     </a>
                 </div>
 
-                <div class="col d-none d-lg-flex justify-content-center align-self-stretch">
+                <div class="col d-none d-xxl-flex justify-content-center align-self-stretch">
                     {% component "mainmenu" %}
                 </div>
 
-                <div class="col d-none d-lg-flex align-items-center justify-content-end">
-                    <div class="brands d-inline-flex align-items-center gap-3 me-3">
-                        <a href="https://autostyl.skoda-auto.cz/" target="_blank">
+                <div class="col d-none d-xxl-flex align-items-center justify-content-end">
+                    <div class="brands d-inline-flex align-items-center me-3">
+                        <a href="https://autostyl.skoda-auto.cz/" target="_blank" class="d-inline-flex skoda">
                             <img src="{{ 'assets/images/logo-skoda.svg'|theme }}" alt="Škoda">
                         </a>
 
-                        <a href="https://www.toyotatrutnov.cz/" target="_blank">
+                        <a href="https://www.toyotatrutnov.cz/" target="_blank" class="d-inline-flex">
                             <img src="{{ 'assets/images/logo-toyota.svg'|theme }}" alt="Toyota">
                         </a>
                     </div>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="col text-end d-lg-none">
+                <div class="col text-end d-xxl-none">
                     <a href="#offcanvas" data-bs-toggle="offcanvas" class="d-inline-flex align-items-center offcanvas-toggler text-decoration-none">
                         Menu
 
