@@ -10,7 +10,7 @@ entryColumn = "fullslug"
 [global page_settings]
 handle = "Pages\Settings"
 ==
-<div class="container-fluid py-5" id="post">
+<div class="container-fluid py-5 {% if page.skoda_ci %}skoda{% endif %}" id="post">
     <div class="container-lg">
         {% if page.banner_sm and page.banner_lg %}
             <div class="banner mb-5">

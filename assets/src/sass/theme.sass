@@ -80,15 +80,15 @@ header
                     .nav
                         li
                             .icon
-                                color: $green-500 !important
+                                color: $green-700 !important
 
                             a
                                 &:not(.active)
                                     &:hover
-                                        color: $green-500
+                                        color: $green-700
 
                                         &:after
-                                            background-color: $green-500
+                                            background-color: $green-700
 
             &.toyota
                 background-color: #E8E8E8
@@ -295,6 +295,23 @@ footer
         .pricelist
             @include media-breakpoint-up(xl)
                 width: 75%
+
+    &.skoda
+        h1
+            font-family: $font-family-skoda-regular
+
+            &:after
+                background-color: $green-700
+
+        .content
+            font-family: $font-family-skoda-thin
+
+            a
+                color: $green-700
+                transition: $transition-base
+
+                &:hover
+                    color: $green-500
 
 .contacts-category
     h2

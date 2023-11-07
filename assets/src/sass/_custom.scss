@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
+@font-face {
+    font-family: "Škoda Regular";
+    src: url("../fonts/SKODANextW02-Regular.woff2") format("woff2"), url("../fonts/SKODANextW02-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Škoda Thin";
+    src: url("../fonts/SKODANextW02-Thin.woff2") format("woff2"), url("../fonts/SKODANextW02-Thin.woff") format("woff");
+}
+
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "~bootstrap/scss/functions";
 
@@ -14,8 +24,8 @@ $white:                                 #FFFFFF;
 $red:                                   #CC0033;
 $red-100:                               #F2C7C9;
 
-$green-500:                             #419468;
-$green-700:                             #0c3725;
+$green-500:                             #59BC87;
+$green-700:                             #419468;
 
 $gray-500:                              #5D6368;
 $gray-300:                              #CED7DE;
@@ -24,11 +34,13 @@ $gray-200:                              #EDF3F5;
 $primary:                               $red;
 $dark:                                  $gray-500;
 $light:                                 $gray-200;
-$success:                               $green-500;
+$success:                               $green-700;
 
 $body-color:                            $black;
 
 $font-family-sans-serif:                "Nunito Sans", sans-serif;
+$font-family-skoda-regular:             "Škoda Regular";
+$font-family-skoda-thin:                "Škoda Thin";
 $font-family-base:                      $font-family-sans-serif;
 
 $font-weight-bold:                      700;

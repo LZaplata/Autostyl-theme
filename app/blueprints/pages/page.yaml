@@ -22,6 +22,10 @@ navigation:
     order: 10
 
 fields:
+    skoda_ci:
+        label: Škoda CI
+        span: left
+        type: switch
     banner_sm:
         label: Malý banner
         span: left

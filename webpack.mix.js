@@ -20,6 +20,7 @@ mix.setPublicPath("assets/")
     .js("node_modules/swiper/swiper-bundle.js", "js/")
     .copyDirectory("node_modules/lightgallery/fonts", "assets/fonts/")
     .copy("node_modules/@phosphor-icons/web/src/regular/Phosphor.*", "assets/css/")
+    .copy("assets/src/fonts/SKODA*", "assets/fonts/")
     .browserSync({
         proxy: "localhost81/hucr/autostyl.eu",
         files: [

@@ -1,20 +1,26 @@
 {% set post = __SELF__.post %}
 {% set image = post.featured_images.first %}
+{% set category = post.categories.first %}
 
-{% if image %}
-    <div class="banner mb-5">
-        <picture>
-            <source media="(min-width:768px)" srcset="{{ image.thumb(page_settings.banner_lg_width, page_settings.banner_lg_height, {"mode": "crop"}) }}">
 
-            <img src="{{ image.thumb(page_settings.banner_sm_width, page_settings.banner_sm_height, {"mode": "crop"}) }}" alt="{{ page.banner_sm.description }}" class="img-fluid w-100 rounded-3">
-        </picture>
+<div class="container-fluid py-5 {{ category.slug }}" id="post">
+    <div class="container-lg">
+        {% if image %}
+            <div class="banner mb-5">
+                <picture>
+                    <source media="(min-width:768px)" srcset="{{ image.thumb(page_settings.banner_lg_width, page_settings.banner_lg_height, {"mode": "crop"}) }}">
+
+                    <img src="{{ image.thumb(page_settings.banner_sm_width, page_settings.banner_sm_height, {"mode": "crop"}) }}" alt="{{ page.banner_sm.description }}" class="img-fluid w-100 rounded-3">
+                </picture>
+            </div>
+        {% endif %}
+
+        <h1 class="mb-5">
+            {{ post.title }}
+        </h1>
+
+        <div class="content">
+            {{ post.content|raw }}
+        </div>
     </div>
-{% endif %}
-
-<h1 class="mb-5">
-    {{ post.title }}
-</h1>
-
-<div class="content">
-    {{ post.content|raw }}
 </div>
