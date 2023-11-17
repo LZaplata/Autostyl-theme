@@ -21,6 +21,8 @@
     "/fonts/SKODANextW02-Italic.woff2": "/fonts/SKODANextW02-Italic.woff2",
     "/fonts/SKODANextW02-Regular.woff": "/fonts/SKODANextW02-Regular.woff",
     "/fonts/SKODANextW02-Regular.woff2": "/fonts/SKODANextW02-Regular.woff2",
+    "/fonts/SKODANextW02-Thin.woff": "/fonts/SKODANextW02-Thin.woff",
+    "/fonts/SKODANextW02-Thin.woff2": "/fonts/SKODANextW02-Thin.woff2",
     "/fonts/lg.svg": "/fonts/lg.svg",
     "/fonts/lg.ttf": "/fonts/lg.ttf",
     "/fonts/lg.woff": "/fonts/lg.woff",
@@ -28,7 +30,5 @@
     "/css/Phosphor.svg": "/css/Phosphor.svg",
     "/css/Phosphor.ttf": "/css/Phosphor.ttf",
     "/css/Phosphor.woff": "/css/Phosphor.woff",
-    "/css/Phosphor.woff2": "/css/Phosphor.woff2",
-    "/fonts/SKODANextW02-Thin.woff": "/fonts/SKODANextW02-Thin.woff",
-    "/fonts/SKODANextW02-Thin.woff2": "/fonts/SKODANextW02-Thin.woff2"
+    "/css/Phosphor.woff2": "/css/Phosphor.woff2"
 }

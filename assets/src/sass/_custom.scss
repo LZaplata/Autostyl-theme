@@ -297,7 +297,7 @@ $post-font-weight-bold:                 $font-weight-bold;
     }
 
     &-toyota {
-        @include mask-image("logo-toyota", 73, 20);
+        @include mask-image("logo-toyota-sm", 73, 20);
     }
 
     &-12 {
