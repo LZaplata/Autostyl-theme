@@ -298,14 +298,22 @@ footer
 
     &.skoda
         h1, h2, h3, h4, h5, h6
-            font-family: $font-family-skoda-regular
+            font-family: $font-family-skoda-bold
+            font-weight: inherit
+            color: $black-skoda
 
         h1
             &:after
                 background-color: $green-700
 
         .content
-            font-family: $font-family-skoda-thin
+            font-family: $font-family-skoda-regular
+            font-weight: inherit
+            color: $black-skoda
+
+            strong
+                font-family: $font-family-skoda-bold
+                font-weight: inherit
 
             a
                 color: $green-700
