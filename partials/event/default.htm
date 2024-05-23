@@ -1,5 +1,6 @@
 {% set post = __SELF__.post %}
 {% set image = post.featured_images.first %}
+{% set images = post.featured_images.skip(1) %}
 {% set category = post.categories.first %}
 
 
@@ -22,5 +23,19 @@
         <div class="content">
             {{ post.content|raw }}
         </div>
+
+        {% if images.count %}
+            <div class="mt-5" id="post-gallery">
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-5 g-4">
+                    {% for img in images %}
+                        <div class="col">
+                            <a href="{{ img.path }}" class="post-gallery-image">
+                                <img src="{{ img.thumb(600, 400, {"mode": "crop"}) }}" alt="{{ img.description }}" class="img-fluid w-100 rounded-3">
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
     </div>
 </div>

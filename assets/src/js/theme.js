@@ -33,6 +33,13 @@ lightGallery(document.getElementById("gallery"), {
     galleryId: 1,
 });
 
+lightGallery(document.getElementById("post-gallery"), {
+    selector: ".post-gallery-image",
+    plugins: [lgZoom, lgThumbnail],
+    speed: 500,
+    galleryId: 1,
+});
+
 var sliderSwiper = new Swiper(".slider-swiper", {
     navigation: {
         nextEl: ".swiper-button-next",
