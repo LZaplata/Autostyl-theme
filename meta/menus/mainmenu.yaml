@@ -58,7 +58,7 @@ items:
                         title: Vše
                         type: category-blog-posts
                         code: ''
-                        reference: '1'
+                        reference: '3'
                         cmsPage: novinka
                         replace: 1
                         viewBag:
