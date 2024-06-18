@@ -55,40 +55,12 @@ items:
                     isExternal: '0'
                 items:
                     -
-                        title: Škoda
-                        nesting: 0
-                        type: blog-category
-                        url: null
+                        title: Vše
+                        type: category-blog-posts
                         code: ''
                         reference: '1'
-                        cmsPage: novinky-kategorie
-                        replace: 0
-                        viewBag:
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-                    -
-                        title: Toyota
-                        nesting: 0
-                        type: blog-category
-                        url: null
-                        code: ''
-                        reference: '2'
-                        cmsPage: novinky-kategorie
-                        replace: 0
-                        viewBag:
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-                    -
-                        title: Autostyl
-                        nesting: 0
-                        type: blog-category
-                        url: null
-                        code: ''
-                        reference: '3'
-                        cmsPage: novinky-kategorie
-                        replace: 0
+                        cmsPage: novinka
+                        replace: 1
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
@@ -267,9 +239,13 @@ items:
                             isExternal: '1'
                     -
                         title: 'Financování Škoda'
+                        nesting: null
                         type: url
                         url: 'https://autostyl.skoda-auto.cz/financovani-a-pojisteni'
                         code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
