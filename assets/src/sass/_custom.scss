@@ -223,6 +223,17 @@ $footer-nav-link-hover-color:           $primary;
 
 $post-font-weight-bold:                 $font-weight-bold;
 
+$pagination-border-color:               transparent;
+$pagination-color:                      $body-color;
+$pagination-hover-color:                $primary;
+$pagination-hover-bg:                   transparent;
+$pagination-hover-border-color:         transparent;
+$pagination-active-color:               $primary;
+$pagination-active-bg:                  transparent;
+$pagination-active-border-color:        transparent;
+$pagination-focus-box-shadow:           none;
+$pagination-focus-bg:                   transparent;
+
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/variables-dark";
@@ -252,6 +263,7 @@ $post-font-weight-bold:                 $font-weight-bold;
 @import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/badge";
 @import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/pagination";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "~bootstrap/scss/utilities/api";
