@@ -1,0 +1,30 @@
+{% set posts = __SELF__.posts %}
+
+<div class="accordion w-100" id="accordion-references">
+    {% for key, post in posts %}
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-references-item-{{ key }}">
+                    <span class="number d-inline-flex align-items-center justify-content-center rounded-circle me-3">
+                        {{ loop.index }}
+                    </span>
+
+                    <span class="d-inline-flex align-items-baseline">
+                        {{ post.title }}
+
+                        <small class="fs-6 ms-3">
+                            {{ post.date|date("j. n. Y") }}
+                        </small>
+                    </span>
+                </button>
+            </h2>
+
+            <div id="accordion-references-item-{{ key }}" class="accordion-collapse collapse" data-bs-parent="#accordion-references">
+                <div class="accordion-body content content-text">
+                    {{ post.content|raw }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+

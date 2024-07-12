@@ -234,6 +234,28 @@ $pagination-active-border-color:        transparent;
 $pagination-focus-box-shadow:           none;
 $pagination-focus-bg:                   transparent;
 
+$accordion-button-color:                $body-color;
+$accordion-button-padding-x:            0;
+$accordion-button-padding-y:            1rem;
+$accordion-button-active-bg:            transparent;
+$accordion-button-active-color:         $body-color;
+$accordion-button-focus-border-color:   transparent;
+$accordion-button-focus-box-shadow:     none;
+//$accordion-button-icon:                 url("../images/icons/plus.svg");
+//$accordion-button-active-icon:          url("../images/icons/minus.svg");
+$accordion-border-width:                1px;
+$accordion-border-color:                $gray-200;
+$accordion-border-radius:               0;
+
+$references-accordion-item-border-x:           0;
+$references-accordion-button-font-size:        map-get($font-sizes, 2);
+$references-accordion-button-font-weight:      $font-weight-medium;
+$references-accordion-number-font-size:        map-get($font-sizes, 4);
+$references-accordion-number-font-weight:      $font-weight-medium;
+$references-accordion-number-color:            $body-color;
+$references-accordion-number-size:             40px;
+$references-accordion-number-bg:               $gray-200;
+
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/variables-dark";
@@ -264,6 +286,7 @@ $pagination-focus-bg:                   transparent;
 @import "~bootstrap/scss/badge";
 @import "~bootstrap/scss/modal";
 @import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/accordion";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "~bootstrap/scss/utilities/api";

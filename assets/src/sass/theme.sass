@@ -375,3 +375,64 @@ footer
             .modal-footer
                 padding: 0
                 border-top: none
+
+#accordion-references
+    .accordion-item
+        border-left-width: $references-accordion-item-border-x
+        border-right-width: $references-accordion-item-border-x
+
+        .accordion-button
+            font-size: $references-accordion-button-font-size
+            font-weight: $references-accordion-button-font-weight
+
+            .number
+                font-size: $references-accordion-number-font-size
+                font-weight: $references-accordion-number-font-weight
+                color: $references-accordion-number-color
+                width: $references-accordion-number-size
+                height: $references-accordion-number-size
+                background-color: $references-accordion-number-bg
+
+            small
+                color: $gray-400
+
+        .accordion-body
+            padding-top: 0
+            padding-right: 0
+            padding-left: calc($references-accordion-number-size + 1rem)
+
+            p
+                margin-bottom: map-get($spacers, 4)
+
+                &:last-child
+                    margin-bottom: 0 !important
+
+                & + h2
+                    margin-top: map-get($spacers, 5)
+
+                & + h3
+                    margin-top: map-get($spacers, 5)
+
+                & + h4
+                    margin-top: map-get($spacers, 5)
+
+                & + h5
+                    margin-top: map-get($spacers, 5)
+
+            h2, h3, h4, h5
+                margin-bottom: map-get($spacers, 4)
+
+            strong
+                font-weight: $post-font-weight-bold
+
+            ul
+                padding-left: 0
+                margin-bottom: map-get($spacers, 4)
+
+                li
+                    list-style-type: none
+
+                    &:before
+                        content: "•"
+                        position: relative
+                        margin-right: 10px

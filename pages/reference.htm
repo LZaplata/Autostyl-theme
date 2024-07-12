@@ -1,0 +1,23 @@
+title = "Reference"
+layout = "default"
+url = "/reference"
+
+[blogPosts references]
+pageNumber = "{{ :page }}"
+categoryFilter = "reference"
+noPostsMessage = "Nenalezeny žádné příspěvky"
+sortOrder = "published_at desc"
+categoryPage = "homepage"
+postPage = "homepage"
+==
+<div class="container-fluid py-5" id="post">
+    <div class="container-lg pb-xl-4">
+        <h1 class="mb-5">
+            {{ this.page.title }}
+        </h1>
+
+        <div class="events row row-cols-1 gy-5 row-cols-sm-2 row-cols-lg-3">
+            {% component "references" %}
+        </div>
+    </div>
+</div>
