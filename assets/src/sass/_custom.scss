@@ -323,7 +323,7 @@ $references-accordion-number-bg:               $gray-200;
     }
 
     &-youtube {
-        @include mask-image("icons/youtube");
+        @include mask-image("icons/youtube", 12, 13);
     }
 
     &-logo {
