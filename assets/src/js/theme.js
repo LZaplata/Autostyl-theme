@@ -68,6 +68,9 @@ var eventsSwiper = new Swiper(".events-swiper", {
 
 var partnersSwiper = new Swiper(".partners-swiper", {
     slidesPerView: 2,
+    autoplay: {
+        delay: 3000,
+    },
     breakpoints: {
         576: {
             slidesPerView: 3,

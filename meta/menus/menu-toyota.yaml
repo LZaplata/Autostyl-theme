@@ -26,6 +26,15 @@ items:
             cssClass: ''
             isExternal: '1'
     -
+        title: 'Jak probíhá nákup vozu'
+        type: url
+        url: 'https://www.youtube.com/watch?v=8cDHkAzzjv8&t=1s'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
         title: 'Operativní leasing Toyota'
         nesting: null
         type: url
@@ -79,10 +88,13 @@ items:
             isExternal: '0'
     -
         title: 'Náhradní díly Toyota'
+        nesting: null
         type: entry-lzaplata_pages
+        url: null
         code: ''
         reference: '21'
         cmsPage: stranka
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''

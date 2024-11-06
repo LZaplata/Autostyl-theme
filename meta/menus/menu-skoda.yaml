@@ -26,6 +26,15 @@ items:
             cssClass: ''
             isExternal: '1'
     -
+        title: 'Jak probíhá nákup vozu'
+        type: url
+        url: 'https://www.youtube.com/watch?v=ucFHzOu0CTw'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
         title: 'Operativní leasing Škoda'
         nesting: null
         type: url
@@ -40,9 +49,13 @@ items:
             isExternal: '1'
     -
         title: Financování
+        nesting: null
         type: url
         url: 'https://autostyl.skoda-auto.cz/financovani-a-pojisteni'
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
