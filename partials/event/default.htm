@@ -3,8 +3,7 @@
 {% set images = post.featured_images.skip(1) %}
 {% set category = post.categories.first %}
 
-
-<div class="container-fluid py-5 {{ category.slug }}" id="post">
+<div class="container-fluid py-5 {{ post.categories.listsNested("slug")|join(" ") }}" id="post">
     <div class="container-lg">
         {% if image %}
             <div class="banner mb-5">
