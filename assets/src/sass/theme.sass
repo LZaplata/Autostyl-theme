@@ -439,14 +439,14 @@ footer
 
 .contacts-category
     .skoda &
+        h2
+            font-family: $font-family-skoda-bold
+            font-weight: inherit
+            color: $green-700 !important
+
         .contact
             font-family: $font-family-skoda-regular
             font-weight: inherit
-
-            h2
-                font-family: $font-family-skoda-bold
-                font-weight: inherit
-                color: $green-700
 
             .name
                 font-family: $font-family-skoda-bold
@@ -454,8 +454,9 @@ footer
 
             .mobile, .phone, .email
                 i
-                    color: $green-700
+                    color: $green-700 !important
 
                 a
                     &:hover
-                        color: $green-700
+                        &:after
+                            color: $green-700
