@@ -1,7 +1,7 @@
 {% set posts = __SELF__.posts %}
 
 {% for post in posts %}
-    <div class="swiper-slide event">
+    <div class="swiper-slide event {{ post.categories.listsNested("slug")|join(" ") }}">
         {% partial "events/event" post=post loop=loop %}
     </div>
 {% endfor %}
