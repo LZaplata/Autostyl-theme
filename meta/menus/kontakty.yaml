@@ -1,10 +1,13 @@
 items:
     -
         title: Autostyl
+        nesting: null
         type: entry-lzaplata_contacts_categories
+        url: null
         code: ''
         reference: '3'
         cmsPage: kontakty
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -17,14 +20,17 @@ items:
         cmsPage: kontakty
         viewBag:
             isHidden: '0'
-            cssClass: ''
+            cssClass: skoda
             isExternal: '0'
     -
         title: Toyota
+        nesting: null
         type: entry-lzaplata_contacts_categories
+        url: null
         code: ''
         reference: '2'
         cmsPage: kontakty
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
