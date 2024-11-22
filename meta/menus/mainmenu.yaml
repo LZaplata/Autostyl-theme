@@ -92,7 +92,7 @@ items:
                         replace: null
                         viewBag:
                             isHidden: '0'
-                            cssClass: ''
+                            cssClass: skoda
                             isExternal: '0'
                     -
                         title: 'Služby Toyota'
@@ -170,7 +170,7 @@ items:
                         replace: null
                         viewBag:
                             isHidden: '0'
-                            cssClass: ''
+                            cssClass: skoda
                             isExternal: '0'
                     -
                         title: 'Náhradní díly Toyota'
@@ -210,7 +210,7 @@ items:
                         replace: null
                         viewBag:
                             isHidden: '0'
-                            cssClass: ''
+                            cssClass: skoda
                             isExternal: '1'
                     -
                         title: 'Operativní leasing Rentstyl'
@@ -236,7 +236,7 @@ items:
                         replace: null
                         viewBag:
                             isHidden: '0'
-                            cssClass: ''
+                            cssClass: skoda
                             isExternal: '1'
                     -
                         title: 'Financování Toyota'
