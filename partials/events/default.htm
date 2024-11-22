@@ -1,7 +1,7 @@
 {% set posts = __SELF__.posts %}
 
 {% for post in posts %}
-    <div class="col event position-relative">
+    <div class="col event position-relative {{ post.categories.listsNested("slug")|join(" ") }}">
         {% partial "events/event" post=post loop=loop %}
     </div>
 {% endfor %}
