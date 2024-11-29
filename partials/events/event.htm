@@ -22,7 +22,7 @@
 {#{% endif %}#}
 
 <h3 class="title fw-bold mb-3">
-    <a href="{{ post.url }}">
+    <a href="{% if detail is defined and detail == false %}{{ post.content|striptags }}{% else %}{{ post.url }}{% endif %}" {% if detail is defined and detail == false %}target="_blank"{% endif %}>
         {{ post.title }}
     </a>
 </h3>

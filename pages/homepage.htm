@@ -21,7 +21,7 @@ noPostsMessage = "Nenalezeny žádné příspěvky"
 sortOrder = "published_at desc"
 categoryPage = "novinky"
 postPage = "novinka"
-exceptCategories = "kariera,reference"
+exceptCategories = "kariera,reference,podporujeme"
 
 [blogPosts eventshpskoda]
 pageNumber = "{{ :page }}"
@@ -54,6 +54,15 @@ postPage = "novinka"
 exceptCategories = "kariera,reference"
 
 [staticMenu footermenu]
+
+[blogPosts support]
+pageNumber = "{{ :page }}"
+categoryFilter = "podporujeme"
+postsPerPage = 3
+sortOrder = "published_at desc"
+categoryPage = "podporujeme"
+postPage = "podporujeme"
+exceptCategories = "kariera,reference,novinky,skoda,autostyl,toyota"
 ==
 {% if slider.getIterator().count %}
     <div class="swiper slider-swiper">
@@ -251,6 +260,34 @@ exceptCategories = "kariera,reference"
 {#                    </a>#}
 {#                </p>#}
 {#            </div>#}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5" id="support">
+    <div class="container-lg py-xl-4">
+        <div class="d-flex flex-column flex-md-row align-items-md-center">
+            <h2 class="fw-bold mb-0">
+                Podporujeme
+            </h2>
+        </div>
+
+        <div class="tab-content mt-5">
+            <div class="tab-pane fade show active" id="events-all" role="tabpanel">
+                <div class="swiper events-swiper events">
+                    <div class="swiper-wrapper">
+                        {% component "support" %}
+                    </div>
+
+                    <div class="swiper-scrollbar"></div>
+                </div>
+
+                <p class="mb-0 mt-4 text-md-center mt-lg-5">
+                    <a href="{{ 'podporujeme'|page }}" class="btn btn-primary d-flex justify-content-center d-md-inline-flex">
+                        Další partneři
+                    </a>
+                </p>
+            </div>
         </div>
     </div>
 </div>

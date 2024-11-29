@@ -1,15 +1,16 @@
-url = "/autostyl/novinky/:page?|^[0-9]+"
+url = "/autostyl/podporujeme/:page?|^[0-9]+"
 layout = "default"
-title = "Novinky"
+title = "Podporujeme"
 
-[blogPosts events]
+[blogPosts support]
 pageNumber = "{{ :page }}"
+categoryFilter = "podporujeme"
 postsPerPage = 12
 noPostsMessage = "Nenalezeny žádné příspěvky"
 sortOrder = "published_at desc"
-categoryPage = "novinky-kategorie"
-postPage = "novinka"
-exceptCategories = "kariera,reference,podporujeme"
+categoryPage = "podporujeme"
+postPage = "podporujeme"
+exceptCategories = "kariera,reference,novinky,skoda,autostyl,toyota"
 ==
 <div class="container-fluid py-5" id="post">
     <div class="container-lg pb-xl-4">
@@ -18,7 +19,7 @@ exceptCategories = "kariera,reference,podporujeme"
         </h1>
 
         <div class="events row row-cols-1 gy-5 row-cols-sm-2 row-cols-lg-3">
-            {% component "events" %}
+            {% component "support" %}
         </div>
     </div>
 </div>
