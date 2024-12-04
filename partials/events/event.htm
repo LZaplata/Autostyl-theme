@@ -3,7 +3,7 @@
 
 {% if image %}
     <p class="img mb-4">
-        <a href="{{ post.url }}" class="position-relative d-flex rounded-3">
+        <a href="{% if detail is defined and detail == false %}{{ post.content|striptags }}{% else %}{{ post.url }}{% endif %}" {% if detail is defined and detail == false %}target="_blank"{% endif %} class="position-relative d-flex rounded-3">
             <img src="{{ image.thumb(435, 250, {"mode": "crop"}) }}" alt="{{ image.description }}" class="img-fluid w-100">
 
             {% if loop.first %}
