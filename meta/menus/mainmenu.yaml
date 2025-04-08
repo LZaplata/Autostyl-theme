@@ -316,6 +316,16 @@ items:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
+                    -
+                        title: 'Čištění interiéru'
+                        type: entry-lzaplata_pages
+                        code: ''
+                        reference: '23'
+                        cmsPage: stranka
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
     -
         title: Kontakty
         nesting: null

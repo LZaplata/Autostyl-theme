@@ -1,13 +1,9 @@
 items:
     -
         title: 'Nové vozy Toyota'
-        nesting: null
         type: url
-        url: 'https://proverenevozy.toyota.cz/dealer/AST'
+        url: 'https://www.toyotatrutnov.cz/koupe-a-nabidky/akcni-nabidka#/cz/rav4'
         code: ''
-        reference: null
-        cmsPage: null
-        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -27,9 +23,13 @@ items:
             isExternal: '1'
     -
         title: 'Jak probíhá nákup vozu'
+        nesting: null
         type: url
         url: 'https://www.youtube.com/watch?v=8cDHkAzzjv8&t=1s'
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''

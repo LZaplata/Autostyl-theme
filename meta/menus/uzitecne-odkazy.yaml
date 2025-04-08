@@ -27,7 +27,7 @@ items:
         type: entry-lzaplata_pages
         url: null
         code: ''
-        reference: '19'
+        reference: '22'
         cmsPage: stranka
         replace: null
         viewBag:
