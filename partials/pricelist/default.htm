@@ -7,11 +7,11 @@
         </div>
 
         <div class="col-3 p-2 border-bottom border-1 border-black px-md-3 fw-bold col-sm-2">
-            bez DPH
+            Ceny s DPH za 4 kola (sadu)
         </div>
 
         <div class="col-3 p-2 border-bottom border-1 border-black px-md-3 fw-bold col-sm-2">
-            s DPH
+            Ceny s DPH za 1 kolo
         </div>
     </div>
 
@@ -22,11 +22,11 @@
             </div>
 
             <div class="col-3 p-2 border-bottom border-1 border-black px-md-3 col-sm-2">
-                {{ item.price|number_format(0, ",", " ") }} Kč
+                {{ item.price_1|number_format(0, ",", " ") }} Kč
             </div>
 
             <div class="col-3 p-2 border-bottom border-1 border-black px-md-3 col-sm-2">
-                {{ item.price_vat|number_format(0, ",", " ") }} Kč
+                {{ item.price_2|number_format(0, ",", " ") }} Kč
             </div>
         </div>
     {% endfor %}
