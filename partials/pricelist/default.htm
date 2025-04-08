@@ -24,11 +24,15 @@
             </div>
 
             <div class="col-3 p-2 border-bottom border-1 border-black px-md-3 col-sm-2">
-                {{ item.price_1|number_format(0, ",", " ") }} Kč
+                {% if item.price_1 %}
+                    {{ item.price_1|number_format(0, ",", " ") }} Kč
+                {% endif %}
             </div>
 
             <div class="col-3 p-2 border-bottom border-1 border-black px-md-3 col-sm-2">
-                {{ item.price_2|number_format(0, ",", " ") }} Kč
+                {% if item.price_2 %}
+                    {{ item.price_2|number_format(0, ",", " ") }} Kč
+                {% endif %}
             </div>
         </div>
     {% endfor %}
