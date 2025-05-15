@@ -2,6 +2,6 @@
 
 {% for post in posts %}
     <div class="swiper-slide event {{ post.categories.listsNested("slug")|join(" ") }}">
-        {% partial "events/event" post=post loop=loop detail=false %}
+        {% partial "events/event" post=post loop=loop perex=false %}
     </div>
 {% endfor %}

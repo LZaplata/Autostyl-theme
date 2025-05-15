@@ -1,0 +1,19 @@
+url = "/autostyl/videa/:slug|^[a-z]+"
+layout = "default"
+title = "Video"
+seoOptionsMetaTitle = "{{ post.seo_options.meta_title ?: post.title }}"
+seoOptionsEnabledInSitemap = 1
+seoOptionsUseUpdatedAt = 1
+seoOptionsRobotIndex = "index"
+seoOptionsRobotFollow = "follow"
+seoOptionsOgCard = "summary_large_image"
+seoOptionsMetaDescription = "{{ post.seo_options.meta_description ?: post.excerpt }}"
+
+[blogPost video]
+slug = "{{ :slug }}"
+categoryPage = "videa"
+
+[global page_settings]
+handle = "Pages\Settings"
+==
+{% component "video" %}

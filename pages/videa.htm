@@ -1,15 +1,15 @@
-url = "/autostyl/podporujeme/:page?|^[0-9]+"
+url = "/autostyl/videa/:page?|^[0-9]+"
 layout = "default"
-title = "Podporujeme"
+title = "Videa"
 
-[blogPosts support]
+[blogPosts videogallery]
 pageNumber = "{{ :page }}"
-categoryFilter = "podporujeme"
+categoryFilter = "videa"
 postsPerPage = 12
 noPostsMessage = "Nenalezeny žádné příspěvky"
 sortOrder = "published_at desc"
-categoryPage = "podporujeme"
-postPage = "podporujeme"
+categoryPage = "videa"
+postPage = "video"
 exceptCategories = "kariera,reference,novinky,skoda,autostyl,toyota"
 ==
 <div class="container-fluid py-5" id="post">
@@ -19,7 +19,7 @@ exceptCategories = "kariera,reference,novinky,skoda,autostyl,toyota"
         </h1>
 
         <div class="events row row-cols-1 gy-5 row-cols-sm-2 row-cols-lg-3">
-            {% component "support" %}
+            {% component "videogallery" %}
         </div>
     </div>
 </div>

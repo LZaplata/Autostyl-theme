@@ -27,9 +27,11 @@
     </a>
 </h3>
 
-<div class="excerpt fw-medium text-dark fs-4 mb-3">
-    {{ post.excerpt|raw }}
-</div>
+{% if perex is not defined or (perex is defined and perex == true) %}
+    <div class="excerpt fw-medium text-dark fs-4 mb-3">
+        {{ post.excerpt|raw }}
+    </div>
+{% endif %}
 
 <p class="date mb-0 d-flex align-items-center text-dark fs-6">
     <i class="ph ph-calendar me-2"></i>

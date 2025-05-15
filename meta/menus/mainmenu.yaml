@@ -1,13 +1,8 @@
 items:
     -
         title: Autostyl
-        nesting: null
         type: header
-        url: null
-        code: ''
-        reference: null
-        cmsPage: null
-        replace: null
+        code: autostyl
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -53,15 +48,19 @@ items:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
+            -
+                title: 'Video galerie'
+                type: cms-page
+                code: ''
+                reference: videa
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: Služby
-        nesting: null
         type: header
-        url: null
-        code: ''
-        reference: null
-        cmsPage: null
-        replace: null
+        code: services
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -318,10 +317,13 @@ items:
                             isExternal: '0'
                     -
                         title: 'Čištění interiéru'
+                        nesting: null
                         type: entry-lzaplata_pages
+                        url: null
                         code: ''
                         reference: '23'
                         cmsPage: stranka
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
