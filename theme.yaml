@@ -13,6 +13,7 @@ require:
     - janvince.smallgdpr
     - lzaplata.extensions
     - lzaplata.pricelists
+    - vdlp.redirect
 form:
     tabs:
         fields:

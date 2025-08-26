@@ -1,6 +1,6 @@
 {% for item in items %}
     {% if not item.viewBag.isHidden %}
-        <li role="presentation" class="col {{ parent != 'services' ? 'col-lg-2' }} nav-item d-flex flex-column level-{{ level }} {{ item.viewBag.cssClass }}">
+        <li role="presentation" class="col col-lg-2 nav-item d-flex flex-column level-{{ level }} {{ item.viewBag.cssClass }}">
             {% if parent == "contacts" and item.url %}
                 <a href="{{ item.url }}" class="w-100 pb-0 mb-0">
             {% endif %}

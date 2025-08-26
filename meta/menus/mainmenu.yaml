@@ -1,8 +1,13 @@
 items:
     -
         title: Autostyl
+        nesting: null
         type: header
+        url: null
         code: autostyl
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -50,17 +55,26 @@ items:
                     isExternal: '0'
             -
                 title: 'Video galerie'
+                nesting: null
                 type: cms-page
+                url: null
                 code: ''
                 reference: videa
+                cmsPage: null
+                replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
     -
         title: Služby
+        nesting: null
         type: header
+        url: null
         code: services
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -328,6 +342,14 @@ items:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
+            -
+                title: 'Operativní leasing'
+                type: header
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: Kontakty
         nesting: null
