@@ -1,0 +1,11 @@
+{% if phone %}
+    <p class="mb-0 d-flex align-items-center">
+        <span class="material-symbol__icon me-2 icon__font text-primary">
+            call
+        </span>
+
+        <a href="tel:{{ phone }}" class="link-info">
+            {{ phone }}
+        </a>
+    </p>
+{% endif %}

@@ -1,0 +1,13 @@
+<ul class="nav flex-column">
+    {% for site in sitepicker.sites %}
+        {% if site.code != this.site.code %}
+            <li class="nav-item">
+                <a href="{{ site.url }}" class="nav-link d-flex align-items-center">
+                    <img src="{{ ['assets/images/locales/', site.code, '.svg']|join|theme }}" alt="{{ site.code }}" class="me-2">
+
+                    {{ site.name }}
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>

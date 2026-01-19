@@ -1,0 +1,31 @@
+<div class="row row-cols-1 row-cols-xl-5">
+    <div class="col">
+        <p class="contact__title mb-0">
+            {{ item.title }}
+        </p>
+    </div>
+
+    <div class="col">
+        {% partial "_contact/_job" job=(itemUpdate.job ?: item.job) %}
+    </div>
+
+    <div class="col mt-3 d-xl-none">
+        <div class="d-flex flex-column">
+            {% partial "_contact/_mobile" mobile=(itemUpdate.mobile ?: item.mobile) %}
+            {% partial "_contact/_phone" phone=(itemUpdate.phone ?: item.phone) %}
+            {% partial "_contact/_email" email=(itemUpdate.email ?: item.email) %}
+        </div>
+    </div>
+
+    <div class="col d-none d-xl-block">
+        {% partial "_contact/_mobile" mobile=(itemUpdate.mobile ?: item.mobile) %}
+    </div>
+
+    <div class="col d-none d-xl-block">
+        {% partial "_contact/_phone" phone=(itemUpdate.phone ?: item.phone) %}
+    </div>
+
+    <div class="col">
+        {% partial "_contact/_email" email=(itemUpdate.email ?: item.email) %}
+    </div>
+</div>

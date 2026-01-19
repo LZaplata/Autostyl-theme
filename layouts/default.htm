@@ -7,6 +7,10 @@ code = "mainmenu"
 
 [staticMenu offcanvasmenu]
 code = "mainmenu"
+
+[staticMenu footermenu]
+
+[sitePicker sitepicker]
 ==
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -25,12 +29,12 @@ code = "mainmenu"
             'assets/css/swiper-bundle.css',
         ]|theme }}" />
 
-        <link rel="stylesheet" href="{{ 'assets/css/icons.css'|theme }}">
+{#        <link rel="stylesheet" href="{{ 'assets/css/icons.css'|theme }}">#}
 
         {% styles %}
     </head>
 
-    <body>
+    <body class="overflow-x-hidden">
         {% partial "header" %}
 
         <main>
@@ -52,8 +56,6 @@ code = "mainmenu"
             'assets/js/swiper-bundle.js',
             'assets/js/theme.js',
         ]|theme }}"></script>
-
-        <script src="https://reenio.cz/cs/GEZTKMRX/widget-iframe.js" async defer></script>
 
         {% scripts %}
         {% framework extras %}

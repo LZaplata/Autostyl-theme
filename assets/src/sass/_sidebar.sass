@@ -1,0 +1,129 @@
+.sidebar
+    .nav
+        &.root
+            background-color: $sidebar-nav-bg
+            padding: $sidebar-nav-padding-y $sidebar-nav-padding-x
+            border: $sidebar-nav-border-width solid $sidebar-nav-border-color
+            border-radius: $sidebar-nav-border-radius
+
+            & > li
+                position: relative
+
+                &:before
+                    content: $sidebar-nav-item-before-content
+                    font-family: $sidebar-nav-item-before-font-family
+                    font-size: $sidebar-nav-item-before-font-size
+                    position: absolute
+                    left: calc($sidebar-nav-link-padding-x)
+                    top: calc($sidebar-nav-link-padding-y)
+                    color: $sidebar-nav-item-before-color
+
+                &:after
+                    content: $sidebar-nav-item-after-content
+                    font-family: $sidebar-nav-item-after-font-family
+                    font-size: $sidebar-nav-item-after-font-size
+                    position: absolute
+                    right: calc($sidebar-nav-link-padding-x)
+                    top: calc($sidebar-nav-link-padding-y)
+                    color: $sidebar-nav-item-after-color
+
+                &.active
+                    &:before
+                        content: $sidebar-nav-item-active-before-content
+
+                    &:after
+                        content: $sidebar-nav-item-active-after-content
+
+                & > a
+                    color: $sidebar-nav-link-color
+                    font-size: $sidebar-nav-link-font-size
+                    font-weight: $sidebar-nav-link-font-weight
+                    padding: $sidebar-nav-link-padding-y $sidebar-nav-link-padding-x
+                    text-decoration: underline
+                    text-decoration-color: $sidebar-nav-link-underline-color
+                    transition: $transition-base
+                    background-color: $sidebar-nav-link-bg
+
+                    @if $sidebar-nav-item-before-content != none
+                        padding-left: calc($sidebar-nav-link-padding-x + 15px) !important
+
+                    &:hover
+                        color: $sidebar-nav-link-hover-color
+                        text-decoration-color: $sidebar-nav-link-hover-underline-color
+                        background-color: $sidebar-nav-link-hover-bg
+
+                    &.active
+                        color: $sidebar-nav-link-active-color
+                        font-weight: $sidebar-nav-link-active-font-weight
+                        text-decoration-color: $sidebar-nav-link-active-underline-color
+                        background-color: $sidebar-nav-link-active-bg
+
+                        @if $sidebar-nav-item-active-before-content == none
+                            padding-left: $sidebar-nav-link-padding-x !important
+
+                & > .external-link-icon
+                    color: $sidebar-nav-link-color
+
+                & + .nav-item-separator
+                    height: $sidebar-nav-item-separator-height
+                    background-color: $sidebar-nav-item-separator-bg
+
+                    @if $sidebar-nav-item-separator-fluid == false
+                        margin-left: $sidebar-nav-link-padding-x
+                        margin-right: $sidebar-nav-link-padding-x
+
+                & > ul
+                    padding: $sidebar-nav-level-1-padding
+                    background-color: $sidebar-nav-level-1-bg
+
+                    & > li
+                        position: relative
+
+                        &:before
+                            content: $sidebar-nav-level-1-item-before-content
+                            font-family: $sidebar-nav-level-1-item-before-font-family
+                            font-size: $sidebar-nav-level-1-item-before-font-size
+                            position: absolute
+                            left: calc($sidebar-nav-level-1-link-padding-x)
+                            top: calc($sidebar-nav-level-1-link-padding-y)
+                            color: $sidebar-nav-level-1-item-before-color
+
+                        &:after
+                            content: $sidebar-nav-level-1-item-after-content
+                            font-family: $sidebar-nav-level-1-item-after-font-family
+                            font-size: $sidebar-nav-level-1-item-after-font-size
+                            position: absolute
+                            right: calc($sidebar-nav-level-1-link-padding-x)
+                            top: calc($sidebar-nav-level-1-link-padding-y)
+                            color: $sidebar-nav-level-1-item-after-color
+
+                        &.active
+                            &:before
+                                content: $sidebar-nav-level-1-item-active-before-content
+
+                            &:after
+                                content: $sidebar-nav-level-1-item-active-after-content
+
+                        & > a
+                            color: $sidebar-nav-level-1-link-color
+                            font-size: $sidebar-nav-level-1-link-font-size
+                            padding: $sidebar-nav-level-1-link-padding-y $sidebar-nav-level-1-link-padding-x
+                            font-weight: $sidebar-nav-level-1-link-font-weight
+                            text-decoration: underline
+                            text-decoration-color: $sidebar-nav-level-1-link-underline-color
+                            transition: $transition-base
+                            background-color: $sidebar-nav-level-1-link-bg
+
+                            @if $sidebar-nav-level-1-item-before-content != none
+                                padding-left: calc($sidebar-nav-level-1-link-padding-x + 15px) !important
+
+                            &:hover
+                                color: $sidebar-nav-level-1-link-hover-color
+                                text-decoration-color: $sidebar-nav-level-1-link-hover-underline-color
+                                background-color: $sidebar-nav-level-1-link-hover-bg
+
+                            &.active
+                                color: $sidebar-nav-level-1-link-active-color
+                                font-weight: $sidebar-nav-level-1-link-active-font-weight
+                                text-decoration-color: $sidebar-nav-level-1-link-active-underline-color
+                                background-color: $sidebar-nav-level-1-link-active-bg

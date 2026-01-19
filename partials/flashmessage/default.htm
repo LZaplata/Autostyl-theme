@@ -1,0 +1,27 @@
+{% set message = __SELF__.message %}
+
+{% if message %}
+    <div class="d-flex flex-row align-items-center gap-3 py-3">
+    {% if message.link %}
+        <a href="{{ message.link|link }}" class="d-flex flex-row align-items-center gap-3">
+    {% endif %}
+
+            <div class="d-flex">
+                <span class="material-symbol__icon flash-message__icon">
+                    info
+                </span>
+            </div>
+
+            <div class="flash-message__title">
+                {{ message.name }}
+            </div>
+
+            <div class="flash-message__text">
+                {{ message.text|content }}
+            </div>
+
+    {% if message.link %}
+        </a>
+    {% endif %}
+    </div>
+{% endif %}

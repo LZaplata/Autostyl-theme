@@ -1,0 +1,27 @@
+.gallery
+    &__img
+        border-radius: $gallery-image-border-radius
+
+    &__overlay
+        background-color: $gallery-image-overlay-bg
+        background-image: $gallery-image-overlay-bg-image
+        opacity: 0
+        transition: $transition-base
+        border-radius: $gallery-image-border-radius
+
+    &__icon-bg
+        width: $gallery-image-overlay-icon-bg-width
+        height: $gallery-image-overlay-icon-bg-height
+        background: $gallery-image-overlay-icon-bg
+        border-radius: $gallery-image-overlay-icon-bg-border-radius
+
+    &__icon
+        font-size: $gallery-image-overlay-icon-font-size
+        color: $gallery-image-overlay-icon-color
+
+    &__link
+        &:hover
+            .gallery
+                &__overlay
+                    opacity: 1
+

@@ -1,0 +1,49 @@
+uuid: lzaplata_links_categories
+handle: Links\Category
+type: structure
+name: Kategorie odkazů
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+structure:
+    maxDepth: 1
+
+navigation:
+    label: Kategorie
+    icon: icon-folder
+    parent: Links\Link
+    order: 10
+
+customMessages:
+    buttonCreate: Nová kategorie
+    titleCreateForm: Vytvořit kategorii
+    titleUpdateForm: Upravit kategorii
+    titleIndexList: Kategorie odkazů
+
+fields:
+    title:
+        placeholder: Název kategorie
+
+    links:
+        label: Odkazy
+        type: nesteditems
+        span: adaptive
+        maxDepth: 1
+        form:
+            fields:
+                link:
+                    label: Odkaz
+                    type: entries
+                    source: Links\Link
+                    displayMode: relation
+                    maxItems: 1
+
+        customMessages:
+            buttonCreate: Přidat odkaz
+            titleCreateForm: Přidat odkaz
+
+columns:
+    title:
+        label: Název

@@ -1,4 +1,4 @@
-url = "/autostyl/novinky/:page?|^[0-9]+"
+url = "/autostyl/novinky/:page?|^[0-9]+$"
 layout = "default"
 title = "Novinky"
 
@@ -6,10 +6,10 @@ title = "Novinky"
 pageNumber = "{{ :page }}"
 postsPerPage = 12
 noPostsMessage = "Nenalezeny žádné příspěvky"
-sortOrder = "published_at desc"
+sortOrder = "published_at asc"
 categoryPage = "novinky-kategorie"
 postPage = "novinka"
-exceptCategories = "kariera,reference,videa"
+exceptCategories = "kariera"
 ==
 <div class="container-fluid py-5" id="post">
     <div class="container-lg pb-xl-4">

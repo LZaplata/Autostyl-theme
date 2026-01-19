@@ -1,0 +1,93 @@
+uuid: lzaplata_slider_sliders
+handle: Slider\Slider
+type: structure
+name: Slider
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+customMessages:
+    buttonCreate: Nový slider
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Slider
+    icon: icon-picture-o
+    order: 0
+
+navigation:
+    label: Slidery
+    icon: icon-picture-o
+    parent: Slider\Slider
+    order: 0
+
+fields:
+    slides:
+        type: entries
+        source: Slider\Slide
+        tab: Položky
+        column: false
+    _image_sm:
+        type: section
+        label: Malý obrázek
+        comment: Obrázek, který se bude zobrazovat na mobilních zařízeních a menších tabletech. Měl by mít rozměr 640x640px.
+        tab: Nastavení
+    image_sm_is_published:
+        label: Publikováno
+        type: switch
+        default: true
+        tab: Nastavení
+        column: false
+        scope: false
+    image_sm_width:
+        label: Šířka
+        type: number
+        default: 640
+        span: left
+        min: 200
+        trigger:
+            action: show
+            field: image_sm_is_published
+            condition: checked
+        column: false
+        scope: false
+        tab: Nastavení
+    image_sm_height:
+        label: Výška
+        type: number
+        default: 640
+        span: right
+        min: 200
+        trigger:
+            action: show
+            field: image_sm_is_published
+            condition: checked
+        column: false
+        scope: false
+        tab: Nastavení
+    _image_lg:
+        type: section
+        label: Velký obrázek
+        comment: Obrázek, který se bude zobrazovat na větších zařízeních. Měl by mít rozměr 1920x550px.
+        tab: Nastavení
+    image_lg_width:
+        label: Šířka
+        type: number
+        default: 1920
+        span: left
+        min: 1920
+        column: false
+        scope: false
+        tab: Nastavení
+    image_lg_height:
+        label: Výška
+        type: number
+        default: 550
+        span: right
+        min: 500
+        column: false
+        scope: false
+        tab: Nastavení

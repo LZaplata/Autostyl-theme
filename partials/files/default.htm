@@ -1,0 +1,30 @@
+{% set files = __SELF__.files %}
+
+{% if files %}
+    {% set types = {
+        "application/pdf": "pdf",
+        "application/msword": "doc",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document": "docx",
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": "xlsx"
+    } %}
+
+    <ul class="mb-0 ps-0 list-unstyled">
+        {% for file in files %}
+            <li class="file file--with-icon">
+                <span class="material-symbol__icon icon__font--lg">
+                    draft
+                </span>
+
+                <a href="{{ file.file.path }}" target="_blank" class="d-inline-flex file__link">
+                    {{ file.name }}
+                </a>
+
+                {% if file.description %}
+                    - {{ file.description }}
+                {% endif %}
+
+                ({{ file.file.file_size|filesize }}, {{ types[file.file.content_type] }})
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

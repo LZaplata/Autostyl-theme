@@ -1,0 +1,45 @@
+{% set post = __SELF__.post %}
+{% set image = post.featured_images.first %}
+{% set gallery_images = post.featured_images.skip(1) %}
+
+{% if image %}
+    <div class="banner mb-5">
+        <picture>
+            <source media="(min-width:768px)" srcset="{{ image.thumb(1400, 400, {"mode": "crop"}) }}">
+
+            <img src="{{ image.thumb(600, 300, {"mode": "crop"}) }}" alt="{{ image.description }}" class="img-fluid w-100 rounded-4">
+        </picture>
+    </div>
+{% endif %}
+
+<h1 class="mb-4">
+    {{ post.title }}
+</h1>
+
+<div class="text">
+    {{ post.content|raw }}
+</div>
+
+{% if gallery_images.count %}
+    <div class="mt-5" id="gallery">
+        <div class="row row-cols-2 g-4 row-cols-sm-3 row-cols-lg-4">
+            {% for gallery_image in gallery_images %}
+                <div class="col">
+                    <div class="position-relative">
+                        <img src="{{ gallery_image.thumb(600, 400, {"mode": "crop"}) }}" alt="{{ gallery_image.description }}" class="img-fluid w-100 gallery__img">
+
+                        <a href="{{ gallery_image.path }}" class="gallery__link position-absolute start-0 w-100 top-0 h-100 text-decoration-none" data-external-thumb-image="{{ gallery_image.path }}">
+                            <span class="gallery__overlay d-flex align-items-center justify-content-center h-100">
+                                <span class="gallery__icon-bg d-inline-flex align-items-center justify-content-center">
+                                    <span class="material-symbol__icon post__icon">
+                                        eyeglasses
+                                    </span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

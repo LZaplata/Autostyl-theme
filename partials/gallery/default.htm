@@ -1,0 +1,21 @@
+{% set images = __SELF__.images %}
+
+<div id="{{ __SELF__ }}" class="gallery row row-cols-2 g-4 row-cols-md-3 row-cols-xl-4">
+    {% for image in images %}
+        <div class="col">
+            <div class="position-relative">
+                <img src="{{ image.thumb(600, 400, {"mode": "fit"}) }}" alt="{{ image.description }}" class="img-fluid w-100 gallery__img">
+
+                <a href="{{ image.path }}" class="gallery__link position-absolute start-0 w-100 top-0 h-100 text-decoration-none" data-external-thumb-image="{{ image.path }}">
+                    <span class="gallery__overlay d-flex align-items-center justify-content-center h-100">
+                        <span class="gallery__icon-bg d-inline-flex align-items-center justify-content-center">
+                            <span class="material-symbol__icon post__icon">
+                                eyeglasses
+                            </span>
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,13 @@
+-
+    name: LZaplata.Pages page data
+    class: LZaplata\Pages\Models\PageImport
+    file: seeds/data/lzaplata-pages-page.json
+    attributes:
+        file_format: json
+
+-
+    name: LZaplata.Pages content data
+    class: LZaplata\Pages\Models\ContentImport
+    file: seeds/data/lzaplata-pages-content.json
+    attributes:
+        file_format: json

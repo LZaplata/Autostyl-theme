@@ -1,0 +1,81 @@
+[viewBag]
+==
+<?php
+function onStart() {
+    use LZaplata\Pages\Models\Page;
+    use Cms\Classes\PageManager;
+
+    $postsComponentProperties = $this->page->components["posts"]->getProperties();
+    $moreButtonLink = $postsComponentProperties["moreButtonLink"] ?? null;
+
+    if ($moreButtonLink) {
+        $page = PageManager::resolve($moreButtonLink);
+        $page = Page::find($page->reference);
+
+        $this["page"] = $page;
+    }
+}
+?>
+==
+{% set run = __SELF__.onRun() %}
+{% set posts = __SELF__.posts %}
+{% set row_cols = __SELF__.properties.rowCols %}
+{% set show_pagination = __SELF__.properties.showPagination %}
+{% set partial = __SELF__.properties.partial %}
+{% set more_button_is_published = __SELF__.properties.moreButtonIsPublished %}
+{% set more_button_title = __SELF__.properties.moreButtonTitle %}
+{% set more_button_link = __SELF__.properties.moreButtonLink %}
+
+<div class="posts row row-cols-{{ min(1, row_cols) }} g-5 row-cols-sm-{{ min(2, row_cols) }} gx-sm-4 row-cols-lg-{{ min(3, row_cols) }} gx-lg-5 row-cols-xl-{{ min(4, row_cols) }} row-cols-xxl-{{ row_cols }}">
+    {% for post in posts %}
+        {% set image = post.featured_images.first %}
+
+        {% if more_button_link %}
+            {% set url = post.setUrl(__SELF__.postPage, __SELF__.controller, {fullslug: page.fullslug}) %}
+        {% endif %}
+
+        <div class="col">
+            {% partial partial item=post image=image %}
+        </div>
+    {% endfor %}
+</div>
+
+{% if more_button_is_published %}
+    <p class="mt-5 mb-0 text-center">
+        <a href="{{ more_button_link|link }}" class="btn btn-primary">
+            {{ more_button_title }}
+        </a>
+    </p>
+{% endif %}
+
+{% if posts.lastPage > 1 and show_pagination %}
+    <ul class="pagination mt-5 mb-0 d-flex justify-content-center">
+        {% if posts.currentPage > 1 %}
+            <li class="page-item">
+                <a href="{{ this.page.baseFileName|page }}?page={{ posts.currentPage - 1 }}" class="prev page-link d-inline-flex align-items-center h-100">
+                    <span class="material-symbol__icon">
+                        arrow_back
+                    </span>
+                </a>
+            </li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+            <li class="page-item {{ posts.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page }}?page={{ page }}" class="page-link d-inline-flex align-items-center h-100">
+                    {{ page }}
+                </a>
+            </li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+            <li class="page-item">
+                <a href="{{ this.page.baseFileName|page }}?page={{ posts.currentPage + 1 }}" class="next page-link d-inline-flex align-items-center h-100">
+                    <span class="material-symbol__icon">
+                        arrow_forward
+                    </span>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}

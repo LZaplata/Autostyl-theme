@@ -1,0 +1,39 @@
+.icon
+    &__font
+        font-size: $icon-font-font-size
+
+        &--lg
+            font-size: $icon-font-font-size-lg
+
+    &__link
+        color: $icon-link-color
+        transition: $transition-base
+
+        &:hover
+            color: $icon-link-hover-color
+
+        &--light
+            color: $icon-light-link-color
+
+            &:hover
+                color: $icon-light-link-hover-color
+
+        &--box
+            width: $icon-box-link-width
+            height: $icon-box-link-height
+            background: $icon-box-link-bg
+            display: inline-flex
+            align-items: center
+            justify-content: center
+            border-radius: $icon-box-link-border-radius
+            transition: $transition-base
+            color: $icon-box-link-color
+
+            &:hover
+                background: $icon-box-link-hover-bg
+                color: $icon-box-link-hover-color
+
+    &__mask-image
+        width: $icon-mask-image-width
+        height: $icon-mask-image-height
+        background: $icon-mask-image-bg

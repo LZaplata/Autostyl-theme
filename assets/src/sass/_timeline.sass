@@ -1,0 +1,129 @@
+.timeline
+    &__category
+        &:not(:last-child)
+            .timeline__events
+                padding-bottom: map-get($spacers, 5)
+
+                &:before
+                    height: if($timeline-title-border-radius > 900, calc(100% + 10px), 100%)
+
+    &__heading
+        display: flex
+        margin-bottom: 0
+        line-height: 1
+        justify-content: start
+
+        @include media-breakpoint-up(md)
+            justify-content: $timeline-heading-justify-content
+
+    &__title
+        @include font-size($timeline-title-font-size)
+
+        font-family: $timeline-title-font-family
+        font-weight: $timeline-title-font-weight
+        color: $timeline-title-color
+        background: $timeline-title-bg
+        border: $timeline-title-border-width solid $timeline-title-border-color
+        border-radius: $timeline-title-border-radius
+        padding: $timeline-title-padding-y $timeline-title-padding-x
+        width: $timeline-title-width
+        height: $timeline-title-height
+
+        &--sm
+            @include font-size($timeline-title-sm-font-size)
+
+            font-family: $timeline-title-sm-font-family
+            font-weight: $timeline-title-sm-font-weight
+            color: $timeline-title-sm-color
+            background: none
+            padding: 0
+
+    &__events
+        padding-top: map-get($spacers, 5)
+        position: relative
+
+        &:before
+            content: ""
+            background: $timeline-events-before-bg
+            height: if($timeline-title-border-radius > 900, calc(100% + 5px), 100%)
+            width: $timeline-events-before-width
+            position: absolute
+            top: if($timeline-title-border-radius > 900, -5px, 0)
+            left: $timeline-event-before-width / 2
+            transform: translateX(-50%)
+
+            @include media-breakpoint-up(md)
+                left: 50%
+
+    &__event
+        position: relative
+        display: flex
+        justify-content: end
+
+        &:before
+            content: ""
+            background: $timeline-event-before-bg
+            height: $timeline-event-before-height
+            width: $timeline-event-before-width
+            position: absolute
+            top: 70px
+            left: 0
+            transform: translate(0, -50%)
+            border: $timeline-event-before-border-width solid $timeline-event-before-border-border-color
+            border-radius: $timeline-event-before-border-radius
+
+        & + .timeline__event
+            margin-top: map-get($spacers, 4)
+
+        @include media-breakpoint-up(md)
+            &--odd
+                justify-content: start
+
+            & + .timeline__event
+                margin-top: -30px
+
+            &:before
+                left: 50%
+                transform: translate(-50%, -50%)
+
+    &__card
+        background: $timeline-card-bg
+        border: $timeline-card-border-width solid $timeline-card-border-color
+        border-radius: $timeline-card-border-radius
+        padding: map-get($spacers, 4)
+        display: flex
+        flex-direction: column
+        gap: map-get($spacers, 4)
+        position: relative
+        width: calc(100% - $timeline-event-before-width - 15px - map-get($spacers, 4))
+
+        &:after
+            content: ""
+            border-right: 15px solid $timeline-card-bg
+            border-bottom: 15px solid transparent
+            border-top: 15px solid transparent
+            transform: translate(-100%, -50%)
+            position: absolute
+            top: 70px
+            left: 0
+
+        @include media-breakpoint-up(md)
+            width: $timeline-card-width
+
+            &--odd
+                &:after
+                    left: unset
+                    right: 0
+                    transform: translate(100%, -50%)
+                    border-right: unset
+                    border-left: 15px solid $timeline-card-bg
+
+        @include media-breakpoint-down(md)
+            .timeline__heading
+                justify-content: center
+
+    &__image
+        margin-bottom: 0
+
+        img
+            @extend .img-fluid

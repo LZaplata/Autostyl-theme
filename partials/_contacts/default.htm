@@ -1,0 +1,7 @@
+<div class="row row-cols-{{ min(1, row_cols) }} g-5 row-cols-sm-{{ min(2, row_cols) }} gx-sm-4 row-cols-lg-{{ min(3, row_cols) }} {% if partial == "_contact/card" %}gx-lg-5 row-cols-xl-{{ min(4, row_cols) }} row-cols-xxl-{{ row_cols }}{% else %}row-cols-xl-1 g-xl-2{% endif %}">
+    {% for contactItem in content.contacts_category.contacts.where("contact.is_enabled", true) %}
+        <div class="col">
+            {% partial partial item=contactItem.contact itemUpdate=contactItem %}
+        </div>
+    {% endfor %}
+</div>

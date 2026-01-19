@@ -1,0 +1,73 @@
+<div class="swiper slider-swiper">
+    <div class="swiper-wrapper">
+        {% for slide in slides %}
+            <div class="swiper-slide">
+                {% if slide.link and slide.link_type == "fluid" %}
+                    <a href="{{ slide.link|link }}">
+                {% endif %}
+                        {% if slide.type == "image" %}
+                            <picture>
+                                {% if settings and settings.image_lg_width and settings.image_lg_height %}
+                                    <source media="(min-width:768px)" srcset="{{ slide.image_lg.thumb(settings.image_lg_width, settings.image_lg_height, {"mode": "crop"}) }}">
+                                {% else %}
+                                    <source media="(min-width:768px)" srcset="{{ slide.image_lg.path }}">
+                                {% endif %}
+
+                                {% if settings and settings.image_sm_width and settings.image_sm_height %}
+                                    <img src="{{ slide.image_sm.thumb(settings.image_sm_width, settings.image_sm_height, {"mode": "crop"}) }}" alt="{{ slide.image_sm.description }}" class="img-fluid w-100">
+                                {% else %}
+                                    <img src="{{ slide.image_sm.path }}" alt="{{ slide.image_sm.description }}" class="img-fluid w-100">
+                                {% endif %}
+                            </picture>
+                        {% else %}
+                            <video class="img-fluid w-100" autoplay muted loop>
+                                <source src="{{ slide.video.path }}" type="video/mp4">
+                            </video>
+                        {% endif %}
+
+                        {% if slide.title_type is defined or slide.btn %}
+                            <div class="container-fluid position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <div class="container-lg d-flex flex-column gap-4">
+                                    {% if slide.title_type is defined and slide.title_type %}
+                                        <p class="mb-0 text-center lh-sm slider__title">
+                                            {{ slide.title|content }}
+                                        </p>
+                                    {% endif %}
+
+                                    {% if slide.btn %}
+                                        <p class="mb-0 text-center">
+                                            {% if slide.link and slide.link_type == "btn" %}
+                                                <a href="{{ slide.link|link }}" class="btn btn-primary">
+                                                    {{ slide.btn }}
+                                                </a>
+                                            {% elseif slide.link and slide.link_type == "fluid" %}
+                                                <button class="btn btn-primary">
+                                                    {{ slide.btn }}
+                                                </button>
+                                            {% endif %}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                {% if slide.link %}
+                    </a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="swiper-button-next d-none d-md-flex">
+        <span class="material-symbol__icon icon">
+            chevron_right
+        </span>
+    </div>
+
+    <div class="swiper-button-prev d-none d-md-flex">
+        <span class="material-symbol__icon icon">
+            chevron_left
+        </span>
+    </div>
+
+    <div class="swiper-pagination"></div>
+</div>

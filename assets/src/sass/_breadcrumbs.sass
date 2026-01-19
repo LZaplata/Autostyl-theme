@@ -1,0 +1,36 @@
+#breadcrumb
+    background-color: $breadcrumb-bg
+    padding: $breadcrumb-padding
+
+    .breadcrumb
+        .breadcrumb-item
+            font-weight: $breadcrumb-font-weight
+
+            &:not(.active):not(:first-child)
+                a
+                    color: $breadcrumb-link-color
+                    text-decoration: underline
+                    text-decoration-color: $breadcrumb-link-underline-color
+                    transition: $transition-base
+
+                    &:hover
+                        color: $breadcrumb-link-hover-color
+                        text-decoration-color: $breadcrumb-link-hover-underline-color
+
+            &.home
+                margin-left: -3px
+                margin-right: 10px
+
+                a
+                    font-size: $breadcrumb-home-link-font-size
+                    color: $breadcrumb-home-link-color
+                    transition: $transition-base
+
+                    &:hover
+                        color: $breadcrumb-home-link-hover-color
+
+                & + .breadcrumb-item
+                    padding-left: 0
+
+                    //&:before
+                        content: none

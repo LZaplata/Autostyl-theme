@@ -1,0 +1,33 @@
+<div class="link">
+    <a href="{{ link ?: item.url }}" class="link__link position-relative d-flex flex-column gap-3">
+        {% if image %}
+            <p class="link__img mb-0 position-relative overflow-hidden">
+                {% if image.path %}
+                    <img src="{{ image.thumb(600, 400, {"mode": "crop"}) }}" alt="{{ image.description }}" class="img-fluid w-100">
+                {% else %}
+                    <img src="{{ image|media }}" alt="{{ image.description }}" class="img-fluid w-100">
+                {% endif %}
+
+                <span class="link__overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                    <span class="link__icon-bg d-inline-flex align-items-center justify-content-center">
+                        <span class="material-symbol__icon link__icon">
+                            eyeglasses
+                        </span>
+                    </span>
+                </span>
+            </p>
+        {% endif %}
+
+        <h3 class="link__title mb-0">
+            {{ item.title }}
+        </h3>
+
+        {% if item.excerpt or item.perex %}
+            <div class="link__perex mt-n2 text">
+                <p class="mb-0">
+                    {{ item.excerpt ?: item.perex|raw }}
+                </p>
+            </div>
+        {% endif %}
+    </a>
+</div>

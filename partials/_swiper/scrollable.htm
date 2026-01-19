@@ -1,0 +1,19 @@
+<div class="swiper scrollable-swiper" data-slides-per-view="{{ slides_per_view }}">
+    <div class="swiper-wrapper">
+        {% for key, item in items %}
+            {% set image = item.image ?: item.featured_images.first %}
+
+            {% if item.link %}
+                {% set link %}
+                    {{ item.link|link }}
+                {% endset %}
+            {% endif %}
+
+            <div class="swiper-slide">
+                {% partial partial key=key item=item image=image link=link %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="swiper-scrollbar position-relative start-0 end-0 w-100 bottom-0 mt-4 mt-xl-5"></div>
+</div>

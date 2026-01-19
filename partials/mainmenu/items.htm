@@ -5,27 +5,45 @@
                 <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link position-relative {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
                     {{ item.title }}
                 </a>
+
+                {% if item.viewBag.isExternal %}
+                    <span class="material-symbol__icon ms-2 external-link-icon">
+                        arrow_outward
+                    </span>
+                {% endif %}
             {% else %}
                 <span class="nav-link position-relative {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
                     {{ item.title }}
                 </span>
             {% endif %}
 
-            {% if item.items and level < 2 %}
-                <i class="ph ph-caret-down ms-1 submenu-toggler"></i>
+            {% if item.items and level < 2 and this.theme.mainmenu_dropdown %}
+                <span class="material-symbol__icon ms-1 submenu-toggler">
+                    keyboard_arrow_down
+                </span>
 
                 <div class="submenu">
-                    <div class="container-lg">
-{#                        <ul class="nav flex-column">#}
-{#                            {% partial __SELF__ ~ "::items" items=item.items level=2 %}#}
-{#                        </ul>#}
+                    <div class="container-lg grid">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <p class="h2">
+                                    {{ item.title }}
+                                </p>
+                            </div>
+                        </div>
 
-                        <!-- Uncomment below while using fluid submenu and columns + comment above -->
-
-                        <ul class="nav row {{ item.code }}">
-                            {% partial __SELF__ ~ "::items-fluid-autostyl" items=item.items level=2 parent=item.code %}
+                        <ul class="nav flex-column">
+                            {% partial __SELF__ ~ "::items" items=item.items level=2 %}
                         </ul>
                     </div>
+
+                    <!-- Uncomment below while using fluid submenu and columns + comment above -->
+
+{#                    <div class="container-lg">#}
+{#                        <ul class="nav row row-cols-lg-4 {{ item.code }}">#}
+{#                            {% partial __SELF__ ~ "::items-fluid" items=item.items level=2 %}#}
+{#                        </ul>#}
+{#                    </div>#}
                 </div>
             {% endif %}
         </li>

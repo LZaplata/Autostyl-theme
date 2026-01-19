@@ -1,9 +1,24 @@
 header
+    background-color: $header-bg
+
     @if $nav-level-1-min-width == false
         position: relative
 
     &:not(.homepage)
         border-bottom: $header-border-width solid $header-border-color
+
+    &.homepage
+        .nav
+            &.root
+                & > li
+                    & > .submenu
+                        top: 100%
+                        border-top: $nav-level-1-border
+                        border-width: 0
+
+                    &:hover
+                        & > .submenu
+                            border-top: $nav-level-1-border
 
     .nav
         &.root
@@ -13,6 +28,11 @@ header
 
                 & > a, & > span
                     position: relative
+
+                    @if $nav-link-vertical-fluid
+                        display: flex
+                        align-items: center
+                        height: 100%
 
                     &:after
                         content: ""
@@ -38,19 +58,26 @@ header
 
                 .submenu-toggler
                     color: $nav-link-submenu-toggler-color
-                    font-size: $nav-link-submenu-toggler-font-size
+                    font-size: $nav-link-submenu-toggler-font-size !important
                     transition: $transition-base
 
                 &:hover
+                    & > .nav-link
+                        color: $nav-link-hover-color
+
+                        &:after
+                            width: 100%
+
                     & > .submenu
                         max-height: $nav-level-1-max-height
 
                     .submenu-toggler
                         transform: rotate(180deg)
+                        color: $nav-link-hover-submenu-toggler-color
 
                 & > .submenu
                     position: absolute
-                    top: 100%
+                    top: calc(100% + $header-border-width)
                     background-color: $nav-level-1-bg
                     max-height: 0
                     overflow: hidden
@@ -71,6 +98,16 @@ header
                             padding-left: 0
                             padding-right: 0
 
+                        &.grid
+                            display: grid
+                            grid-template-rows: repeat(1, 1fr)
+                            grid-template-columns: repeat(2, 1fr)
+                            gap: 200px
+
+                            & > div
+                                &:first-child
+                                    padding: $nav-level-1-padding-y 0
+
                         & > ul
                             padding: $nav-level-1-padding-y $nav-level-1-padding-x $nav-level-1-padding-y $nav-level-1-padding-x
 
@@ -80,6 +117,11 @@ header
                                     font-weight: $nav-level-1-link-font-weight
                                     color: $nav-level-1-link-color
                                     padding: $nav-level-1-link-padding-y $nav-level-1-link-padding-x $nav-level-1-link-padding-y $nav-level-1-link-padding-x
+                                    text-decoration: underline
+                                    text-decoration-thickness: $nav-level-1-link-underline-height
+                                    text-decoration-color: $nav-level-1-link-underline-color
+                                    text-underline-offset: $nav-level-1-link-underline-offset
+                                    transition: $transition-base
 
                                     @if $nav-level-1-min-width
                                         width: 100%
@@ -90,13 +132,25 @@ header
                                         &:hover
                                             color: $nav-level-1-link-hover-color
                                             background-color: $nav-level-1-link-hover-bg
+                                            text-decoration-color: $nav-level-1-link-hover-underline-color
 
                                     &.active
                                         color: $nav-level-1-link-active-color
                                         background-color: $nav-level-1-link-active-bg
+                                        text-decoration-color: $nav-level-1-link-active-underline-color
 
                                 & > span
                                     cursor: default
+
+                                & > .external-link-icon
+                                    color: $nav-level-1-link-color
+
+                                &:before
+                                    content: $nav-level-1-link-before-content
+                                    margin-right: $nav-level-1-link-before-margin-right
+                                    color: $nav-level-1-link-before-color
+                                    font-family: $font-family-icons
+                                    font-size: $nav-level-1-link-before-font-size
 
                                 & > .submenu
                                     @if $nav-level-1-min-width
@@ -145,15 +199,58 @@ header
                                                 & > span
                                                     cursor: default
 
-    .socials
+    .icon
         a
-            .icon
-                background-color: $header-socials-icon-color
-                transition: $transition-base
+            color: $header-icon-link-color
+            transition: $transition-base
+            font-size: $header-icon-link-font-size !important
 
             &:hover
-                .icon
-                    background-color: $header-socials-icon-hover-color
+                color: $header-icon-link-hover-color
+    .logo
+        img
+            @include media-breakpoint-down($header-logo-sm-height-breakpoint)
+                height: $header-logo-sm-height
+
+    .sitepicker
+        & > li
+            & > span
+                color: $header-sitepicker-nav-link-color
+                font-size: $header-sitepicker-nav-link-font-size
+                cursor: default
+
+                .sitepicker-toggler
+                    font-size: $header-sitepicker-toggler-font-size
+                    transition: $transition-base
+
+            & > .submenu
+                position: absolute
+                top: 100%
+                left: calc(0px - $header-sitepicker-nav-level-1-link-padding-x)
+                background-color: $header-sitepicker-nav-level-1-bg
+                max-height: 0
+                overflow: hidden
+                transition: $transition-base
+                z-index: 1000
+
+                & > ul
+                    padding: $header-sitepicker-nav-level-1-padding-y $header-sitepicker-nav-level-1-padding-x $header-sitepicker-nav-level-1-padding-y $header-sitepicker-nav-level-1-padding-x
+
+                    & > li
+                        & > a
+                            font-size: $header-sitepicker-nav-level-1-link-font-size
+                            color: $header-sitepicker-nav-level-1-link-color
+                            padding: $header-sitepicker-nav-level-1-link-padding-y $header-sitepicker-nav-level-1-link-padding-x $header-sitepicker-nav-level-1-link-padding-y $header-sitepicker-nav-level-1-link-padding-x
+
+                            &:hover
+                                color: $header-sitepicker-nav-level-1-link-hover-color
+
+            &:hover
+                & > .submenu
+                    max-height: $header-sitepicker-nav-level-1-max-height
+
+                .sitepicker-toggler
+                    transform: rotate(180deg)
 
     .offcanvas
         &-toggler
@@ -161,4 +258,4 @@ header
             color: $offcanvas-toggler-color
 
             .icon
-                font-size: $offcanvas-toggler-icon-font-size
+                font-size: $offcanvas-toggler-icon-font-size !important

@@ -1,56 +1,92 @@
+{% set socials_is_published = (this.theme.facebook or this.theme.instagram or this.theme.youtube) and "footer" in this.theme.socials_published_in %}
+
 <footer>
     <div class="top container-fluid pt-5 pb-sm-5">
         <div class="container-lg">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5">
-                <div class="col">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
+                <div class="col d-flex flex-column">
                     <p class="mb-0 d-flex justify-content-between align-items-center">
-                        <a href="{{ 'homepage'|page }}" class="mi mi-logo"></a>
-
-                        <a href="#footer-1" data-bs-toggle="collapse" class="toggler text-decoration-none d-sm-none">
-                            <i class="ph ph-caret-up fs-2"></i>
+                        <a href="{{ 'homepage'|page }}" class="logo">
+                            <img src="{% if this.theme.logo_sm %}{{ this.theme.logo_sm.path }}{% else %}{{ 'assets/images/logo.svg'|theme }}{% endif %}" alt="logo">
                         </a>
                     </p>
 
-                    <div class="collapse show" id="footer-1">
-                        <div class="contact pt-5 d-flex flex-column justify-content-between gap-3">
-                            {% if this.theme.phone or this.theme.email %}
-                                <p class="mb-0 d-flex flex-column">
-                                    {% if this.theme.phone %}
-                                        <a href="tel:{{ this.theme.phone }}" target="_blank" class="phone">
-                                            {{ this.theme.phone }}
+                    <div class="collapse show mt-auto" id="footer-1">
+                        <div class="pt-5 d-flex flex-column justify-content-between gap-3">
+                            {% if socials_is_published %}
+                                <div class="socials d-flex gap-2">
+                                    {% if this.theme.facebook %}
+                                        <a href="{{ this.theme.facebook }}" target="_blank" class="d-inline-flex text-decoration-none icon__link--box">
+                                            <i class="mi mi-facebook icon__mask-image"></i>
                                         </a>
                                     {% endif %}
 
-                                    {% if this.theme.email %}
-                                        <a href="mailto:{{ this.theme.email }}" target="_blank" class="email">
-                                            {{ this.theme.email }}
+                                    {% if this.theme.instagram %}
+                                        <a href="{{ this.theme.instagram }}" target="_blank" class="d-inline-flex text-decoration-none icon__link--box">
+                                            <i class="mi mi-instagram icon__mask-image"></i>
                                         </a>
                                     {% endif %}
-                                </p>
+
+                                    {% if this.theme.youtube %}
+                                        <a href="{{ this.theme.youtube }}" target="_blank" class="d-inline-flex text-decoration-none icon__link--box">
+                                            <i class="mi mi-youtube icon__mask-image"></i>
+                                        </a>
+                                    {% endif %}
+
+                                    {% if this.theme.linkedin %}
+                                        <a href="{{ this.theme.linkedin }}" target="_blank" class="d-inline-flex text-decoration-none icon__link--box">
+                                            <i class="mi mi-linkedin icon__mask-image"></i>
+                                        </a>
+                                    {% endif %}
+                                </div>
                             {% endif %}
+                        </div>
+                    </div>
+                </div>
 
-                            <p class="mb-0 d-flex flex-column">
-                                <span>
-                                    Datová schránka: drtttxr
-                                </span>
-                            </p>
+                <div class="col">
+                    <div class="toggle d-flex justify-content-between align-items-center mt-4 pt-4 mt-sm-0 pt-sm-0">
+                        <h3 class="heading mb-0">
+                            Adresa
+                        </h3>
 
+                        <a href="#footer-2" data-bs-toggle="collapse" class="toggler collapsed d-sm-none material-symbol__box">
+                            <span class="material-symbol__icon">
+                                keyboard_arrow_up
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="collapse" id="footer-2">
+                        <div class="pt-4 d-flex flex-column gap-3">
                             {% if this.theme.street or this.theme.city %}
-                                <p class="mb-0 d-flex flex-column">
+                                <p class="mb-0 d-flex flex-column contact">
+                                    {% if this.theme.company %}
+                                        <span class="fw-semibold mb-2">
+                                            {{ this.theme.company }}
+                                        </span>
+                                    {% endif %}
+
                                     {% if this.theme.street %}
                                         <span>
-                                        {{ this.theme.street }} {{ this.theme.street_no }}
-                                    </span>
+                                            {{ this.theme.street }} {{ this.theme.street_no }}
+                                        </span>
                                     {% endif %}
 
                                     {% if this.theme.city %}
                                         <span>
-                                        {{ this.theme.zip }} {{ this.theme.city }}
-                                    </span>
+                                            {{ this.theme.zip }} {{ this.theme.city }}
+                                        </span>
+                                    {% endif %}
+
+                                    {% if this.theme.country %}
+                                        <span>
+                                            {{ this.theme.country }}
+                                        </span>
                                     {% endif %}
 
                                     {% if this.theme.map_link %}
-                                        <a href="{{ this.theme.map_link }}" target="_blank">
+                                        <a href="{{ this.theme.map_link }}" target="_blank" class="mt-2">
                                             Ukázat na mapě
                                         </a>
                                     {% endif %}
@@ -61,81 +97,87 @@
                 </div>
 
                 <div class="col">
-                    <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-white border-opacity-25 mt-sm-0 pt-sm-0">
-                        <h3 class="text-white mb-0">
-                            Kariéra
+                    <div class="toggle d-flex justify-content-between align-items-center mt-4 pt-4 mt-md-0 pt-md-0">
+                        <h3 class="heading mb-0">
+                            O firmě
                         </h3>
 
-                        <a href="#footer-2" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
-                            <i class="ph ph-caret-up"></i>
-                        </a>
-                    </div>
-
-                    <div class="collapse" id="footer-2">
-                        <div class="pt-4">
-                            {{ footermenu.resetMenu("footermenu") }}
-
-                            {% component "footermenu" code="kariera" %}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-light border-opacity-25 mt-md-0 pt-md-0">
-                        <h3 class="text-white mb-0">
-                            Kontakty
-                        </h3>
-
-                        <a href="#footer-3" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
-                            <i class="ph ph-caret-up"></i>
+                        <a href="#footer-3" data-bs-toggle="collapse" class="toggler collapsed d-sm-none material-symbol__box">
+                            <span class="material-symbol__icon">
+                                keyboard_arrow_up
+                            </span>
                         </a>
                     </div>
 
                     <div class="collapse" id="footer-3">
-                        <div class="pt-4">
-                            {{ footermenu.resetMenu("footermenu") }}
+                        <div class="pt-4 d-flex flex-column gap-3 contact">
+                            {% if this.theme.company_id or this.theme.company_vat_id %}
+                                <p class="mb-0 d-flex flex-column">
+                                    {% if this.theme.company_id %}
+                                        <span>
+                                            IČ: {{ this.theme.company_id }}
+                                        </span>
+                                    {% endif %}
 
-                            {% component "footermenu" code="kontakty" %}
+                                    {% if this.theme.company_vat_id %}
+                                        <span>
+                                            DIČ: {{ this.theme.company_vat_id }}
+                                        </span>
+                                    {% endif %}
+
+                                    {% if this.theme.databox %}
+                                        <span>
+                                            Datová schránka: {{ this.theme.databox }}
+                                        </span>
+                                    {% endif %}
+                                </p>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
 
                 <div class="col">
-                    <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-light border-opacity-25 mt-xl-0 pt-xl-0">
-                        <h3 class="text-white mb-0">
-                            Užitečné odkazy
+                    <div class="toggle d-flex justify-content-between align-items-center mt-4 pt-4 mt-xl-0 pt-xl-0">
+                        <h3 class="heading mb-0">
+                            Rychlý kontakt
                         </h3>
 
-                        <a href="#footer-4" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
-                            <i class="ph ph-caret-up"></i>
+                        <a href="#footer-4" data-bs-toggle="collapse" class="toggler collapsed d-sm-none material-symbol__box">
+                            <span class="material-symbol__icon">
+                                keyboard_arrow_up
+                            </span>
                         </a>
                     </div>
 
                     <div class="collapse" id="footer-4">
                         <div class="pt-4">
-                            {{ footermenu.resetMenu("footermenu") }}
+                            {% if this.theme.phone or this.theme.email %}
+                                <p class="mb-0 d-flex flex-column gap-2">
+                                    {% if this.theme.phone %}
+                                        <a href="tel:{{ this.theme.phone }}" target="_blank" class="phone link link-light material-symbol__box">
+                                            <span class="material-symbol__bg">
+                                                <span class="material-symbol__icon">
+                                                    mobile_sound_2
+                                                </span>
+                                            </span>
 
-                            {% component "footermenu" code="uzitecne-odkazy" %}
-                        </div>
-                    </div>
-                </div>
+                                            {{ this.theme.phone }}
+                                        </a>
+                                    {% endif %}
 
-                <div class="col">
-                    <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-light border-opacity-25 mt-xl-0 pt-xl-0">
-                        <h3 class="text-white mb-0">
-                            Dealerské stránky
-                        </h3>
+                                    {% if this.theme.email %}
+                                        <a href="mailto:{{ this.theme.email }}" target="_blank" class="email link link-light material-symbol__box">
+                                            <span class="material-symbol__bg">
+                                                <span class="material-symbol__icon">
+                                                    mail
+                                                </span>
+                                            </span>
 
-                        <a href="#footer-5" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
-                            <i class="ph ph-caret-up"></i>
-                        </a>
-                    </div>
-
-                    <div class="collapse" id="footer-5">
-                        <div class="pt-4 brands d-inline-flex flex-column gap-3">
-                            <a href="https://autostyl.skoda-auto.cz/" target="_blank" class="mi mi-skoda"></a>
-
-                            <a href="https://www.toyotatrutnov.cz/" target="_blank" class="mi mi-toyota"></a>
+                                            {{ this.theme.email }}
+                                        </a>
+                                    {% endif %}
+                                </p>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -145,39 +187,22 @@
 
     <div class="bottom container-fluid pt-4 pt-sm-0">
         <div class="container-lg">
-            <div class="border-top border-1 border-light border-opacity-25 py-4">
-                <div class="row row-cols-2 d-flex align-items-center row-cols-md-3">
-                    <div class="col order-1 mt-4 col-md mt-md-0">
-                        <div class="socials d-inline-flex align-items-center gap-2 justify-content-end">
-                            {% if this.theme.facebook %}
-                                <a href="{{ this.theme.facebook }}" target="_blank" class="d-inline-flex text-decoration-none">
-                                    {#                                <i class="ph ph-facebook-logo icon"></i>#}
-                                    <i class="mi mi-facebook icon"></i>
-                                </a>
-                            {% endif %}
-
-                            {% if this.theme.instagram %}
-                                <a href="{{ this.theme.instagram }}" target="_blank" class="d-inline-flex text-decoration-none">
-                                    {#                                <i class="ph ph-instagram-logo icon"></i>#}
-                                    <i class="mi mi-instagram icon"></i>
-                                </a>
-                            {% endif %}
-
-                            {% if this.theme.youtube %}
-                                <a href="{{ this.theme.youtube }}" target="_blank" class="d-inline-flex text-decoration-none">
-{#                                    <i class="ph ph-youtube-logo icon"></i>#}
-                                    <i class="mi mi-youtube icon"></i>
-                                </a>
-                            {% endif %}
-                        </div>
+            <div class="py-4">
+                <div class="row row-cols-1 d-flex align-items-center g-3 row-cols-md-3">
+                    <div class="cookies col d-flex justify-content-center justify-content-md-start">
+                        <a href="{{ 'page'|page({fullslug: 'nastaveni-cookies'}) }}" class="material-symbol__box">
+                            <span class="material-symbol__icon">
+                                cookie
+                            </span>
+                        </a>
                     </div>
 
-                    <div class="col-12 order-0 d-flex justify-content-center col-md order-md-1">
-                        &copy; {{ "now"|date("Y") }}, Autostyl a.s.
+                    <div class="col d-flex justify-content-center">
+                        &copy; {{ "now"|date("Y") }}, {{ this.theme.copyright }}
                     </div>
 
-                    <div class="col order-1 mt-4 col-md mt-md-0">
-                        <p class="mb-0 text-end">
+                    <div class="col">
+                        <p class="mb-0 d-flex justify-content-center mt-2 justify-content-md-end mt-md-0">
                             <a href="https://www.hucr.cz" target="_blank" class="mi-signature"></a>
                         </p>
                     </div>

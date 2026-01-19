@@ -4,15 +4,19 @@
             <div class="d-flex align-items-center justify-content-between">
                 <a href="{% if item.url %}{{ item.url }}{% else %}#level-{{ level }}-{{ item.title|slug }}{% endif %}" {{ not item.url ? 'data-bs-toggle="collapse"' }} {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link position-relative d-inline-flex align-items-center {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
                     {% if level >= 2 %}
-                        <i class="ph ph-caret-right me-2 icon"></i>
+                        <span class="material-symbol__icon me-2 icon">
+                            chevron_right
+                        </span>
                     {% endif %}
 
                     {{ item.title }}
                 </a>
 
                 {% if item.items %}
-                    <a href="#level-{{ level }}-{{ item.title|slug }}" data-bs-toggle="collapse" class="text-decoration-none">
-                        <i class="ph ph-caret-down ms-3 submenu-toggler"></i>
+                    <a href="#level-{{ level }}-{{ item.title|slug }}" data-bs-toggle="collapse" class="material-symbol__box">
+                        <span class="material-symbol__icon ms-3 submenu-toggler">
+                            keyboard_arrow_down
+                        </span>
                     </a>
                 {% endif %}
             </div>

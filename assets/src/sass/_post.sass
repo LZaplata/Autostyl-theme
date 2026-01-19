@@ -1,34 +1,53 @@
-#post
-    .content
+.post
+    &__img
+        border-radius: $post-image-border-radius
+
+    &__overlay
+        background-color: $post-image-overlay-bg
+        background-image: $post-image-overlay-bg-image
+        opacity: 0
+        transition: $transition-base
+
+    &__icon-bg
+        width: $post-image-overlay-icon-bg-width
+        height: $post-image-overlay-icon-bg-height
+        background: $post-image-overlay-icon-bg
+        border-radius: $post-image-overlay-icon-bg-border-radius
+
+    &__icon
+        font-size: $post-image-overlay-icon-font-size !important
+        color: $post-image-overlay-icon-color
+
+    &__title
+        font-size: $post-title-font-size
+        font-weight: $post-title-font-weight
+        text-decoration: underline
+        text-decoration-color: $post-title-underline-color
+        transition: $transition-base
+        color: $post-title-color
+
+    &__perex
+        font-size: $post-perex-font-size
+
         p
-            margin-bottom: map-get($spacers, 4)
+            color: $post-perex-color !important
 
-            & + h2
-                margin-top: map-get($spacers, 5)
+    &__details
+        font-size: $post-details-font-size
+        color: $post-details-color
+        border-color: $post-details-color
 
-            & + h3
-                margin-top: map-get($spacers, 5)
+    &__link
+        background-color: $post-link-bg
+        padding: $post-link-padding-x $post-link-padding-y
+        border: $post-link-border-width solid $post-link-border-color
+        border-radius: $post-link-border-radius
 
-            & + h4
-                margin-top: map-get($spacers, 5)
+        &:hover
+            .post
+                &__overlay
+                    opacity: 1
 
-            & + h5
-                margin-top: map-get($spacers, 5)
-
-        h2, h3, h4, h5
-            margin-bottom: map-get($spacers, 4)
-
-        strong
-            font-weight: $post-font-weight-bold
-
-        ul
-            padding-left: 0
-            margin-bottom: map-get($spacers, 4)
-
-            li
-                list-style-type: none
-
-                &:before
-                    content: "•"
-                    position: relative
-                    margin-right: 10px
+                &__title
+                    text-decoration-color: $post-hover-title-underline-color
+                    color: $post-hover-title-color

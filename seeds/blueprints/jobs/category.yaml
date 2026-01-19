@@ -1,0 +1,49 @@
+uuid: lzaplata_jobs_categories
+handle: Jobs\Category
+type: structure
+name: Kategorie volných pozic
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+structure:
+    maxDepth: 1
+
+navigation:
+    label: Kategorie
+    icon: icon-folder
+    parent: Jobs\Job
+    order: 10
+
+customMessages:
+    buttonCreate: Nová kategorie
+    titleCreateForm: Vytvořit kategorii
+    titleUpdateForm: Upravit kategorii
+    titleIndexList: Kategorie volných pozic
+
+fields:
+    title:
+        placeholder: Název kategorie
+
+    jobs:
+        label: Volné pozice
+        type: nesteditems
+        span: adaptive
+        maxDepth: 1
+        form:
+            fields:
+                job:
+                    label: Pozice
+                    type: entries
+                    source: Jobs\Job
+                    displayMode: relation
+                    maxItems: 1
+
+        customMessages:
+            buttonCreate: Přidat pozici
+            titleCreateForm: Přidat pozici
+
+columns:
+    title:
+        label: Název

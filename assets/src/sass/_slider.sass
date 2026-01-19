@@ -10,6 +10,9 @@
     .swiper-button-next, .swiper-button-prev
         background-color: $slider-navigation-bg
         border-radius: 50%
+        border-width: $slider-navigation-border-width
+        border-color: $slider-navigation-border-color
+        border-style: solid
         width: $slider-navigation-width
         height: $slider-navigation-height
         transition: $transition-base
@@ -31,8 +34,18 @@
     .swiper-button-disabled
         opacity: 1 !important
 
+    .swiper-button-lock
+        display: none !important
+
     .swiper-pagination-bullet
         transition: $transition-base
 
         &-active
             width: $slider-pagination-width
+
+.slider
+    &__title
+        font-family: $slider-title-font-family
+        font-size: $slider-title-font-size
+        font-weight: $slider-title-font-weight
+        color: $slider-title-color

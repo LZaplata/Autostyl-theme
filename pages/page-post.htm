@@ -1,0 +1,33 @@
+url = "/:fullslug*/p/:slug"
+layout = "default"
+title = "Post"
+seoOptionsMetaTitle = "{{ post.id ? post.title }} | {{ page.title }}"
+
+[breadcrumbs]
+pageCode = "page"
+
+[page]
+column = "fullslug"
+value = "{{ :fullslug }}"
+
+[blogPost post]
+slug = "{{ :slug }}"
+categoryPage = "page"
+==
+<div class="container-fluid">
+    <div class="container-lg">
+        <div id="breadcrumb">
+            <div class="row g-5">
+                <div class="col">
+                    {% component "breadcrumbs" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5" id="page-post">
+    <div class="container-lg pb-xl-4">
+        {% component "post" %}
+    </div>
+</div>

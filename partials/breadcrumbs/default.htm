@@ -1,0 +1,27 @@
+{% set breadcrumbs = __SELF__.breadcrumbs %}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb align-items-center">
+        <li class="breadcrumb-item home d-inline-flex">
+            <a href="{{ 'homepage'|page }}" class="d-inline-flex text-decoration-none">
+                <span class="material-symbol__icon fs-2">
+                    home
+                </span>
+            </a>
+        </li>
+
+        {% for breadcrumb in breadcrumbs %}
+            {% if not loop.last or (loop.last and (job or post)) %}
+                <li class="breadcrumb-item">
+                    <a href="{{ breadcrumb.url }}">
+                        {{ breadcrumb.title }}
+                    </a>
+                </li>
+            {% else %}
+                <li class="breadcrumb-item active" aria-current="page">
+                    {{ breadcrumb.title }}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</nav>

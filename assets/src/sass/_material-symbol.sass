@@ -1,0 +1,56 @@
+.material-symbol
+    &__bg
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        transition: $transition-base
+        width: $material-symbol-bg-size
+        height: $material-symbol-bg-size
+        border-radius: $material-symbol-bg-border-radius
+
+    &__icon
+        font-family: $material-symbol-font-family
+        font-size: $material-symbol-font-size
+        font-weight: normal
+        font-style: normal
+        display: inline-block
+        line-height: 1
+        text-transform: none
+        letter-spacing: normal
+        word-wrap: normal
+        white-space: nowrap
+        direction: ltr
+        transition: $transition-base
+        font-optical-sizing: auto
+        font-variation-settings: "wght" $material-symbol-font-weight
+
+        &--light
+            font-variation-settings: "wght" $font-weight-light
+
+        &--regular
+            font-variation-settings: "wght" $font-weight-regular
+
+        &--medium
+            font-variation-settings: "wght" $font-weight-medium
+
+        &--semibold
+            font-variation-settings: "wght" $font-weight-semibold
+
+        &--bold
+            font-variation-settings: "wght" $font-weight-bold
+
+    &__box
+        display: inline-flex
+        align-items: center
+        gap: $material-symbol-box-gap
+        text-decoration: none
+
+        &--fit
+            &.btn
+                padding-left: $btn-padding-y
+
+            &.btn-lg
+                padding-left: $btn-padding-y-lg
+
+            &.btn-sm
+                padding-left: $btn-padding-y-sm

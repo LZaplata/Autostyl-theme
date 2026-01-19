@@ -1,0 +1,17 @@
+{% set run = __SELF__.onRun() %}
+{% set posts = __SELF__.posts %}
+{% set row_cols = __SELF__.properties.rowCols %}
+{% set partial = __SELF__.properties.partial %}
+{% set more_button_title = __SELF__.properties.moreButtonTitle %}
+{% set more_button_link = __SELF__.properties.moreButtonLink %}
+
+{% partial "_swiper/scrollable" items=posts partial=partial slides_per_view=row_cols %}
+
+{% if more_button_link and more_button_title %}
+    <p class="mt-5 mb-0 text-center">
+        <a href="{{ more_button_link|link }}" class="btn btn-primary">
+            {{ more_button_title }}
+        </a>
+    </p>
+{% endif %}
+

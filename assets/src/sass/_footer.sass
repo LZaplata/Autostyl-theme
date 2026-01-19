@@ -5,12 +5,8 @@ footer
         background-color: $footer-bg
 
         .col
-            .mi-logo
-                background-color: $footer-logo-bg
-                transition: $transition-base
-
-                &:hover
-                    background-color: $footer-logo-hover-bg
+            .toggle
+                border-top: $footer-toggle-border-width solid $footer-toggle-border-color
 
             .toggler
                 color: $footer-toggler-color
@@ -19,73 +15,100 @@ footer
                 &.collapsed
                     transform: rotate(180deg)
 
+            .heading
+                color: $footer-heading-color
+                font-size: $footer-heading-font-size
+                font-weight: $footer-heading-font-weight
+                position: relative
+
+                @if $footer-heading-after
+                    padding-bottom: 7px
+
+                    &:after
+                        content: ""
+                        position: absolute
+                        width: 10px
+                        height: 2px
+                        bottom: 0
+                        background-color: $footer-heading-after-color
+                        left: 0
+
             & > .collapse
                 @include media-breakpoint-up(sm)
                     border-top: none !important
                     display: block
-
-                .contact
-                    font-size: $footer-contact-font-size
-
-                    a
-                        color: $footer-contact-link-color
-                        transition: $transition-base
-                        text-decoration: none
-                        position: relative
-                        display: inline-flex
-                        width: max-content
-
-                        &:after
-                            content: ""
-                            position: absolute
-                            bottom: 3px
-                            left: 0
-                            width: 100%
-                            height: 1px
-                            transition: $transition-base
-                            background-color: transparent
-
-                        &:hover
-                            color: $footer-contact-link-hover-color
-
-                            &:after
-                                background-color: $footer-contact-link-hover-color
-
-                    .phone
-                        font-size: $footer-contact-phone-font-size
-
-                    .email
-                        font-size: $footer-contact-email-font-size
 
     .bottom
         background-color: $footer-bottom-bg
         font-size: $footer-bottom-font-size
         color: $footer-bottom-color
 
-    .socials
-        a
-            .icon
-                background-color: $footer-socials-icon-color
-                transition: $transition-base
-
-            &:hover
-                .icon
-                    background-color: $footer-socials-icon-hover-color
+        & > .container-lg
+            & > div
+                border-top: $footer-bottom-border-width solid $footer-bottom-border-color
 
     .mi-signature
-        background-color: $footer-socials-icon-color
+        background-color: $footer-signature-color
         transition: $transition-base
 
         &:hover
-            background-color: $footer-socials-icon-hover-color
+            background-color: $footer-signature-hover-color
+
+    .contact
+        font-size: $footer-contact-font-size
+
+        a
+            color: $footer-contact-link-color
+            transition: $transition-base
+            position: relative
+            display: inline-flex
+            width: max-content
+            text-decoration: underline
+            text-decoration-thickness: $footer-contact-link-underline-height
+            text-decoration-color: $footer-contact-link-underline-color
+
+            &:hover
+                color: $footer-contact-link-hover-color
+                text-decoration-color: $footer-contact-link-hover-underline-color
+
+    .phone
+        font-size: $footer-contact-phone-font-size
+
+    .email
+        font-size: $footer-contact-email-font-size
+
+    .cookies
+        font-size: $footer-cookies-font-size
+
+        a
+            color: $footer-cookies-link-color
+
+            &:hover
+                color: $footer-cookies-link-hover-color
 
     .nav
         li
+            @if $footer-nav-link-before-content != "none"
+                position: relative
+
+            &:before
+                content: $footer-nav-link-before-content
+                color: $footer-nav-link-before-color
+                top: $footer-nav-link-before-top
+                font-family: $font-family-icons
+                margin-right: $footer-nav-link-before-margin-right
+                font-size: $footer-nav-link-before-font-size
+
             a
                 color: $footer-nav-link-color
                 font-size: $footer-nav-link-font-size
                 font-weight: $footer-nav-link-font-weight
                 display: inline-flex
+                text-decoration: underline
+                text-decoration-thickness: $footer-nav-link-underline-height
+                text-decoration-color: $footer-nav-link-underline-color
+                transition: $transition-base
 
                 &:hover
                     color: $footer-nav-link-hover-color
+                    text-decoration-color: $footer-nav-link-hover-underline-color

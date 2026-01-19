@@ -1,0 +1,121 @@
+uuid: lzaplata_jobs
+handle: Jobs\Job
+type: structure
+name: Pozice
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Volné pozice
+    icon: ph ph-read-cv-logo
+
+navigation:
+    label: Pozice
+    icon: icon-list-ul
+    parent: Jobs\Job
+    order: 0
+
+customMessages:
+    buttonCreate: Nová pozice
+    titleCreateForm: Vytvořit pozici
+    titleUpdateForm: Upravit pozici
+    titleIndexList: Volné pozice
+
+fields:
+    title:
+        placeholder: Název pozice
+
+    image:
+        label: Obrázek
+        type: fileupload
+        span: left
+        tab: Základní informace
+        column: false
+        maxFiles: 1
+        fileTypes: png, jpg, webp
+
+    relationship:
+        label: Pracovní poměr
+        span: left
+        tab: Základní informace
+        column:
+            type: text
+
+    salary:
+        label: Odměna/mzda
+        span: right
+        tab: Základní informace
+        column:
+            type: text
+
+    job:
+        type: richeditor
+        span: full
+        size: huge
+        tab: Náplň práce
+        column: false
+
+    requirements:
+        type: richeditor
+        span: full
+        size: huge
+        tab: Požadujeme
+        column: false
+
+    offer:
+        type: richeditor
+        span: full
+        size: huge
+        tab: Nabízíme
+        column: false
+
+    benefits:
+        type: richeditor
+        span: full
+        size: huge
+        tab: Benefity
+        column: false
+
+    contacts_category:
+        label: Kategorie kontaktů
+        type: entries
+        source: Contacts\Category
+        maxItems: 1
+        displayMode: relation
+        span: left
+        tab: Kontakty
+        column: false
+
+    contacts_partial:
+        label: Šablona
+        type: dropdown
+        optionsMethod: LZaplata\Pages\Helpers\Content::getPartialOptions
+        span: right
+        tab: Kontakty
+        column: false
+        permissions: 
+            - lzaplata.pages.content.update.partial
+
+    contacts_row_cols:
+        label: Počet kontaktů na řádek
+        type: dropdown
+        optionsMethod: LZaplata\Pages\Helpers\Content::getRowColsOptions
+        default: 4
+        span: left
+        tab: Kontakty
+        column: false
+        trigger:
+            action: hide|fill[1]
+            condition: value[*/row]
+            field: contacts_partial
+        permissions: 
+            - lzaplata.pages.content.update.row_cols
+
+columns:
+    title:
+        label: Název

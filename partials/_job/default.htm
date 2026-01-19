@@ -1,0 +1,62 @@
+{% if post.image %}
+    <div class="mb-5">
+        <img src="{{ post.image.thumb(1400, 350, {mode: "crop"}) }}" alt="{{ post.image.description }}" class="img-fluid w-100 rounded-3">
+    </div>
+{% endif %}
+
+<h1 class="mb-4">
+    {{ post.title }}
+</h1>
+
+<div class="d-flex flex-column gap-5">
+    <div class="text">
+        <p class="mb-0">
+            Pracovní poměr: {{ post.relationship }} <br>
+            Odměna/mzda:
+
+            <span class="fw-bold fs-2">
+                {{ post.salary|price }}
+            </span>
+        </p>
+    </div>
+
+    {% if post.job %}
+        <div class="text">
+            <h2 class="mb-4">
+                Náplň práce
+            </h2>
+
+            {{ post.job|content|bootstrap }}
+        </div>
+    {% endif %}
+
+    {% if post.requirements %}
+        <div class="text">
+            <h2 class="mb-4">
+                Požadujeme
+            </h2>
+
+            {{ post.requirements|content|bootstrap }}
+        </div>
+    {% endif %}
+
+    {% if post.offer %}
+        <div class="text">
+            <h2 class="mb-4">
+                Nabízíme
+            </h2>
+
+            {{ post.offer|content|bootstrap }}
+        </div>
+    {% endif %}
+
+    {% if post.benefits %}
+        <div class="text">
+            <h2 class="mb-4">
+                Benefity
+            </h2>
+
+            {{ post.benefits|content|bootstrap }}
+        </div>
+    {% endif %}
+</div>

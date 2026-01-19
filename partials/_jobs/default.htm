@@ -1,0 +1,11 @@
+<div class="row row row-cols-{{ min(1, row_cols) }} g-5 row-cols-sm-{{ min(2, row_cols) }} gx-sm-4 row-cols-lg-{{ min(3, row_cols) }} gx-lg-5 row-cols-xl-{{ min(4, row_cols) }} row-cols-xxl-{{ row_cols }}">
+    {% for category_job in content.jobs_category.jobs.where("job.is_enabled", true) %}
+        {% set link %}
+            {{ "page-job"|page({slug: category_job.job.slug}) }}
+        {% endset %}
+
+        <div class="col">
+            {% partial partial item=category_job.job image=category_job.job.image link=link %}
+        </div>
+    {% endfor %}
+</div>

@@ -10,37 +10,74 @@ require:
     - initbiz.seostorm
     - rainlab.pages
     - rainlab.blog
+    - rainlab.translate
     - janvince.smallgdpr
+    - janvince.smallcontactform
+    - lzaplata.gallery
+    - lzaplata.files
     - lzaplata.extensions
+    - lzaplata.pages
     - lzaplata.pricelists
-    - vdlp.redirect
+    - lzaplata.openinghours
+    - lzaplata.timelines
+    - lzaplata.flashmessages
 form:
     tabs:
         fields:
-            facebook:
-                label: Facebook
+            logo:
+                label: Logo
+                type: fileupload
+                span: left
+                fileTypes: png, svg, webp
+                commentAbove: 'Pouze soubory typu PNG, SVG a WEBP jsou povoleny'
+                maxFiles: 1
+                tab: Nastavení
+            logo_sm:
+                label: Malé logo
+                type: fileupload
+                span: right
+                fileTypes: png, svg, webp
+                commentAbove: 'Pouze soubory typu PNG, SVG a WEBP jsou povoleny'
+                commentBelove: 'Toto logo je používané v patičce'
+                maxFiles: 1
+                tab: Nastavení
+            mainmenu_dropdown:
+                label: Zobrazit 2. úroveň hlavního menu
+                type: switch
+                default: false
+                span: left
+                tab: Nastavení
+            copyright:
+                label: Copyright
                 type: text
                 span: left
-                tab: Sociální sítě
-            instagram:
-                label: Instagram
+                tab: Nastavení
+            founder:
+                label: Zřizovatel
+                type: text
+                span: left
+                tab: Kontakt
+            company:
+                label: Firma
                 type: text
                 span: right
-                tab: Sociální sítě
-            youtube:
-                label: Youtube
-                type: text
-                span: left
-                tab: Sociální sítě
+                tab: Kontakt
             phone:
                 label: Telefon
                 type: text
                 span: left
                 tab: Kontakt
+            phone_published_in:
+                label: Publikováno (telefon)
+                type: checkboxlist
+                tab: Kontakt
+                span: right
+                options:
+                    header: Hlavička
             email:
                 label: E-mail
                 type: text
-                span: right
+                span: left
                 tab: Kontakt
             street:
                 label: Ulice
@@ -48,7 +85,7 @@ form:
                 span: left
                 tab: Kontakt
             street_no:
-                label: Číslo domu
+                label: 'Číslo domu'
                 type: text
                 span: right
                 tab: Kontakt
@@ -62,8 +99,72 @@ form:
                 type: text
                 span: right
                 tab: Kontakt
-            map_link:
-                label: Odkaz na mapu
+            country:
+                label: Země
                 type: text
                 span: left
                 tab: Kontakt
+                translatable: true
+            map_link:
+                label: 'Odkaz na mapu'
+                type: text
+                span: right
+                tab: Kontakt
+            company_id:
+                label: IČO
+                type: text
+                span: left
+                tab: Kontakt
+            company_vat_id:
+                label: DIČ
+                type: text
+                span: right
+                tab: Kontakt
+            databox:
+                label: Datavá schránka
+                type: text
+                span: left
+                tab: Kontakt
+            company_registration:
+                label: Registrace
+                commentAbove: 'Text k registraci v firmy v živnostenském rejstříku'
+                type: textarea
+                tab: Kontakt
+            bank:
+                label: Banka
+                type: text
+                span: left
+                tab: Kontakt
+            account_number:
+                label: Číslo účtu
+                type: text
+                span: right
+                tab: Kontakt
+            socials_published_in:
+                label: Publikováno
+                type: checkboxlist
+                tab: 'Sociální sítě'
+                options:
+                    header: Hlavička
+                    footer: Patička
+                default: [footer]
+            facebook:
+                label: Facebook
+                type: text
+                span: left
+                tab: 'Sociální sítě'
+            instagram:
+                label: Instagram
+                type: text
+                span: right
+                tab: 'Sociální sítě'
+            youtube:
+                label: Youtube
+                type: text
+                span: left
+                tab: 'Sociální sítě'
+            linkedin:
+                label: LinkedIn
+                type: text
+                span: right
+                tab: 'Sociální sítě'

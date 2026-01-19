@@ -1,0 +1,40 @@
+.input
+    &__icon
+        position: relative
+
+        &:before
+            font-family: $font-family-icons
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: calc($grid-gutter-width / 2)
+            padding-left: $input-padding-x
+            font-size: $input-font-size-lg
+
+        &--name
+            &:before
+                content: "person"
+
+        &--email
+            &:before
+                content: "mail"
+
+        &--phone
+            &:before
+                content: "mobile_sound_2"
+
+        &--text
+            &:before
+                content: "edit"
+                top: 13px
+                transform: none
+
+    &__icon-input
+        padding-left: 45px
+
+        &--textarea
+            height: 200px
+
+        &--button
+            &:after
+                content: none !important

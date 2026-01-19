@@ -1,21 +1,21 @@
 <div class="offcanvas offcanvas-end" id="offcanvas">
     <div class="h-100 d-flex flex-column">
-        <div class="container-fluid py-3">
+        <div class="container-fluid py-4">
             <div class="container-lg">
                 <div class="row row-cols-2 align-items-center">
                     <div class="col d-flex">
-                        <a href="{{ 'homepage'|page }}" class="mi mi-logo bg-white">
-                            <!-- Uncomment and remove classes while using normal image as logo -->
-
-{#                            <img src="{{ 'assets/images/logo.svg'|theme }}" alt="logo">#}
+                        <a href="{{ 'homepage'|page }}" class="d-flex align-items-center logo">
+                            <img src="{% if this.theme.logo %}{{ this.theme.logo.path }}{% else %}{{ 'assets/images/logo.svg'|theme }}{% endif %}" alt="logo">
                         </a>
                     </div>
 
                     <div class="col d-flex justify-content-end">
-                        <a href="#offcanvas" data-bs-dismiss="offcanvas" class="d-inline-flex align-items-center offcanvas-toggler offcanvas-close text-decoration-none">
+                        <a href="#offcanvas" data-bs-dismiss="offcanvas" class="offcanvas-toggler offcanvas-close material-symbol__box">
                             Zavřít
 
-                            <i class="ph ph-x ms-2 icon"></i>
+                            <span class="material-symbol__icon icon">
+                                close
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -30,27 +30,33 @@
 
         <div class="container-fluid py-4">
             <div class="container-lg">
-                <div class="d-flex align-items-center justify-content-center gap-3 socials">
-                    {% if this.theme.facebook %}
-                        <a href="{{ this.theme.facebook }}" target="_blank" class="d-inline-flex text-decoration-none">
-{#                            <i class="ph ph-facebook-logo icon"></i>#}
-                            <i class="mi mi-facebook icon"></i>
-                        </a>
-                    {% endif %}
+                {% if (this.theme.facebook or this.theme.instagram or this.theme.youtube) and "footer" in this.theme.socials_published_in %}
+                    <div class="socials d-flex align-items-center gap-2 justify-content-center">
+                        {% if this.theme.facebook %}
+                            <a href="{{ this.theme.facebook }}" target="_blank" class="d-inline-flex text-decoration-none icon__link--box">
+                                <i class="mi mi-facebook icon__mask-image"></i>
+                            </a>
+                        {% endif %}
 
-                    {% if this.theme.instagram %}
-                        <a href="{{ this.theme.instagram }}" target="_blank" class="d-inline-flex text-decoration-none">
-{#                            <i class="ph ph-instagram-logo icon"></i>#}
-                            <i class="mi mi-instagram icon"></i>
-                        </a>
-                    {% endif %}
+                        {% if this.theme.instagram %}
+                            <a href="{{ this.theme.instagram }}" target="_blank" class="d-inline-flex text-decoration-none icon__link--box">
+                                <i class="mi mi-instagram icon__mask-image"></i>
+                            </a>
+                        {% endif %}
 
-                    {% if this.theme.youtube %}
-                        <a href="{{ this.theme.youtube }}" target="_blank" class="d-inline-flex text-decoration-none">
-                            <i class="ph ph-youtube-logo icon"></i>
-                        </a>
-                    {% endif %}
-                </div>
+                        {% if this.theme.youtube %}
+                            <a href="{{ this.theme.youtube }}" target="_blank" class="d-inline-flex text-decoration-none icon__link--box">
+                                <i class="mi mi-youtube icon__mask-image"></i>
+                            </a>
+                        {% endif %}
+
+                        {% if this.theme.linkedin %}
+                            <a href="{{ this.theme.linkedin }}" target="_blank" class="d-inline-flex text-decoration-none icon__link--box">
+                                <i class="mi mi-linkedin icon__mask-image"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>

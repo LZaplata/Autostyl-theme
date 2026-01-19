@@ -1,0 +1,26 @@
+uuid: lzaplata_faq
+handle: FAQ\Question
+type: structure
+name: Časté dotazy
+drafts: false
+showImport: false
+showExport: false
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: FAQ
+    icon: icon-question
+    order: 180
+
+navigation:
+    icon: icon-list-ul
+    parent: FAQ\Question
+    order: 10
+    label: Časté dotazy
+
+fields:
+    answer:
+        label: Odpověď
+        type: richeditor

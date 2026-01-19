@@ -1,0 +1,71 @@
+@use "sass:map"
+
+.text
+    font-size: $text-font-size
+
+    *:last-child
+        margin-bottom: 0
+
+    p
+        margin-bottom: $text-gap-base
+        color: $text-color
+
+        strong
+            font-weight: $text-strong-font-weight
+
+        a:not(.btn)
+            color: $text-link-color
+            font-weight: $text-link-font-weight
+            text-decoration: underline
+            text-decoration-color: $text-link-underline-color
+            transition: $transition-base
+
+            &:hover
+                color: $text-link-hover-color
+                text-decoration-color: $text-link-hover-underline-color
+
+    .table-responsive
+        margin-top: $text-gap-lg
+
+        tr
+            td, th
+                white-space: nowrap
+
+        thead
+            tr
+                td, th
+                    background-color: $text-table-head-bg
+                    font-size: $text-table-head-font-size
+
+        tbody
+            tr
+                td, th
+                    font-size: $text-table-body-font-size
+
+                    strong
+                        font-weight: $table-th-font-weight
+
+    ul
+        //padding-left: 0
+        margin-bottom: map.get($spacers, 4)
+
+        //li
+            list-style-type: none
+
+            &:before
+                content: "•"
+                position: relative
+                margin-right: 5px
+
+    ul, ol
+        li
+            color: $text-color
+
+            & + li
+                margin-top: 3px
+
+        & + p
+            margin-top: $text-gap-base
+
+    h2, h3, h4, h5
+        margin-bottom: $text-gap-base

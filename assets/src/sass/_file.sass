@@ -1,0 +1,23 @@
+@use "sass:map"
+
+.file
+    &__link
+        color: $file-link-color
+        text-decoration: underline
+        text-decoration-color: $file-link-underline-color
+        transition: $transition-base
+
+        &:hover
+            color: $file-link-hover-color
+            text-decoration-color: $file-link-hover-underline-color
+
+    &--with-icon
+        display: flex
+        align-items: center
+        gap: map.get($spacers, 1)
+
+    &--with-list
+        &:before
+            content: "•"
+            position: relative
+            margin-right: 5px

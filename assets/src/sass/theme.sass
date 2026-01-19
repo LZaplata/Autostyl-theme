@@ -1,240 +1,68 @@
+@use "sass:map"
+@use "colors" as *
+
 @import "custom"
 @import "header"
 @import "offcanvas"
 @import "slider"
 @import "footer"
 @import "post"
+@import "map"
+@import "sidebar"
+@import "breadcrumbs"
+@import "cookies"
+@import "flash-message"
+@import "image-text"
+@import "text"
+@import "file"
+@import "icon"
+@import "input"
+@import "gallery"
+@import "pagination"
+@import "timeline"
+@import "link"
+@import "material-symbol"
 
-header
-    .nav
-        .level-1
-           & > .submenu
-               & > .container-lg
-                   & > ul
-                       --bs-gutter-x: 40px
+#map-wrapper
+    #map
+        *, ::before, ::after
+            box-sizing: unset !important
 
-        .level-2
-            & > a.nav-link, & > span
-                padding-bottom: 4px !important
-                margin-bottom: 10px
+        .cluster
+            div
+                background-color: $primary
+                border: solid 4px rgba(var(--bs-white-rgb), 0.35)
 
-                &:after
-                    content: ""
-                    width: 20px
-                    height: 2px
-                    background: $primary
-                    position: absolute
-                    bottom: 0
-                    left: 0
-
-        .level-3
-            &.skoda
-                & > a.nav-link, & > span
-                    &:hover
-                        color: $green-700 !important
-
-                        &:after
-                            background-color: $green-700 !important
-
-        .contact-support
-            font-size: 15px
-
-    .socials
-        a
-            background: $gray-200
-            padding: 6px
-            border-radius: 3px
-
-    .brands
-        a
-            &.skoda
-                margin: 60px
+                span
+                    font-weight: $font-weight-medium
+                    font-size: $font-size-base
+                    font-family: $font-family-base
+                    color: $white
 
                 img
-                    height: 20px
+                    display: none !important
 
-.offcanvas
-    .socials
-        a
-            background: transparentize($white, .7)
-            padding: 6px
-            border-radius: 3px
+        .card
+            padding: map.get($spacers, 4)
 
-#skoda-toyota
-    .row
-        .col
-            &.skoda
-                background-color: #F0F0F0
+        .hud
+            .zoom, .compass
+                z-index: 200
 
-                @include media-breakpoint-up(md)
-                    background-image: url("../images/skoda.png")
-                    background-position-x: left
-                    background-position-y: bottom
-                    background-repeat: no-repeat
-                    background-size: 40%
+                @include media-breakpoint-only(xs)
+                    display: none
 
-                @include media-breakpoint-up(lg)
-                    background-size: 50%
+    #map-input-wrapper
+        z-index: 100
 
-                @include media-breakpoint-up(xl)
-                    background-size: 60%
 
-                @include media-breakpoint-up(xxl)
-                    background-size: auto
 
-                .links
-                    .nav
-                        li
-                            .icon
-                                color: $green-700 !important
-
-                            a
-                                &:not(.active)
-                                    &:hover
-                                        color: $green-700
-
-                                        &:after
-                                            background-color: $green-700
-
-            &.toyota
-                background-color: #E8E8E8
-
-                @include media-breakpoint-up(md)
-                    background-image: url("../images/toyota.png")
-                    background-position-x: right
-                    background-position-y: bottom
-                    background-repeat: no-repeat
-                    background-size: 40%
-
-                @include media-breakpoint-up(lg)
-                    background-size: 50%
-
-                @include media-breakpoint-up(xl)
-                    background-size: 60%
-
-                @include media-breakpoint-up(xxl)
-                    background-size: auto
-
-            .links
-                width: max-content
-
-                .nav
-                    li
-                        a
-                            &:after
-                                content: ""
-                                position: absolute
-                                bottom: $nav-level-2-link-padding-y
-                                left: 0
-                                width: 100%
-                                height: $nav-level-2-link-after-height
-                                transition: $transition-base
-                                background-color: transparent
-
-                            &:not(.active)
-                                &:hover
-                                    color: $primary
-
-                                    &:after
-                                        background-color: $primary
-
-#events
-    h2
-        @include media-breakpoint-up(md)
-            border-right: 1px solid $gray-300
-            padding-right: 30px
-            margin-right: 30px
-
-    .nav
-        li
-            a
-                position: relative
-
-                &:after
-                    content: ""
-                    position: absolute
-                    bottom: $nav-level-2-link-padding-y
-                    left: 0
-                    width: 100%
-                    height: $nav-level-2-link-after-height
-                    transition: $transition-base
-                    background-color: transparent
-
-                &:not(.active)
-                    &:hover
-                        color: $primary
-
-                        &:after
-                            background-color: $primary
+// from autostyl theme
+// delete finally
 
 .dropdown-toggle
     &:after
         content: none
-
-.events
-    --swiper-scrollbar-sides-offset: 0%
-    --swiper-scrollbar-bottom: 0
-    --swiper-scrollbar-size: 6px
-    --swiper-scrollbar-bg-color: #{$gray-200}
-    --swiper-scrollbar-drag-bg-color: #{$black}
-    padding-bottom: 25px !important
-
-    @include media-breakpoint-up(md)
-        padding-bottom: 0 !important
-
-    .event
-        &.swiper-slide
-            width: 70%
-
-            @include media-breakpoint-down(md)
-                &:not(.swiper-slide-active)
-                    opacity: .5
-                    transition: $transition-base
-
-        .img
-            a
-                overflow: hidden
-
-                img
-                    transition: $transition-base
-
-            a
-                &:hover
-                    img
-                        transform: scale(1.03)
-
-        .title
-            a
-                color: $black
-                text-decoration: none
-                position: relative
-                display: inline-block
-                line-height: $line-height-base
-
-                &:after
-                    content: ""
-                    position: absolute
-                    bottom: $nav-level-2-link-padding-y
-                    left: 0
-                    width: 100%
-                    height: $nav-level-2-link-after-height
-                    transition: $transition-base
-                    background-color: transparent
-
-                &:hover
-                    color: $primary
-
-                    &:after
-                        background-color: $primary
-
-        &.skoda
-            .title
-                a
-                    &:hover
-                        color: $green-700
-
-                        &:after
-                            background-color: $green-700
 
 #about-us
     h2
@@ -254,15 +82,6 @@ header
             border-top-left-radius: 0 !important
             border-bottom-left-radius: 0 !important
 
-#partners
-    .partners
-        --swiper-scrollbar-sides-offset: 0%
-        --swiper-scrollbar-bottom: 0
-        --swiper-scrollbar-size: 6px
-        --swiper-scrollbar-bg-color: #{$gray-200}
-        --swiper-scrollbar-drag-bg-color: #{$black}
-        padding-bottom: 20px !important
-
 footer
     .top
         .row
@@ -270,36 +89,6 @@ footer
                 & > div
                     @include media-breakpoint-up(sm)
                         border-top: none !important
-
-        #footer-3
-            .nav
-                .nav-item
-                    &.skoda
-                        .nav-link
-                            &:hover
-                                color: $green-700
-
-        #footer-5
-            a
-                transition: $transition-base
-
-                &.mi
-                    background-color: $white
-
-                    &.mi-skoda
-                        &:hover
-                            background-color: $green-500
-
-                    &.mi-toyota
-                        &:hover
-                            background-color: $primary
-
-    .bottom
-        .socials
-            a
-                background: $gray-500
-                padding: 4px
-                border-radius: 3px
 
 #post
     h1
@@ -310,7 +99,7 @@ footer
             position: absolute
             left: 0
             bottom: -10px
-            background-color: $black-skoda
+            background-color: $primary
             width: 32px
             height: 3px
 
@@ -318,32 +107,6 @@ footer
         .pricelist
             @include media-breakpoint-up(xl)
                 width: 75%
-
-    &.skoda
-        h1, h2, h3, h4, h5, h6
-            font-family: $font-family-skoda-bold
-            font-weight: inherit
-            color: $black-skoda
-
-        h1
-            &:after
-                background-color: $green-700
-
-        .content
-            font-family: $font-family-skoda-regular
-            font-weight: inherit
-            color: $black-skoda
-
-            strong
-                font-family: $font-family-skoda-bold
-                font-weight: inherit
-
-            a
-                color: $green-700
-                transition: $transition-base
-
-                &:hover
-                    color: $green-500
 
 .contacts-category
     h2
@@ -398,90 +161,3 @@ footer
             .modal-footer
                 padding: 0
                 border-top: none
-
-#accordion-references
-    .accordion-item
-        border-left-width: $references-accordion-item-border-x
-        border-right-width: $references-accordion-item-border-x
-
-        .accordion-button
-            font-size: $references-accordion-button-font-size
-            font-weight: $references-accordion-button-font-weight
-
-            .number
-                font-size: $references-accordion-number-font-size
-                font-weight: $references-accordion-number-font-weight
-                color: $references-accordion-number-color
-                width: $references-accordion-number-size
-                height: $references-accordion-number-size
-                background-color: $references-accordion-number-bg
-
-            small
-                color: $gray-400
-
-        .accordion-body
-            padding-top: 0
-            padding-right: 0
-            padding-left: calc($references-accordion-number-size + 1rem)
-
-            p
-                margin-bottom: map-get($spacers, 4)
-
-                &:last-child
-                    margin-bottom: 0 !important
-
-                & + h2
-                    margin-top: map-get($spacers, 5)
-
-                & + h3
-                    margin-top: map-get($spacers, 5)
-
-                & + h4
-                    margin-top: map-get($spacers, 5)
-
-                & + h5
-                    margin-top: map-get($spacers, 5)
-
-            h2, h3, h4, h5
-                margin-bottom: map-get($spacers, 4)
-
-            strong
-                font-weight: $post-font-weight-bold
-
-            ul
-                padding-left: 0
-                margin-bottom: map-get($spacers, 4)
-
-                li
-                    list-style-type: none
-
-                    &:before
-                        content: "•"
-                        position: relative
-                        margin-right: 10px
-
-.contacts-category
-    .skoda &
-        h2
-            font-family: $font-family-skoda-bold
-            font-weight: inherit
-            color: $green-700 !important
-
-        .contact
-            font-family: $font-family-skoda-regular
-            font-weight: inherit
-
-            .name
-                font-family: $font-family-skoda-bold
-                font-weight: inherit
-
-            .mobile, .phone, .email
-                i
-                    color: $green-700 !important
-
-                a
-                    &:hover
-                        color: $green-700
-
-                        &:after
-                            background-color: $green-700

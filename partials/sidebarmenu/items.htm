@@ -1,0 +1,29 @@
+{% for item in items %}
+    {% if not item.viewBag.isHidden %}
+        <li class="nav-item d-flex flex-wrap align-items-center level-{{ level }} {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }} {{ item.viewBag.cssClass }} {{ item.items ? 'has-items' : '' }}">
+            {% if item.url %}
+                <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link d-flex w-100 {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
+                    {{ item.title }}
+                </a>
+
+                {% if item.viewBag.isExternal %}
+                    <span class="material-symbol__icon ms-2 external-link-icon">
+                        arrow_outward
+                    </span>
+                {% endif %}
+            {% else %}
+                <span>{{ item.title }}</span>
+            {% endif %}
+
+            {% if item.items and level < 2 %}
+                <ul class="nav w-100 flex-column flex-basis-100">
+                    {% partial __SELF__ ~ "::items" items=item.items level=2 %}
+                </ul>
+            {% endif %}
+        </li>
+
+        {% if not loop.last and level == 1 %}
+            <span class="nav-item-separator d-flex"></span>
+        {% endif %}
+    {% endif %}
+{% endfor %}

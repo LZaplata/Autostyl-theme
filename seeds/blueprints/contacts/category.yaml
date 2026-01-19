@@ -1,0 +1,70 @@
+uuid: lzaplata_contacts_categories
+handle: Contacts\Category
+type: structure
+name: Kategorie kontaktů
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+structure:
+    maxDepth: 2
+
+navigation:
+    label: Kategorie
+    icon: icon-folder-o
+    parent: Contacts\Contact
+    order: 20
+
+customMessages:
+    buttonCreate: Nová kategorie
+    titleCreateForm: Vytvořit kategorii
+    titleUpdateForm: Upravit kategorii
+    titleIndexList: Kategorie kontaktů
+
+fields:
+    title:
+        column:
+            label: Název
+
+    contacts:
+        label: Kontakty
+        type: nesteditems
+        customMessages:
+            buttonCreate: Přidat kontakt
+            titleCreateForm: Přidat kontakt
+            titleUpdateForm: Upravit kontakt
+        form:
+            fields:
+                contact:
+                    label: Kontakt
+                    type: entries
+                    source: Contacts\Contact
+                    displayMode: relation
+                    maxItems: 1
+                    column:
+                        label: Jméno
+
+                job:
+                    label: Pozice
+                    type: text
+                    span: left
+                    commentAbove: Upraví pozici vybraného kontaktu jen pro tuto kategorii
+
+                email:
+                    label: E-mail
+                    type: text
+                    span: right
+                    commentAbove: Upraví e-mail vybraného kontaktu jen pro tuto kategorii
+
+                mobile:
+                    label: Mobil
+                    type: text
+                    span: left
+                    commentAbove: Upraví mobil vybraného kontaktu jen pro tuto kategorii
+
+                phone:
+                    label: Telefon
+                    type: text
+                    span: right
+                    commentAbove: Upraví telefon vybraného kontaktu jen pro tuto kategorii

@@ -1,0 +1,54 @@
+uuid: lzaplata_links
+handle: Links\Link
+type: structure
+name: Odkazy
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Odkazy
+    icon: ph ph-link
+
+navigation:
+    label: Odkazy
+    icon: icon-list-ul
+    parent: Links\Link
+    order: 0
+
+customMessages:
+    buttonCreate: Nový odkaz
+    titleCreateForm: Vytvořit odkaz
+    titleUpdateForm: Upravit odkaz
+    titleIndexList: Odkazy
+
+fields:
+    title:
+        placeholder: Název odkazu
+
+    image:
+        label: Obrázek
+        type: fileupload
+        span: left
+        column: false
+        maxFiles: 1
+        fileTypes: png, jpg, webp, svg
+
+    link:
+        label: Odkaz
+        type: pagefinder
+        span: right
+
+    perex:
+        label: Perex
+        type: textarea
+        size: small
+        column: false
+
+columns:
+    title:
+        label: Název

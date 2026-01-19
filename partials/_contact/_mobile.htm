@@ -1,0 +1,11 @@
+{% if mobile %}
+    <p class="mb-0 d-flex align-items-center">
+        <span class="material-symbol__icon me-2 icon__font text-primary">
+            mobile_sound_2
+        </span>
+
+        <a href="tel:{{ mobile }}" class="link-info">
+            {{ mobile }}
+        </a>
+    </p>
+{% endif %}

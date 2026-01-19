@@ -1,0 +1,108 @@
+<div class="position-relative" id="map-wrapper">
+    <div id="map" style="height: 570px;"></div>
+</div>
+
+{% put scripts %}
+    <script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
+    <script type="text/javascript">Loader.load(null, {suggest: true});</script>
+
+    <script>
+        initMap();
+
+        function initMap(lng = 15.3386383, lat = 49.9437572, zoom = 8) {        // střed ČR - 15.3386383, 49.7437572
+            var center = SMap.Coords.fromWGS84(lng, lat);
+            var map = new SMap(JAK.gel("map"), center, zoom);
+
+            map.addDefaultLayer(SMap.DEF_BASE).enable();
+            map.addDefaultControls();
+
+            var layer = new SMap.Layer.Marker();
+            var clusterer = new SMap.Marker.Clusterer(map);
+
+            layer.setClusterer(clusterer);
+
+            var markers = [];
+
+            {% for museum in this.theme.museums %}
+                var x = "{{ museum.lng }}";
+                var y = "{{ museum.lat }}";
+                var coords = SMap.Coords.fromWGS84(x, y);
+                var marker = new SMap.Marker(coords, false, {
+                    "url": "{{ ['assets/images/icons/', loop.index, '-marker.svg']|join|theme }}",
+                });
+                var card = new SMap.Card();
+
+                var header = `
+                    <p class="h3 fw-semibold text-primary mb-0">
+                        {{ museum.title }}
+                    </p>
+                `;
+
+                {#var body = `#}
+                {#    <p class="ff-inter fs-13 fw-regular ls-n02 text-tertiary-55 mb-0 mt-2">#}
+                {#        {{ place.street }} <br>#}
+                {#        {{ place.zip }} {{ place.city }}#}
+                {#    </p>#}
+                {#`;#}
+
+{#                {% if place.link %}#}
+{#                    var body = body + `#}
+{#                        <p class="ff-inter fs-13 fw-regular ls-n02 mb-0 mt-2">#}
+{#                            <a href="https://{{ place.link }}" target="_blank" class="text-primary text-secondary-hover transition text-decoration-underline-w-hover">#}
+{#                                {{ place.link }}#}
+{#                            </a>#}
+{#                        </p>#}
+{#                    `;#}
+{#                {% endif %}#}
+
+{#                {% if place.phone %}#}
+{#                    var body = body + `#}
+{#                        <p class="ff-inter fs-13 ls-n02 mt-3 mb-0 d-flex align-items-center">#}
+{#                            <span class="mi-phone mi-16 bg-tertiary"></span>#}
+
+{#                            <a href="tel:{{ place.phone }}" target="_blank" class="text-decoration-underline-w-hover text-tertiary text-primary-hover transition ms-2">#}
+{#                                {{ place.phone }}#}
+{#                            </a>#}
+{#                        </p>#}
+{#                    `;#}
+{#                {% endif %}#}
+
+{#                {% if place.email %}#}
+{#                    var body = body + `#}
+{#                        <p class="ff-inter fs-13 ls-n02 mt-1 mb-0 d-flex align-items-center">#}
+{#                            <span class="mi-paper-plane mi-16 bg-tertiary"></span>#}
+
+{#                            <a href="tel:{{ place.email }}" target="_blank" class="text-decoration-underline-w-hover text-tertiary text-primary-hover transition ms-2">#}
+{#                                {{ place.email }}#}
+{#                            </a>#}
+{#                        </p>#}
+{#                    `;#}
+{#                {% endif %}#}
+
+//                var body = body + `<!---->
+//<!--                    </div>-->
+//                // `;
+
+                card.getHeader().innerHTML = header;
+                // card.getBody().innerHTML = body;
+
+                marker.decorate(SMap.Marker.Feature.Card, card);
+                markers.push(marker);
+            {% endfor %}
+
+            layer.addMarker(markers);
+            map.addLayer(layer).enable();
+
+            var mouseControl = null;
+            var controls = map.getControls();
+
+            for (var i = 0; i < controls.length; i++) {
+                if (controls[i] instanceof SMap.Control.Mouse) {
+                    mouseControl = controls[i];
+                }
+            }
+
+            mouseControl.configure(SMap.MOUSE_PAN | SMap.MOUSE_ZOOM);
+        }
+    </script>
+{% endput %}

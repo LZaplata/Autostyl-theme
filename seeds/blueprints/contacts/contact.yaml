@@ -1,0 +1,65 @@
+uuid: lzaplata_contacts
+handle: Contacts\Contact
+type: stream
+name: Kontakty
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+primaryNavigation:
+    label: Kontakty
+    icon: icon-users
+    order: 0
+
+navigation:
+    label: Kontakty
+    icon: icon-list-ul
+    parent: Contacts\Contact
+    order: 10
+
+customMessages:
+    buttonCreate: Nový kontakt
+    titleCreateForm: Vytvořit kontakt
+    titleUpdateForm: Upravit kontakt
+    titleIndexList: Kontakty
+
+fields:
+    title:
+        column:
+            label: Jméno
+
+    image:
+        label: Obrázek
+        type: fileupload
+        fileTypes: png, jpg, jpeg, webp
+        maxFiles: 1
+        span: left
+        column: false
+        scope: false
+
+    job:
+        label: Pozice
+        type: text
+        span: right
+
+    mobile:
+        label: Mobil
+        type: text
+        span: left
+        column: false
+        scope: false
+
+    phone:
+        label: Telefon
+        type: text
+        span: right
+        column: false
+        scope: false
+
+    email:
+        label: E-mail
+        type: text
+        span: left
+        column: false
+        scope: false

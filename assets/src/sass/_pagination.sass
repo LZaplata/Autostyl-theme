@@ -1,0 +1,17 @@
+.page
+    &-item
+        &.active
+            .page
+                &-link
+                    &:not(.prev), &:not(.next)
+                        text-decoration-color: $pagination-link-active-underline-color !important
+
+    &-link
+        transition: $transition-base
+
+        &:not(.prev):not(.next)
+            text-decoration: underline !important
+            text-decoration-color: $pagination-link-underline-color
+
+            &:hover
+                text-decoration-color: $pagination-link-hover-underline-color !important

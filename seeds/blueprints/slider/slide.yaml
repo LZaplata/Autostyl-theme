@@ -1,0 +1,120 @@
+uuid: lzaplata_slider_slides
+handle: Slider\Slide
+type: structure
+name: Položka slideru
+drafts: false
+showImport: false
+showExport: false
+multisite: true
+
+customMessages:
+    buttonCreate: Nová položka
+
+structure:
+    maxDepth: 1
+
+navigation:
+    label: Položky
+    icon: icon-list-ul
+    parent: Slider\Slider
+    order: 10
+
+fields:
+    sliders:
+        label: Slidery
+        type: entries
+        source: Slider\Slider
+        inverse: slides
+    type:
+        type: balloon-selector
+        span: left
+        options:
+            image: Obrázek
+            video: Video
+        default: image
+        column: false
+        scope: false
+    image_sm:
+        label: Malý obrázek
+        span: left
+        type: fileupload
+        maxFiles: 1
+        mode: image
+        fileTypes: png,jpg,jpeg,webp
+        column: false
+        scope: false
+        trigger:
+            action: show
+            condition: value[image]
+            field: type
+        validation: required_if:type,image
+    image_lg:
+        label: Velký obrázek
+        span: right
+        type: fileupload
+        maxFiles: 1
+        mode: image
+        fileTypes: png,jpg,jpeg,webp
+        column: false
+        scope: false
+        trigger:
+            action: show
+            condition: value[image]
+            field: type
+        validation: required_if:type,image
+    video:
+        label: Video
+        span: left
+        type: fileupload
+        maxFiles: 1
+        mode: file
+        fileTypes: mp4
+        column: false
+        scope: false
+        trigger:
+            action: show
+            condition: value[video]
+            field: type
+        validation: required_if:type,video
+    title_type:
+        label: Titulek
+        span: left
+        type: balloon-selector
+        options:
+            title: Název příspěvku
+            custom: Vlastní titulek
+        commentAbove: Pokud není vybraná ani jedna možnost, titulek se nezobrazí
+        allowEmpty: true
+        column: false
+        scope: false
+    title_custom:
+        label: Vlastní titulek
+        span: right
+        trigger:
+            action: show
+            condition: value[custom]
+            field: title_type
+        column: false
+        scope: false
+    link:
+        label: Odkaz
+        span: left
+        type: pagefinder
+        column: false
+        scope: false
+    link_type:
+        label: Typ odkazu
+        span: right
+        type: balloon-selector
+        options:
+            fluid: Přes celou položku
+            btn: Na tlačítku
+        validation: required_with:link
+        column: false
+        scope: false
+    btn:
+        label: Text tlačítka
+        span: left
+        validation: required_if:link_type,btn
+        column: false
+        scope: false

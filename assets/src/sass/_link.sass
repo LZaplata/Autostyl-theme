@@ -1,0 +1,48 @@
+.link
+    &__img
+        border-radius: $link-image-border-radius
+
+    &__overlay
+        background-color: $link-image-overlay-bg
+        background-image: $link-image-overlay-bg-image
+        opacity: 0
+        transition: $transition-base
+
+    &__icon-bg
+        width: $link-image-overlay-icon-bg-width
+        height: $link-image-overlay-icon-bg-height
+        background: $link-image-overlay-icon-bg
+        border-radius: $link-image-overlay-icon-bg-border-radius
+
+    &__icon
+        font-size: $link-image-overlay-icon-font-size !important
+        color: $link-image-overlay-icon-color
+
+    &__title
+        font-size: $link-title-font-size
+        font-weight: $link-title-font-weight
+        text-decoration: underline
+        text-decoration-color: $link-title-underline-color
+        transition: $transition-base
+        color: $link-title-color
+
+    &__perex
+        font-size: $link-perex-font-size
+
+        p
+            color: $link-perex-color !important
+
+    &__link
+        background-color: $link-link-bg
+        padding: $link-link-padding-x $link-link-padding-y
+        border: $link-link-border-width solid $link-link-border-color
+        border-radius: $link-link-border-radius
+
+        &:hover
+            .link
+                &__overlay
+                    opacity: 1
+
+                &__title
+                    text-decoration-color: $link-hover-title-underline-color
+                    color: $link-hover-title-color

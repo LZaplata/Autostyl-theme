@@ -1,13 +1,6 @@
-url = "/autostyl/novinky/:slug|^[a-z]+"
+url = "/autostyl/novinky/:category/:slug"
 layout = "default"
 title = "Novinka"
-seoOptionsMetaTitle = "{{ post.seo_options.meta_title ?: post.title }}"
-seoOptionsEnabledInSitemap = 1
-seoOptionsUseUpdatedAt = 1
-seoOptionsRobotIndex = "index"
-seoOptionsRobotFollow = "follow"
-seoOptionsOgCard = "summary_large_image"
-seoOptionsMetaDescription = "{{ post.seo_options.meta_description ?: post.excerpt }}"
 
 [blogPost event]
 slug = "{{ :slug }}"
@@ -16,4 +9,8 @@ categoryPage = "novinky"
 [global page_settings]
 handle = "Pages\Settings"
 ==
-{% component "event" %}
+<div class="container-fluid py-5" id="post">
+    <div class="container-lg">
+        {% component "event" %}
+    </div>
+</div>

@@ -1,19 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
-
-@font-face {
-    font-family: "Škoda Bold";
-    src: url("../fonts/SKODANextW02-Bold.woff2") format("woff2"), url("../fonts/SKODANextW02-Bold.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Škoda Regular";
-    src: url("../fonts/SKODANextW02-Regular.woff2") format("woff2"), url("../fonts/SKODANextW02-Regular.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Škoda Thin";
-    src: url("../fonts/SKODANextW02-Thin.woff2") format("woff2"), url("../fonts/SKODANextW02-Thin.woff") format("woff");
-}
+@use "sass:map";
+@use "font";
+@use "colors" as *;
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "~bootstrap/scss/functions";
@@ -23,140 +10,173 @@ $enable-negative-margins:               true;
 
 $min-contrast-ratio:                    2.5;
 
-$black:                                 #222D32;
-$black-skoda:                           #161718;
-$white:                                 #FFFFFF;
-
-$red:                                   #CC0033;
-$red-100:                               #F2C7C9;
-
-$green-500:                             #59BC87;
-$green-700:                             #419468;
-
-$gray-500:                              #5D6368;
-$gray-300:                              #CED7DE;
-$gray-200:                              #EDF3F5;
-
-$primary:                               $red;
+$primary:                               $green-500;
+$secondary:                             $blue-500;
 $dark:                                  $gray-500;
-$light:                                 $gray-200;
+$light:                                 $gray-300;
 $success:                               $green-700;
+$info:                                  $black;
 
 $body-color:                            $black;
 
-$font-family-sans-serif:                "Nunito Sans", sans-serif;
-$font-family-skoda-bold:                "Škoda Bold";
-$font-family-skoda-regular:             "Škoda Regular";
-$font-family-skoda-thin:                "Škoda Thin";
+$font-family-sans-serif:                "Open Sans", sans-serif;
 $font-family-base:                      $font-family-sans-serif;
+$font-family-icons:                     "Material Symbols Rounded";
 
 $font-weight-bold:                      700;
 $font-weight-semibold:                  600;
 $font-weight-medium:                    500;
 $font-weight-regular:                   400;
+$font-weight-light:                     300;
 
 $font-size-base:                        1rem;       // 16px
 $font-size-sm:                          .75rem;     // 12px
 
 $font-sizes: (
+    1:                                  2rem,           // 32px
     2:                                  1.25rem,        // 20px
     4:                                  .9375rem,       // 15px
     6:                                  $font-size-sm,  // 12px
 );
 
+$spacer:                                1rem;
+$spacers: (
+    0:                                  0,
+    1:                                  $spacer * .25,
+    2:                                  $spacer * .5,
+    3:                                  $spacer,
+    4:                                  $spacer * 1.5,
+    5:                                  $spacer * 3,
+    10:                                 $spacer * 6,
+);
+
 $line-height-base:                      1.5;
 
 $headings-font-family:                  $font-family-base;
-$headings-font-weight:                  $font-weight-bold;
+$headings-font-weight:                  $font-weight-medium;
 $headings-color:                        $black;
 
+$header-bg:                             $primary;
 $header-border-color:                   $gray-300;
 $header-border-width:                   1px;
 
-$h1-font-size:                          2.5rem;         // 40px
-$h2-font-size:                          2rem;           // 32px
-$h3-font-size:                          1.0625rem;      // 17px
+$header-logo-sm-height:                 55px;           // auto for turn off - this value is relevant from breakpoint below (not included) down
+$header-logo-sm-height-breakpoint:      "xxl";          // sm, md, lg, xl, xxl
+
+$header-icon-link-color:              $green-50;
+$header-icon-link-hover-color:        $blue-600;
+$header-icon-link-font-size:          map.get($font-sizes, 2);
+
+$header-sitepicker-nav-link-color:      $green-50;
+$header-sitepicker-nav-link-font-size:  map.get($font-sizes, 4);
+
+$header-sitepicker-toggler-font-size:   $font-size-sm;
+
+$header-sitepicker-nav-level-1-bg:                  $white;
+$header-sitepicker-nav-level-1-max-height:          400px;
+$header-sitepicker-nav-level-1-padding-x:           0;
+$header-sitepicker-nav-level-1-padding-y:           10px;
+$header-sitepicker-nav-level-1-link-color:          $black;
+$header-sitepicker-nav-level-1-link-hover-color:    $gray-500;
+$header-sitepicker-nav-level-1-link-font-size:      $header-sitepicker-nav-link-font-size;
+$header-sitepicker-nav-level-1-link-padding-x:      15px;
+$header-sitepicker-nav-level-1-link-padding-y:      5px;
+
+$h1-font-size:                          2.5rem;             // 40px
+$h2-font-size:                          2rem;               // 32px
+$h3-font-size:                          1.125rem;           // 18px
+$h4-font-size:                          $font-size-base;    // 16px
 
 $link-color:                            $primary;
 $link-hover-color:                      $black;
 $link-decoration:                       none;
 
-$nav-link-color:                        $black;
-$nav-link-hover-color:                  $black;
+$nav-link-color:                        $green-50;
+$nav-link-hover-color:                  $blue-600;
 $nav-link-after-height:                 1px;        // 0 for turn off
 $nav-link-padding-x:                    0;
 $nav-link-padding-y:                    0;
-$nav-link-font-weight:                  $font-weight-semibold;
-$nav-link-font-size:                    $font-size-base;
-$nav-link-submenu-toggler-color:        $black;
-$nav-link-submenu-toggler-font-size:    $font-size-sm;
+$nav-link-font-weight:                  $font-weight-regular;
+$nav-link-font-size:                    map.get($font-sizes, 2);
+$nav-link-vertical-fluid:               false;
+$nav-link-submenu-toggler-color:        $nav-link-color;
+$nav-link-submenu-toggler-font-size:    $font-size-base;
+$nav-link-hover-submenu-toggler-color:  $nav-link-hover-color;
 
-$nav-pills-link-active-color:           $primary;
+$nav-pills-link-active-color:           $blue-500;
 $nav-pills-link-active-bg:              transparent;
 
 $nav-level-1-bg:                        $white;
-$nav-level-1-box-shadow:                0px 20px 40px rgba(34, 45, 50, 0.1);        // false for turn off
+$nav-level-1-box-shadow:                0px 20px 20px rgba(34, 45, 50, 0.1);        // false for turn off
 $nav-level-1-max-height:                570px;
 $nav-level-1-min-width:                 false;      // false for fluid
 $nav-level-1-padding-x:                 0;
 $nav-level-1-padding-y:                 40px;
-$nav-level-1-link-font-size:            $nav-link-font-size;
-$nav-level-1-link-font-weight:          $font-weight-bold;
-$nav-level-1-link-color:                $nav-link-color;
-$nav-level-1-link-hover-color:          $black;
+$nav-level-1-border:                    $header-border-width solid $header-border-color;          // 0 for turn off
+$nav-level-1-link-font-size:            map.get($font-sizes, 4);
+$nav-level-1-link-font-weight:          $font-weight-regular;
+$nav-level-1-link-color:                $gray-500;
+$nav-level-1-link-hover-color:          $primary;
 $nav-level-1-link-hover-bg:             transparent;
-$nav-level-1-link-active-color:         $black;
+$nav-level-1-link-hover-underline-color:transparent;
+$nav-level-1-link-active-color:         $primary;
+$nav-level-1-link-active-underline-color:   transparent;
 $nav-level-1-link-active-bg:            transparent;
 $nav-level-1-link-padding-x:            0;
-$nav-level-1-link-padding-y:            0;
+$nav-level-1-link-padding-y:            3px;
+$nav-level-1-link-underline-height:     1px;        // 0 for turn off
+$nav-level-1-link-underline-color:      $nav-level-1-link-color;
+$nav-level-1-link-underline-offset:     1px;
+$nav-level-1-link-before-content:       "▪";        // none for turn off | you can use phosporicons
+$nav-level-1-link-before-color:         $primary;
+$nav-level-1-link-before-margin-right:  8px;
+$nav-level-1-link-before-font-size:     $nav-level-1-link-font-size;
 
 $nav-level-2-padding-x:                 0;
 $nav-level-2-padding-y:                 0;
-$nav-level-2-link-font-size:            0.9375rem;      // 15px
-$nav-level-2-link-font-weight:          $font-weight-medium;
-$nav-level-2-link-color:                $black;
+$nav-level-2-link-font-size:            map.get($font-sizes, 4);
+$nav-level-2-link-font-weight:          $font-weight-regular;
+$nav-level-2-link-color:                $gray-500;
 $nav-level-2-link-hover-color:          $primary;
 $nav-level-2-link-hover-bg:             transparent;
 $nav-level-2-link-active-color:         $primary;
 $nav-level-2-link-active-bg:            transparent;
 $nav-level-2-link-padding-x:            0;
 $nav-level-2-link-padding-y:            3px;
-$nav-level-2-link-after-height:         1px;        // 0 for turn off
+$nav-level-2-link-after-height:         0;        // 0 for turn off
 
-$header-socials-icon-color:             $black;
-$header-socials-icon-hover-color:       $primary;
-
-$border-radius-lg:                      15px;
 $border-radius:                         10px;
-$border-radius-sm:                      8px;
+$border-radius-lg:                      $border-radius * 1.5;
+$border-radius-sm:                      $border-radius * 0.8;
 
 $card-border-width:                     0;
 $card-border-radius:                    $border-radius;
 
 $offcanvas-toggler-font-size:           $font-size-sm;
-$offcanvas-toggler-color:               $black;
+$offcanvas-toggler-color:               $nav-link-color;
 $offcanvas-toggler-icon-font-size:      $h2-font-size;
-$offcanvas-toggler-close-color:         $white;
+$offcanvas-toggler-close-color:         $offcanvas-toggler-color;
 $offcanvas-bg-color:                    $primary;
-$offcanvas-socials-icon-color:          $white;
 
-$offcanvas-nav-link-color:              $white;
+$offcanvas-nav-link-color:              $green-50;
 $offcanvas-nav-link-font-size:          $h3-font-size;
-$offcanvas-nav-link-font-weight:        $font-weight-bold;
+$offcanvas-nav-link-font-weight:        $font-weight-medium;
 
 $offcanvas-nav-level-1-link-color:          $offcanvas-nav-link-color;
-$offcanvas-nav-level-1-link-font-size:      map-get($font-sizes, 4);
+$offcanvas-nav-level-1-link-font-size:      map.get($font-sizes, 4);
 $offcanvas-nav-level-1-link-font-weight:    $font-weight-medium;
 $offcanvas-nav-level-1-icon-font-weight:    $font-size-sm;
 
 $slider-navigation-color:               $black;
 $slider-navigation-bg:                  $white;
-$slider-navigation-font-size:           map-get($font-sizes, 2);
+$slider-navigation-font-size:           map.get($font-sizes, 1);
 $slider-navigation-width:               40px;
 $slider-navigation-height:              $slider-navigation-width;
 $slider-navigation-sides-offset:        40px;
-$slider-navigation-hover-color:         $slider-navigation-color;
-$slider-navigation-hover-bg:            $gray-200;
+$slider-navigation-hover-color:         $white;
+$slider-navigation-hover-bg:            $primary;
+$slider-navigation-border-width:        1px;    // 0 for turn off
+$slider-navigation-border-color:        $primary;
 
 $slider-pagination-bg:                  $white;
 $slider-pagination-inactive-bg:         $white;
@@ -165,10 +185,15 @@ $slider-pagination-inactive-width:      20px;
 $slider-pagination-height:              5px;
 $slider-pagination-border-radius:       10px;
 
-$btn-border-radius:                     $border-radius-sm;
+$slider-title-font-family:              $headings-font-family;
+$slider-title-font-size:                map.get($font-sizes, 1);
+$slider-title-font-weight:              $font-weight-bold;
+$slider-title-color:                    $white;
+
+$btn-border-radius:                     999px;
 $btn-border-width:                      1.5px;
 $btn-font-weight:                       $font-weight-semibold;
-$btn-font-size:                         map-get($font-sizes, 4);
+$btn-font-size:                         $font-size-base;
 $btn-padding-x:                         24px;
 $btn-padding-y:                         12px;
 $btn-padding-x-sm:                      20px;
@@ -191,70 +216,312 @@ $badge-padding-x:                       10px;
 $badge-padding-y:                       6px;
 $badge-border-radius:                   30px;
 
-$footer-font-size:                      $font-size-sm;
-$footer-color:                          $gray-300;
-$footer-bg:                             $black;
+$footer-font-size:                      map.get($font-sizes, 4);
+$footer-color:                          $blue-200;
+$footer-bg:                             $blue-900;
 
-$footer-logo-bg:                        $gray-300;
-$footer-logo-hover-bg:                  $red;
+$footer-contact-font-size:                  $footer-font-size;
+$footer-contact-link-color:                 $footer-color;
+$footer-contact-link-underline-height:      1px;        // 0 for turn off
+$footer-contact-link-underline-color:       $footer-contact-link-color;
+$footer-contact-link-hover-color:           $blue-50;
+$footer-contact-link-hover-underline-color: $footer-contact-link-hover-color;
+$footer-contact-phone-font-size:            $font-size-base;
+$footer-contact-email-font-size:            $footer-contact-phone-font-size;
 
-$footer-contact-font-size:              map-get($font-sizes, 4);
-$footer-contact-link-color:             $red;
-$footer-contact-link-hover-color:       $red;
-$footer-contact-phone-font-size:        $h3-font-size;
-$footer-contact-email-font-size:        $footer-contact-phone-font-size;
-
-$footer-toggler-color:                  $white;
+$footer-toggle-border-width:            1px;
+$footer-toggle-border-color:            $blue-800;
+$footer-toggler-color:                  $footer-color;
 
 $footer-bottom-bg:                      $footer-bg;
 $footer-bottom-font-size:               $footer-font-size;
 $footer-bottom-color:                   $footer-color;
+$footer-bottom-border-width:            $footer-toggle-border-width;
+$footer-bottom-border-color:            $footer-toggle-border-color;
 
-$footer-socials-icon-color:             $gray-300;
-$footer-socials-icon-hover-color:       $primary;
+$footer-signature-color:                $blue-50;
+$footer-signature-hover-color:          $blue-200;
 
-$footer-signature-color:                $gray-300;
-$footer-signature-hover-color:          $primary;
-
-$footer-nav-link-color:                 $white;
+$footer-nav-link-color:                 $gray-500;
 $footer-nav-link-font-weight:           $font-weight-regular;
-$footer-nav-link-font-size:             map-get($font-sizes, 4);
+$footer-nav-link-font-size:             $footer-font-size;
+$footer-nav-link-underline-height:      1px;        // 0 for turn off
+$footer-nav-link-underline-color:       $footer-nav-link-color;
 $footer-nav-link-hover-color:           $primary;
+$footer-nav-link-hover-underline-color: $footer-nav-link-hover-color;
+$footer-nav-link-before-content:        $nav-level-1-link-before-content;        // none for turn off
+$footer-nav-link-before-color:          $nav-level-1-link-before-color;
+$footer-nav-link-before-top:            2px;
+$footer-nav-link-before-margin-right:   $nav-level-1-link-before-margin-right;
+$footer-nav-link-before-font-size:      $nav-level-1-link-before-font-size;
 
-$post-font-weight-bold:                 $font-weight-bold;
+$footer-heading-color:                  $blue-50;
+$footer-heading-font-weight:            $font-weight-medium;
+$footer-heading-font-size:              $h3-font-size;
+$footer-heading-after:                  true;      // true | false
+$footer-heading-after-color:            $primary;
 
-$pagination-border-color:               transparent;
-$pagination-color:                      $body-color;
-$pagination-hover-color:                $primary;
-$pagination-hover-bg:                   transparent;
-$pagination-hover-border-color:         transparent;
-$pagination-active-color:               $primary;
-$pagination-active-bg:                  transparent;
-$pagination-active-border-color:        transparent;
-$pagination-focus-box-shadow:           none;
-$pagination-focus-bg:                   transparent;
+$footer-cookies-link-color:             $footer-contact-link-color;
+$footer-cookies-link-hover-color:       $footer-contact-link-hover-color;
+$footer-cookies-font-size:              $footer-contact-font-size;
 
-$accordion-button-color:                $body-color;
-$accordion-button-padding-x:            0;
-$accordion-button-padding-y:            1rem;
-$accordion-button-active-bg:            transparent;
-$accordion-button-active-color:         $body-color;
-$accordion-button-focus-border-color:   transparent;
-$accordion-button-focus-box-shadow:     none;
-//$accordion-button-icon:                 url("../images/icons/plus.svg");
-//$accordion-button-active-icon:          url("../images/icons/minus.svg");
-$accordion-border-width:                1px;
-$accordion-border-color:                $gray-200;
-$accordion-border-radius:               0;
+$post-image-border-radius:                  $border-radius;
+$post-image-overlay-bg:                     transparent;
+$post-image-overlay-bg-image:               linear-gradient(to bottom, rgba($black, 0), rgba($black, .2));
+$post-image-overlay-icon-bg:                rgba($black, .35);
+$post-image-overlay-icon-bg-width:          42px;
+$post-image-overlay-icon-bg-height:         $post-image-overlay-icon-bg-width;
+$post-image-overlay-icon-bg-border-radius:  6px;
+$post-image-overlay-icon-font-size:         map.get($font-sizes, 2);
+$post-image-overlay-icon-color:             $white;
+$post-title-font-size:                      $h3-font-size;
+$post-title-font-weight:                    $font-weight-medium;
+$post-title-color:                          $primary;
+$post-title-underline-color:                transparent;
+$post-hover-title-color:                    $primary;
+$post-hover-title-underline-color:          $primary;
+$post-font-weight-bold:                     $font-weight-bold;
+$post-perex-font-size:                      $font-size-base;
+$post-perex-color:                          $body-color;
+$post-details-font-size:                    $font-size-sm;
+$post-details-color:                        $light;
+$post-link-bg:                              transparent;
+$post-link-padding-x:                       0;
+$post-link-padding-y:                       0;
+$post-link-border-color:                    transparent;
+$post-link-border-width:                    0;
+$post-link-border-radius:                   $border-radius;
 
-$references-accordion-item-border-x:           0;
-$references-accordion-button-font-size:        map-get($font-sizes, 2);
-$references-accordion-button-font-weight:      $font-weight-medium;
-$references-accordion-number-font-size:        map-get($font-sizes, 4);
-$references-accordion-number-font-weight:      $font-weight-medium;
-$references-accordion-number-color:            $body-color;
-$references-accordion-number-size:             40px;
-$references-accordion-number-bg:               $gray-200;
+$map-card-header-bg:                    $white;
+$map-card-footer-bg:                    $white;
+
+$sidebar-nav-bg:                        $gray-300;      // default $gray-300
+$sidebar-nav-padding-x:                 0;           // default 20px
+$sidebar-nav-padding-y:                 5px;            // default 5px
+$sidebar-nav-border-width:              0;
+$sidebar-nav-border-color:              transparent;
+$sidebar-nav-border-radius:             $border-radius;
+
+$sidebar-nav-item-before-content:       "chevron_right";    // none for turn off
+$sidebar-nav-item-before-font-family:   $font-family-icons;
+$sidebar-nav-item-before-font-size:     $nav-level-1-link-before-font-size;
+$sidebar-nav-item-before-color:         $primary;
+$sidebar-nav-item-after-content:        none;       // none for turn off
+$sidebar-nav-item-after-font-family:    $sidebar-nav-item-before-font-family;
+$sidebar-nav-item-after-font-size:      $sidebar-nav-item-before-font-size;
+$sidebar-nav-item-after-color:          $sidebar-nav-item-before-color;
+$sidebar-nav-item-separator-height:     1px;            // default 1px, 0 for turn off
+$sidebar-nav-item-separator-bg:         $gray-200;
+$sidebar-nav-item-separator-fluid:      false;
+
+$sidebar-nav-item-active-before-content:    none;       // none for turn off
+$sidebar-nav-item-active-after-content:     "chevron_right";    // none for turn off
+
+$sidebar-nav-link-color:                $gray-500;
+$sidebar-nav-link-font-size:            $font-size-base;
+$sidebar-nav-link-font-weight:          $font-weight-regular;
+$sidebar-nav-link-bg:                   transparent;
+$sidebar-nav-link-underline-color:      $sidebar-nav-link-color;
+$sidebar-nav-link-padding-x:            20px;           // default 0
+$sidebar-nav-link-padding-y:            10px;
+
+$sidebar-nav-link-hover-color:              $primary;
+$sidebar-nav-link-hover-underline-color:    $primary;
+$sidebar-nav-link-hover-bg:                 transparent;
+
+$sidebar-nav-link-active-color:             $primary;
+$sidebar-nav-link-active-font-weight:       $font-weight-medium;
+$sidebar-nav-link-active-underline-color:   transparent;
+$sidebar-nav-link-active-bg:                transparent;
+
+$sidebar-nav-level-1-bg:                            transparen;     // default $gray-500
+$sidebar-nav-level-1-padding:                       0 0 $sidebar-nav-link-padding-y 10px;
+
+$sidebar-nav-level-1-item-before-content:           $sidebar-nav-item-before-content;    // none for turn off
+$sidebar-nav-level-1-item-before-font-family:       $font-family-icons;
+$sidebar-nav-level-1-item-before-font-size:         $sidebar-nav-item-before-font-size;
+$sidebar-nav-level-1-item-before-color:             $primary;
+$sidebar-nav-level-1-item-after-content:            none;       // none for turn off
+$sidebar-nav-level-1-item-after-font-family:        $font-family-icons;
+$sidebar-nav-level-1-item-after-font-size:          $sidebar-nav-level-1-item-before-font-size;
+$sidebar-nav-level-1-item-after-color:              $primary;
+
+$sidebar-nav-level-1-item-active-before-content:    none;       // none for turn off
+$sidebar-nav-level-1-item-active-after-content:     "chevron_right";    // none for turn off
+
+$sidebar-nav-level-1-link-color:                    $sidebar-nav-link-color;
+$sidebar-nav-level-1-link-font-size:                $sidebar-nav-link-font-size;
+$sidebar-nav-level-1-link-font-weight:              $font-weight-regular;
+$sidebar-nav-level-1-link-bg:                       transparent;
+$sidebar-nav-level-1-link-underline-color:          $sidebar-nav-link-color;
+$sidebar-nav-level-1-link-padding-x:                $sidebar-nav-link-padding-x;
+$sidebar-nav-level-1-link-padding-y:                2px;
+
+$sidebar-nav-level-1-link-hover-color:              $primary;
+$sidebar-nav-level-1-link-hover-underline-color:    $primary;
+$sidebar-nav-level-1-link-hover-bg:                 transparent;
+
+$sidebar-nav-level-1-link-active-color:             $primary;
+$sidebar-nav-level-1-link-active-font-weight:       $font-weight-medium;
+$sidebar-nav-level-1-link-active-underline-color:   transparent;
+$sidebar-nav-level-1-link-active-bg:                transparent;
+
+$table-border-color:                    $gray-500;
+$table-cell-padding-x:                  24px;
+$table-cell-padding-y:                  16px;
+$table-th-font-weight:                  $font-weight-medium;
+
+$text-gap-base:                         1.5rem;
+$text-gap-lg:                           2.5rem;
+$text-color:                            $black;
+$text-font-size:                        $font-size-base;
+$text-strong-font-weight:               $font-weight-bold;
+$text-link-color:                       $primary;
+$text-link-font-weight:                 $text-strong-font-weight;
+$text-link-underline-color:             $primary;
+$text-link-hover-color:                 $gray-500;
+$text-link-hover-underline-color:       $gray-500;
+$text-table-head-bg:                    $gray-300;
+$text-table-head-font-size:             $h3-font-size;
+$text-table-body-font-size:             $font-size-base;
+
+$breadcrumb-bg:                         transparent;
+$breadcrumb-padding:                    map.get($spacers, 4) 0 0;           // padding of #breadcrumb (.breadcrumb wrapper)
+$breadcrumb-margin-bottom:              0;                                  // overwrite default bootstrap .breadcrumb margin
+$breadcrumb-divider:                    "/";
+$breadcrumb-divider-color:              $body-color;
+$breadcrumb-font-size:                  $font-size-sm;
+$breadcrumb-font-weight:                $font-weight-medium;
+$breadcrumb-active-color:               $gray-500;
+$breadcrumb-link-color:                 $body-color;
+$breadcrumb-link-underline-color:       $breadcrumb-link-color;
+$breadcrumb-link-hover-color:           $primary;
+$breadcrumb-link-hover-underline-color: $breadcrumb-link-hover-color;
+$breadcrumb-home-link-font-size:        $h2-font-size;
+$breadcrumb-home-link-color:            $breadcrumb-link-color;
+$breadcrumb-home-link-hover-color:      $breadcrumb-link-hover-color;
+
+$file-link-color:                       $body-color;
+$file-link-underline-color:             $body-color;
+$file-link-hover-color:                 $primary;
+$file-link-hover-underline-color:       $file-link-hover-color;
+
+$flash-message-bg:                      $primary;
+$flash-message-icon-font-size:          map.get($font-sizes, 1);
+$flash-message-icon-color:              $white;
+$flash-message-title-color:             $white;
+$flash-message-title-font-weight:       $headings-font-weight;
+$flash-message-text-color:              $flash-message-title-color;
+
+$image-text-image-border-radius:        $border-radius-lg;
+
+$icon-font-font-size:                   $font-size-base;
+$icon-font-font-size-lg:                map.get($font-sizes, 2);
+$icon-link-color:                       $body-color;
+$icon-link-hover-color:                 $primary;
+$icon-light-link-color:                 $gray-500;
+$icon-light-link-hover-color:           $icon-link-hover-color;
+$icon-box-link-bg:                      rgba($white, .1);
+$icon-box-link-width:                   36px;
+$icon-box-link-height:                  $icon-box-link-width;
+$icon-box-link-hover-bg:                rgba($white, .15);
+$icon-box-link-border-radius:           if($border-radius > 0, 50%, $border-radius);
+$icon-box-link-color:                   $white;
+$icon-box-link-hover-color:             $icon-box-link-color;
+$icon-mask-image-width:                 16px;
+$icon-mask-image-height:                $icon-mask-image-width;
+$icon-mask-image-bg:                    $white;
+
+$input-padding-x:                       map.get($spacers, 3);
+$input-padding-y:                       map.get($spacers, 3);
+
+$gallery-image-border-radius:                   $post-image-border-radius;
+$gallery-image-overlay-bg:                      $post-image-overlay-bg;
+$gallery-image-overlay-bg-image:                $post-image-overlay-bg-image;
+$gallery-image-overlay-icon-color:              $post-image-overlay-icon-color;
+$gallery-image-overlay-icon-font-size:          $post-image-overlay-icon-font-size;
+$gallery-image-overlay-icon-bg:                 $post-image-overlay-icon-bg;
+$gallery-image-overlay-icon-bg-width:           $post-image-overlay-icon-bg-width;
+$gallery-image-overlay-icon-bg-height:          $post-image-overlay-icon-bg-height;
+$gallery-image-overlay-icon-bg-border-radius:   $post-image-overlay-icon-bg-border-radius;
+
+$pagination-color:                              $nav-level-1-link-color;
+$pagination-border-color:                       transparent;
+$pagination-hover-color:                        $nav-level-1-link-hover-color;
+$pagination-hover-bg:                           transparent;
+$pagination-hover-border-color:                 transparent;
+$pagination-active-color:                       $nav-level-1-link-active-color;
+$pagination-active-bg:                          transparent;
+$pagination-active-border-color:                transparent;
+$pagination-focus-bg:                           transparent;
+$pagination-focus-box-shadow:                   none;
+$pagination-link-underline-color:               $nav-level-1-link-underline-color;
+$pagination-link-hover-underline-color:         $nav-level-1-link-hover-underline-color;
+$pagination-link-active-underline-color:        $nav-level-1-link-active-underline-color;
+
+$timeline-heading-justify-content:              center;
+$timeline-title-font-size:                      $h2-font-size;
+$timeline-title-font-weight:                    $headings-font-weight;
+$timeline-title-font-family:                    $headings-font-family;
+$timeline-title-bg:                             $primary;
+$timeline-title-color:                          $white;
+$timeline-title-border-radius:                  $border-radius-lg;
+$timeline-title-border-width:                   0;
+$timeline-title-border-color:                   $timeline-title-bg;
+$timeline-title-padding-x:                      map.get($spacers, 3);
+$timeline-title-padding-y:                      map.get($spacers, 3);
+$timeline-title-width:                          auto;
+$timeline-title-height:                         auto;
+$timeline-title-sm-font-size:                   map.get($font-sizes, 2);
+$timeline-title-sm-font-weight:                 $headings-font-weight;
+$timeline-title-sm-font-family:                 $headings-font-family;
+$timeline-title-sm-color:                       $primary;
+$timeline-events-before-width:                  4px;
+$timeline-events-before-bg:                     $primary;
+$timeline-event-before-bg:                      $primary;
+$timeline-event-before-width:                   30px;
+$timeline-event-before-height:                  30px;
+$timeline-event-before-border-radius:           50%;
+$timeline-event-before-border-width:            0;
+$timeline-event-before-border-border-color:     $timeline-event-before-bg;
+$timeline-card-bg:                              $gray-100;
+$timeline-card-width:                           40%;
+$timeline-card-border-radius:                   $border-radius;
+$timeline-card-border-width:                    0;
+$timeline-card-border-color:                    $timeline-card-bg;
+
+$link-image-border-radius:                  $post-image-border-radius;
+$link-image-overlay-bg:                     $post-image-overlay-bg;
+$link-image-overlay-bg-image:               $post-image-overlay-bg-image;
+$link-image-overlay-icon-bg:                $post-image-overlay-icon-bg;
+$link-image-overlay-icon-bg-width:          $post-image-overlay-icon-bg-width;
+$link-image-overlay-icon-bg-height:         $post-image-overlay-icon-bg-height;
+$link-image-overlay-icon-bg-border-radius:  $post-image-overlay-icon-bg-border-radius;
+$link-image-overlay-icon-font-size:         $post-image-overlay-icon-font-size;
+$link-image-overlay-icon-color:             $post-image-overlay-icon-color;
+$link-title-font-size:                      $post-title-font-size;
+$link-title-font-weight:                    $post-title-font-weight;
+$link-title-color:                          $post-title-color;
+$link-title-underline-color:                $post-title-underline-color;
+$link-hover-title-color:                    $post-hover-title-color;
+$link-hover-title-underline-color:          $post-hover-title-underline-color;
+$link-font-weight-bold:                     $post-font-weight-bold;
+$link-perex-font-size:                      $post-perex-font-size;
+$link-perex-color:                          $post-perex-color;
+$link-link-bg:                              $post-link-bg;
+$link-link-padding-x:                       $post-link-padding-x;
+$link-link-padding-y:                       $post-link-padding-y;
+$link-link-border-color:                    $post-link-border-color;
+$link-link-border-width:                    $post-link-border-width;
+$link-link-border-radius:                   $post-link-border-radius;
+
+$material-symbol-font-family:               $font-family-icons;
+$material-symbol-font-weight:               $font-weight-light;
+$material-symbol-font-size:                 1.1em;
+$material-symbol-box-gap:                   map.get($spacers, 2);
+$material-symbol-bg-size:                   1.7em;
+$material-symbol-bg-border-radius:          $btn-border-radius;
+$material-symbol-bg-box-shadow:             0 0 0 3px;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/variables";
@@ -285,8 +552,26 @@ $references-accordion-number-bg:               $gray-200;
 @import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/badge";
 @import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/breadcrumb";
 @import "~bootstrap/scss/pagination";
-@import "~bootstrap/scss/accordion";
+@import "~bootstrap/scss/alert";
+
+$utilities: map-merge(
+    $utilities,
+    (
+        "flex-basis": (
+            property: flex-basis,
+            class: flex-basis,
+            responsive: true,
+            values: (
+                50: 50%,
+                100: 100%,
+                auto: auto,
+            ),
+        )
+    )
+);
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "~bootstrap/scss/utilities/api";
@@ -315,36 +600,32 @@ $references-accordion-number-bg:               $gray-200;
 
 .mi {
     &-facebook {
-        @include mask-image("icons/facebook", 12, 13);
+        @include mask-image("icons/facebook");
     }
 
     &-instagram {
-        @include mask-image("icons/instagram", 12, 13);
+        @include mask-image("icons/instagram");
     }
 
     &-youtube {
-        @include mask-image("icons/youtube", 12, 13);
+        @include mask-image("icons/youtube");
+    }
+
+    &-linkedin {
+        @include mask-image("icons/linkedin");
     }
 
     &-logo {
-        @include mask-image("logo", 98, 29);
+        @include mask-image("logo", 111, 40);
     }
 
     &-signature {
         @include mask-image("signature", 85, 25);
     }
 
-    &-skoda {
-        @include mask-image("logo-skoda", 74, 10);
-    }
-
-    &-toyota {
-        @include mask-image("logo-toyota-sm", 73, 20);
-    }
-
-    &-12 {
-        width: 12px;
-        height: 12px;
+    &-16 {
+        width: 16px;
+        height: 16px;
     }
 
     &.link-primary {
@@ -359,17 +640,146 @@ $references-accordion-number-bg:               $gray-200;
 
 .btn {
     &.btn-primary {
-        --bs-btn-hover-color: #{$black};
-        --bs-btn-hover-bg: transparent;
-        --bs-btn-hover-border-color: #{$red-100};
+        --bs-btn-color: #{$white};
+        --bs-btn-bg: #{$green-500};
+        --bs-btn-border-color: transparent;
+        --bs-btn-hover-color: var(--bs-btn-color);
+        --bs-btn-hover-bg: #{$green-600};
+        --bs-btn-hover-border-color: transparent;
+
+        .material-symbol {
+            &__bg {
+                background: $white;
+
+                .material-symbol__icon {
+                    color: $green-500;
+                }
+            }
+        }
+
+        &:hover {
+            box-shadow: $material-symbol-bg-box-shadow $green-200;
+
+            .material-symbol {
+                &__bg {
+                    .material-symbol__icon {
+                        color: $green-600;
+                    }
+                }
+            }
+        }
     }
 
-    &.btn-outline-light {
-        --bs-btn-color: #{$black};
-        --bs-btn-bg: transparent;
-        --bs-btn-border-color: #{$gray-300};
-        --bs-btn-hover-color: #{$black};
-        --bs-btn-hover-bg: #{$gray-300};
-        --bs-btn-hover-border-color: #{$gray-300};
+    &.btn-secondary {
+        --bs-btn-color: #{$white};
+        --bs-btn-bg: #{$blue-500};
+        --bs-btn-border-color: transparent;
+        --bs-btn-hover-color: var(--bs-btn-color);
+        --bs-btn-hover-bg: #{$blue-600};
+        --bs-btn-hover-border-color: transparent;
+
+        .material-symbol {
+            &__bg {
+                background: $white;
+
+                .material-symbol__icon {
+                    color: $blue-500;
+                }
+            }
+        }
+
+        &:hover {
+            box-shadow: $material-symbol-bg-box-shadow $blue-200;
+
+            .material-symbol {
+                &__bg {
+                    .material-symbol__icon {
+                        color: $blue-600;
+                    }
+                }
+            }
+        }
     }
+}
+
+.link {
+    &-primary {
+        transition: $transition-base;
+
+        .material-symbol {
+            &__bg {
+                background: $green-500;
+
+                .material-symbol__icon {
+                    color: $white;
+                }
+            }
+        }
+
+        &:hover {
+            color: $green-600 !important;
+
+            .material-symbol {
+                &__bg {
+                    background: $green-600;
+                    box-shadow: $material-symbol-bg-box-shadow $green-200;
+                }
+            }
+        }
+    }
+
+    &-secondary {
+        transition: $transition-base;
+
+        .material-symbol {
+            &__bg {
+                background: $blue-500;
+
+                .material-symbol__icon {
+                    color: $white;
+                }
+            }
+        }
+
+        &:hover {
+            color: $blue-600 !important;
+
+            .material-symbol {
+                &__bg {
+                    background: $blue-600;
+                    box-shadow: $material-symbol-bg-box-shadow $blue-200;
+                }
+            }
+        }
+    }
+
+    &-light {
+        transition: $transition-base;
+        color: $blue-50 !important;
+
+        .material-symbol {
+            &__bg {
+                background: $primary;
+
+                .material-symbol__icon {
+                    color: $white;
+                }
+            }
+        }
+
+        &:hover {
+            color: $blue-100 !important;
+
+            .material-symbol {
+                &__bg {
+                    background: $green-600;
+                    box-shadow: $material-symbol-bg-box-shadow $green-200;
+                }
+            }
+        }
+    }
+}
+
+a {
+    transition: $transition-base;
 }

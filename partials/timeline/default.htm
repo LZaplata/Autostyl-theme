@@ -1,0 +1,42 @@
+{% set timeline = __SELF__.timeline %}
+{% set iterator = 1 %}
+
+{% if timeline %}
+    <div class="timeline">
+        {% for category in timeline.categories %}
+            {% if category.events.count %}
+                <div class="timeline__category timeline__category--{{ category.slug }}">
+                    <h3 class="timeline__heading">
+                        <span class="timeline__title">
+                            {{ category.name }}
+                        </span>
+                    </h3>
+
+                    <div class="timeline__events">
+                        {% for event in category.events %}
+                            <div class="timeline__event timeline__event--{{ iterator is odd ? 'odd' : 'even' }}">
+                                <div class="timeline__card timeline__card--{{ iterator is odd ? 'odd' : 'even' }}">
+                                    <h4 class="timeline__heading">
+                                        <span class="timeline__title timeline__title--sm">
+                                            {{ event.name }}
+                                        </span>
+                                    </h4>
+
+                                    <p class="timeline__image">
+                                        <img src="{{ event.image.thumb(600, 400, {mode: "fit"}) }}" alt="{{ event.image.description }}">
+                                    </p>
+
+                                    <div class="text">
+                                        {{ event.text|content }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% set iterator = iterator + 1 %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
