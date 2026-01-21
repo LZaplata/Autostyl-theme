@@ -94,13 +94,20 @@ if (scrollableSwiperWrappers) {
     scrollableSwiperWrappers.forEach((scrollableSwiperWrapper) => {
         const slidesPerView = scrollableSwiperWrapper.dataset.slidesPerView;
         const scrollableSwiper = new Swiper(scrollableSwiperWrapper, {
-            modules: [Scrollbar],
+            modules: [Scrollbar, Navigation, Pagination],
             scrollbar: {
                 el: ".swiper-scrollbar",
                 hide: false,
             },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
             slidesPerView: 1,
-            spaceBetween: 48,
+            spaceBetween: 24,
             breakpoints: {
                 576: {
                     slidesPerView: Math.min(2, slidesPerView),
@@ -112,15 +119,15 @@ if (scrollableSwiperWrappers) {
                 },
                 992: {
                     slidesPerView: Math.min(3, slidesPerView),
-                    spaceBetween: 48,
+                    spaceBetween: 24,
                 },
                 1200: {
                     slidesPerView: Math.min(4, slidesPerView),
-                    spaceBetween: 48,
+                    spaceBetween: 24,
                 },
                 1400: {
                     slidesPerView: slidesPerView,
-                    spaceBetween: 48,
+                    spaceBetween: 24,
                 },
             },
         });

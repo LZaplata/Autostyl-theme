@@ -6,10 +6,11 @@
     --swiper-pagination-bullet-width: #{$slider-pagination-inactive-width}
     --swiper-pagination-bullet-height: #{$slider-pagination-height}
     --swiper-pagination-bullet-border-radius: #{$slider-pagination-border-radius}
+    --swiper-pagination-bottom: #{$slider-pagination-bottom}
 
     .swiper-button-next, .swiper-button-prev
         background-color: $slider-navigation-bg
-        border-radius: 50%
+        border-radius: $slider-navigation-border-radius
         border-width: $slider-navigation-border-width
         border-color: $slider-navigation-border-color
         border-style: solid
@@ -46,6 +47,7 @@
 .slider
     &__title
         font-family: $slider-title-font-family
-        font-size: $slider-title-font-size
         font-weight: $slider-title-font-weight
         color: $slider-title-color
+
+        @include font-size($slider-title-font-size)

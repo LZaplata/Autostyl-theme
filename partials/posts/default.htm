@@ -26,7 +26,7 @@ function onStart() {
 {% set more_button_title = __SELF__.properties.moreButtonTitle %}
 {% set more_button_link = __SELF__.properties.moreButtonLink %}
 
-<div class="posts row row-cols-{{ min(1, row_cols) }} g-5 row-cols-sm-{{ min(2, row_cols) }} gx-sm-4 row-cols-lg-{{ min(3, row_cols) }} gx-lg-5 row-cols-xl-{{ min(4, row_cols) }} row-cols-xxl-{{ row_cols }}">
+<div class="posts row row-cols-{{ min(1, row_cols) }} g-5 row-cols-sm-{{ min(2, row_cols) }} gx-sm-4 row-cols-lg-{{ min(3, row_cols) }} g-lg-4 row-cols-xl-{{ min(4, row_cols) }} row-cols-xxl-{{ row_cols }}">
     {% for post in posts %}
         {% set image = post.featured_images.first %}
 
@@ -35,15 +35,19 @@ function onStart() {
         {% endif %}
 
         <div class="col">
-            {% partial partial item=post image=image %}
+            {% partial partial item=post image=image show_details=false %}
         </div>
     {% endfor %}
 </div>
 
 {% if more_button_is_published %}
     <p class="mt-5 mb-0 text-center">
-        <a href="{{ more_button_link|link }}" class="btn btn-primary">
+        <a href="{{ more_button_link|link }}" class="btn btn-outline-primary material-symbol__box">
             {{ more_button_title }}
+
+            <span class="material-symbol__icon">
+                keyboard_arrow_right
+            </span>
         </a>
     </p>
 {% endif %}

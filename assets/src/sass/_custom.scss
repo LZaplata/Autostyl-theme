@@ -10,16 +10,17 @@ $enable-negative-margins:               true;
 
 $min-contrast-ratio:                    2.5;
 
-$primary:                               $green-500;
-$secondary:                             $blue-500;
-$dark:                                  $gray-500;
-$light:                                 $gray-300;
-$success:                               $green-700;
+$primary:                               $gray-500;
+$secondary:                             $red-500;
+$dark:                                  $gray-800;
+$light:                                 $gray-200;
+$success:                               $gray-700;
 $info:                                  $black;
 
-$body-color:                            $black;
+$body-color:                            $gray-400;
+$body-bg:                               #FAFAFA;
 
-$font-family-sans-serif:                "Open Sans", sans-serif;
+$font-family-sans-serif:                "Inter", sans-serif;
 $font-family-base:                      $font-family-sans-serif;
 $font-family-icons:                     "Material Symbols Rounded";
 
@@ -29,14 +30,15 @@ $font-weight-medium:                    500;
 $font-weight-regular:                   400;
 $font-weight-light:                     300;
 
-$font-size-base:                        1rem;       // 16px
-$font-size-sm:                          .75rem;     // 12px
+$font-size-base:                        1rem;           // 16px
+$font-size-sm:                          .625rem;        // 10px
 
 $font-sizes: (
-    1:                                  2rem,           // 32px
+    1:                                  2.75rem,        // 44px
     2:                                  1.25rem,        // 20px
     4:                                  .9375rem,       // 15px
-    6:                                  $font-size-sm,  // 12px
+    5:                                  .8125rem,       // 13px
+    6:                                  $font-size-sm,  // 10px
 );
 
 $spacer:                                1rem;
@@ -53,21 +55,21 @@ $spacers: (
 $line-height-base:                      1.5;
 
 $headings-font-family:                  $font-family-base;
-$headings-font-weight:                  $font-weight-medium;
-$headings-color:                        $black;
+$headings-font-weight:                  $font-weight-semibold;
+$headings-color:                        $gray-500;
 
-$header-bg:                             $primary;
+$header-bg:                             $white;
 $header-border-color:                   $gray-300;
 $header-border-width:                   1px;
 
-$header-logo-sm-height:                 55px;           // auto for turn off - this value is relevant from breakpoint below (not included) down
+$header-logo-sm-height:                 auto;           // auto for turn off - this value is relevant from breakpoint below (not included) down
 $header-logo-sm-height-breakpoint:      "xxl";          // sm, md, lg, xl, xxl
 
-$header-icon-link-color:              $green-50;
-$header-icon-link-hover-color:        $blue-600;
+$header-icon-link-color:              $gray-50;
+$header-icon-link-hover-color:        $red-600;
 $header-icon-link-font-size:          map.get($font-sizes, 2);
 
-$header-sitepicker-nav-link-color:      $green-50;
+$header-sitepicker-nav-link-color:      $gray-50;
 $header-sitepicker-nav-link-font-size:  map.get($font-sizes, 4);
 
 $header-sitepicker-toggler-font-size:   $font-size-sm;
@@ -82,28 +84,28 @@ $header-sitepicker-nav-level-1-link-font-size:      $header-sitepicker-nav-link-
 $header-sitepicker-nav-level-1-link-padding-x:      15px;
 $header-sitepicker-nav-level-1-link-padding-y:      5px;
 
-$h1-font-size:                          2.5rem;             // 40px
-$h2-font-size:                          2rem;               // 32px
-$h3-font-size:                          1.125rem;           // 18px
-$h4-font-size:                          $font-size-base;    // 16px
+$h1-font-size:                          2.75rem;                    // 40px
+$h2-font-size:                          2rem;                       // 32px
+$h3-font-size:                          1.25rem;                    // 20px
+$h4-font-size:                          map.get($font-sizes, 4);    // 15px
 
 $link-color:                            $primary;
-$link-hover-color:                      $black;
+$link-hover-color:                      $gray-400;
 $link-decoration:                       none;
 
-$nav-link-color:                        $green-50;
-$nav-link-hover-color:                  $blue-600;
-$nav-link-after-height:                 1px;        // 0 for turn off
+$nav-link-color:                        $link-color;
+$nav-link-hover-color:                  $link-hover-color;
+$nav-link-after-height:                 0;        // 0 for turn off
 $nav-link-padding-x:                    0;
 $nav-link-padding-y:                    0;
-$nav-link-font-weight:                  $font-weight-regular;
-$nav-link-font-size:                    map.get($font-sizes, 2);
+$nav-link-font-weight:                  $font-weight-semibold;
+$nav-link-font-size:                    map.get($font-sizes, 5);
 $nav-link-vertical-fluid:               false;
 $nav-link-submenu-toggler-color:        $nav-link-color;
 $nav-link-submenu-toggler-font-size:    $font-size-base;
 $nav-link-hover-submenu-toggler-color:  $nav-link-hover-color;
 
-$nav-pills-link-active-color:           $blue-500;
+$nav-pills-link-active-color:           $red-500;
 $nav-pills-link-active-bg:              transparent;
 
 $nav-level-1-bg:                        $white;
@@ -145,7 +147,7 @@ $nav-level-2-link-padding-x:            0;
 $nav-level-2-link-padding-y:            3px;
 $nav-level-2-link-after-height:         0;        // 0 for turn off
 
-$border-radius:                         10px;
+$border-radius:                         0;
 $border-radius-lg:                      $border-radius * 1.5;
 $border-radius-sm:                      $border-radius * 0.8;
 
@@ -158,7 +160,7 @@ $offcanvas-toggler-icon-font-size:      $h2-font-size;
 $offcanvas-toggler-close-color:         $offcanvas-toggler-color;
 $offcanvas-bg-color:                    $primary;
 
-$offcanvas-nav-link-color:              $green-50;
+$offcanvas-nav-link-color:              $gray-50;
 $offcanvas-nav-link-font-size:          $h3-font-size;
 $offcanvas-nav-link-font-weight:        $font-weight-medium;
 
@@ -167,37 +169,68 @@ $offcanvas-nav-level-1-link-font-size:      map.get($font-sizes, 4);
 $offcanvas-nav-level-1-link-font-weight:    $font-weight-medium;
 $offcanvas-nav-level-1-icon-font-weight:    $font-size-sm;
 
-$slider-navigation-color:               $black;
-$slider-navigation-bg:                  $white;
-$slider-navigation-font-size:           map.get($font-sizes, 1);
+$btn-border-radius:                     0;
+$btn-border-width:                      2px;
+$btn-font-weight:                       $font-weight-semibold;
+$btn-font-size:                         map.get($font-sizes, 4);
+$btn-padding-x:                         24px;
+$btn-padding-y:                         14px;
+$btn-padding-x-sm:                      20px;
+$btn-padding-y-sm:                      10px;
+
+$slider-navigation-color:               $white;
+$slider-navigation-bg:                  transparent;
+$slider-navigation-font-size:           map.get($font-sizes, 3);
 $slider-navigation-width:               40px;
 $slider-navigation-height:              $slider-navigation-width;
 $slider-navigation-sides-offset:        40px;
-$slider-navigation-hover-color:         $white;
-$slider-navigation-hover-bg:            $primary;
-$slider-navigation-border-width:        1px;    // 0 for turn off
-$slider-navigation-border-color:        $primary;
+$slider-navigation-hover-color:         $primary;
+$slider-navigation-hover-bg:            $white;
+$slider-navigation-border-width:        2px;    // 0 for turn off
+$slider-navigation-border-color:        $white;
+$slider-navigation-border-radius:       $btn-border-radius;
 
-$slider-pagination-bg:                  $white;
-$slider-pagination-inactive-bg:         $white;
-$slider-pagination-width:               40px;
-$slider-pagination-inactive-width:      20px;
-$slider-pagination-height:              5px;
-$slider-pagination-border-radius:       10px;
+$slider-pagination-bg:                  rgba($white, 1);
+$slider-pagination-inactive-bg:         rgba($white, .45);
+$slider-pagination-width:               8px;
+$slider-pagination-inactive-width:      8px;
+$slider-pagination-height:              8px;
+$slider-pagination-border-radius:       $border-radius;
+$slider-pagination-bottom:              20px;
 
 $slider-title-font-family:              $headings-font-family;
 $slider-title-font-size:                map.get($font-sizes, 1);
 $slider-title-font-weight:              $font-weight-bold;
 $slider-title-color:                    $white;
 
-$btn-border-radius:                     999px;
-$btn-border-width:                      1.5px;
-$btn-font-weight:                       $font-weight-semibold;
-$btn-font-size:                         $font-size-base;
-$btn-padding-x:                         24px;
-$btn-padding-y:                         12px;
-$btn-padding-x-sm:                      20px;
-$btn-padding-y-sm:                      10px;
+$scrollable-navigation-color:           $primary;
+$scrollable-navigation-bg:              transparent;
+$scrollable-navigation-font-size:       $slider-navigation-font-size;
+$scrollable-navigation-width:           $slider-navigation-width;
+$scrollable-navigation-height:          $scrollable-navigation-width;
+$scrollable-navigation-top-offset:      calc(0px - $scrollable-navigation-height - map.get($spacers, 5));
+$scrollable-navigation-sides-offset:    0px;
+$scrollable-navigation-hover-color:     $slider-navigation-hover-color;
+$scrollable-navigation-hover-bg:        $slider-navigation-hover-bg;
+$scrollable-navigation-border-width:    1px;    // 0 for turn off
+$scrollable-navigation-border-color:    $gray-100;
+$scrollable-navigation-border-radius:   $slider-navigation-border-radius;
+$scrollable-navigation-disabled-color:  $gray-100;
+$scrollable-navigation-disabled-bg:     $scrollable-navigation-bg;
+$scrollable-navigation-disabled-border-color:   $scrollable-navigation-border-color;
+$scrollable-navigation-display:         flex;           // none | flex
+
+$scrollable-pagination-bg:              $primary;
+$scrollable-pagination-inactive-bg:     $gray-200;
+$scrollable-pagination-width:           $slider-pagination-width;
+$scrollable-pagination-inactive-width:  $slider-pagination-inactive-width;
+$scrollable-pagination-height:          $scrollable-pagination-width;
+$scrollable-pagination-border-radius:   $slider-pagination-border-radius;
+$scrollable-pagination-bottom:          auto;
+$scrollable-pagination-top:             calc($scrollable-navigation-top-offset + ($scrollable-navigation-height / 2) - ($scrollable-pagination-height / 2));
+$scrollable-pagination-display:         flex;           // none | flex
+
+$scrollable-scrollbar-display:          none;           // none | block
 
 $dropdown-bg:                           $white;
 $dropdown-border-color:                 $gray-300;
@@ -216,21 +249,48 @@ $badge-padding-x:                       10px;
 $badge-padding-y:                       6px;
 $badge-border-radius:                   30px;
 
+$text-gap-base:                         1.5rem;
+$text-gap-lg:                           2.5rem;
+$text-color:                            $gray-400;
+$text-font-size:                        map.get($font-sizes, 4);
+$text-strong-font-weight:               $font-weight-bold;
+$text-link-color:                       $primary;
+$text-link-font-weight:                 $font-weight-semibold;
+$text-link-underline-color:             $text-link-color;
+$text-link-hover-color:                 $body-color;
+$text-link-hover-underline-color:       $text-link-hover-color;
+$text-table-head-bg:                    $gray-300;
+$text-table-head-font-size:             $h3-font-size;
+$text-table-body-font-size:             $font-size-base;
+
+$material-symbol-font-family:               $font-family-icons;
+$material-symbol-font-weight:               $font-weight-light;
+$material-symbol-font-size:                 1.2em;
+$material-symbol-box-gap:                   map.get($spacers, 2);
+$material-symbol-bg-size:                   1.7em;
+$material-symbol-bg-border-radius:          $btn-border-radius;
+$material-symbol-bg-box-shadow:             0 0 0 0;
+
 $footer-font-size:                      map.get($font-sizes, 4);
-$footer-color:                          $blue-200;
-$footer-bg:                             $blue-900;
+$footer-color:                          $gray-400;
+$footer-bg:                             $gray-50;
 
 $footer-contact-font-size:                  $footer-font-size;
-$footer-contact-link-color:                 $footer-color;
+$footer-contact-link-font-weight:           $font-weight-medium;
+$footer-contact-link-color:                 $primary;
 $footer-contact-link-underline-height:      1px;        // 0 for turn off
 $footer-contact-link-underline-color:       $footer-contact-link-color;
-$footer-contact-link-hover-color:           $blue-50;
+$footer-contact-link-hover-color:           $link-hover-color;
 $footer-contact-link-hover-underline-color: $footer-contact-link-hover-color;
 $footer-contact-phone-font-size:            $font-size-base;
+$footer-contact-phone-font-weight:          $font-weight-semibold;
+$footer-contact-phone-symbol-font-size:     1.5em;
 $footer-contact-email-font-size:            $footer-contact-phone-font-size;
+$footer-contact-email-font-weight:          $footer-contact-phone-font-weight;
+$footer-contact-email-symbol-font-size:     $footer-contact-phone-symbol-font-size;
 
 $footer-toggle-border-width:            1px;
-$footer-toggle-border-color:            $blue-800;
+$footer-toggle-border-color:            $gray-100;
 $footer-toggler-color:                  $footer-color;
 
 $footer-bottom-bg:                      $footer-bg;
@@ -239,8 +299,8 @@ $footer-bottom-color:                   $footer-color;
 $footer-bottom-border-width:            $footer-toggle-border-width;
 $footer-bottom-border-color:            $footer-toggle-border-color;
 
-$footer-signature-color:                $blue-50;
-$footer-signature-hover-color:          $blue-200;
+$footer-signature-color:                $gray-400;
+$footer-signature-hover-color:          $gray-500;
 
 $footer-nav-link-color:                 $gray-500;
 $footer-nav-link-font-weight:           $font-weight-regular;
@@ -255,10 +315,10 @@ $footer-nav-link-before-top:            2px;
 $footer-nav-link-before-margin-right:   $nav-level-1-link-before-margin-right;
 $footer-nav-link-before-font-size:      $nav-level-1-link-before-font-size;
 
-$footer-heading-color:                  $blue-50;
-$footer-heading-font-weight:            $font-weight-medium;
+$footer-heading-color:                  $primary;
+$footer-heading-font-weight:            $font-weight-semibold;
 $footer-heading-font-size:              $h3-font-size;
-$footer-heading-after:                  true;      // true | false
+$footer-heading-after:                  false;      // true | false
 $footer-heading-after-color:            $primary;
 
 $footer-cookies-link-color:             $footer-contact-link-color;
@@ -266,23 +326,23 @@ $footer-cookies-link-hover-color:       $footer-contact-link-hover-color;
 $footer-cookies-font-size:              $footer-contact-font-size;
 
 $post-image-border-radius:                  $border-radius;
-$post-image-overlay-bg:                     transparent;
-$post-image-overlay-bg-image:               linear-gradient(to bottom, rgba($black, 0), rgba($black, .2));
+$post-image-overlay-bg:                     rgba($primary, .25);
+$post-image-overlay-bg-image:               none;
 $post-image-overlay-icon-bg:                rgba($black, .35);
-$post-image-overlay-icon-bg-width:          42px;
+$post-image-overlay-icon-bg-width:          0;
 $post-image-overlay-icon-bg-height:         $post-image-overlay-icon-bg-width;
 $post-image-overlay-icon-bg-border-radius:  6px;
 $post-image-overlay-icon-font-size:         map.get($font-sizes, 2);
-$post-image-overlay-icon-color:             $white;
+$post-image-overlay-icon-color:             transparent;
 $post-title-font-size:                      $h3-font-size;
-$post-title-font-weight:                    $font-weight-medium;
+$post-title-font-weight:                    $font-weight-semibold;
 $post-title-color:                          $primary;
 $post-title-underline-color:                transparent;
 $post-hover-title-color:                    $primary;
 $post-hover-title-underline-color:          $primary;
 $post-font-weight-bold:                     $font-weight-bold;
-$post-perex-font-size:                      $font-size-base;
-$post-perex-color:                          $body-color;
+$post-perex-font-size:                      map.get($font-sizes, 4);
+$post-perex-color:                          $gray-400;
 $post-details-font-size:                    $font-size-sm;
 $post-details-color:                        $light;
 $post-link-bg:                              transparent;
@@ -371,20 +431,6 @@ $table-cell-padding-x:                  24px;
 $table-cell-padding-y:                  16px;
 $table-th-font-weight:                  $font-weight-medium;
 
-$text-gap-base:                         1.5rem;
-$text-gap-lg:                           2.5rem;
-$text-color:                            $black;
-$text-font-size:                        $font-size-base;
-$text-strong-font-weight:               $font-weight-bold;
-$text-link-color:                       $primary;
-$text-link-font-weight:                 $text-strong-font-weight;
-$text-link-underline-color:             $primary;
-$text-link-hover-color:                 $gray-500;
-$text-link-hover-underline-color:       $gray-500;
-$text-table-head-bg:                    $gray-300;
-$text-table-head-font-size:             $h3-font-size;
-$text-table-body-font-size:             $font-size-base;
-
 $breadcrumb-bg:                         transparent;
 $breadcrumb-padding:                    map.get($spacers, 4) 0 0;           // padding of #breadcrumb (.breadcrumb wrapper)
 $breadcrumb-margin-bottom:              0;                                  // overwrite default bootstrap .breadcrumb margin
@@ -422,15 +468,16 @@ $icon-link-hover-color:                 $primary;
 $icon-light-link-color:                 $gray-500;
 $icon-light-link-hover-color:           $icon-link-hover-color;
 $icon-box-link-bg:                      rgba($white, .1);
-$icon-box-link-width:                   36px;
+$icon-box-link-width:                   20px;
 $icon-box-link-height:                  $icon-box-link-width;
 $icon-box-link-hover-bg:                rgba($white, .15);
 $icon-box-link-border-radius:           if($border-radius > 0, 50%, $border-radius);
-$icon-box-link-color:                   $white;
-$icon-box-link-hover-color:             $icon-box-link-color;
+$icon-box-link-color:                   $link-color;
+$icon-box-link-hover-color:             $link-hover-color;
 $icon-mask-image-width:                 16px;
 $icon-mask-image-height:                $icon-mask-image-width;
-$icon-mask-image-bg:                    $white;
+$icon-mask-image-bg:                    $link-color;
+$icon-mask-image-hover-bg:              $link-hover-color;
 
 $input-padding-x:                       map.get($spacers, 3);
 $input-padding-y:                       map.get($spacers, 3);
@@ -499,14 +546,14 @@ $link-image-overlay-icon-bg-height:         $post-image-overlay-icon-bg-height;
 $link-image-overlay-icon-bg-border-radius:  $post-image-overlay-icon-bg-border-radius;
 $link-image-overlay-icon-font-size:         $post-image-overlay-icon-font-size;
 $link-image-overlay-icon-color:             $post-image-overlay-icon-color;
-$link-title-font-size:                      $post-title-font-size;
-$link-title-font-weight:                    $post-title-font-weight;
+$link-title-font-size:                      map.get($font-sizes, 4);
+$link-title-font-weight:                    $font-weight-bold;
 $link-title-color:                          $post-title-color;
 $link-title-underline-color:                $post-title-underline-color;
 $link-hover-title-color:                    $post-hover-title-color;
 $link-hover-title-underline-color:          $post-hover-title-underline-color;
 $link-font-weight-bold:                     $post-font-weight-bold;
-$link-perex-font-size:                      $post-perex-font-size;
+$link-perex-font-size:                      map.get($font-sizes, 5);
 $link-perex-color:                          $post-perex-color;
 $link-link-bg:                              $post-link-bg;
 $link-link-padding-x:                       $post-link-padding-x;
@@ -514,14 +561,6 @@ $link-link-padding-y:                       $post-link-padding-y;
 $link-link-border-color:                    $post-link-border-color;
 $link-link-border-width:                    $post-link-border-width;
 $link-link-border-radius:                   $post-link-border-radius;
-
-$material-symbol-font-family:               $font-family-icons;
-$material-symbol-font-weight:               $font-weight-light;
-$material-symbol-font-size:                 1.1em;
-$material-symbol-box-gap:                   map.get($spacers, 2);
-$material-symbol-bg-size:                   1.7em;
-$material-symbol-bg-border-radius:          $btn-border-radius;
-$material-symbol-bg-box-shadow:             0 0 0 3px;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/variables";
@@ -641,10 +680,10 @@ $utilities: map-merge(
 .btn {
     &.btn-primary {
         --bs-btn-color: #{$white};
-        --bs-btn-bg: #{$green-500};
+        --bs-btn-bg: #{$gray-500};
         --bs-btn-border-color: transparent;
         --bs-btn-hover-color: var(--bs-btn-color);
-        --bs-btn-hover-bg: #{$green-600};
+        --bs-btn-hover-bg: #{$gray-600};
         --bs-btn-hover-border-color: transparent;
 
         .material-symbol {
@@ -652,18 +691,18 @@ $utilities: map-merge(
                 background: $white;
 
                 .material-symbol__icon {
-                    color: $green-500;
+                    color: $gray-500;
                 }
             }
         }
 
         &:hover {
-            box-shadow: $material-symbol-bg-box-shadow $green-200;
+            box-shadow: $material-symbol-bg-box-shadow $gray-200;
 
             .material-symbol {
                 &__bg {
                     .material-symbol__icon {
-                        color: $green-600;
+                        color: $gray-600;
                     }
                 }
             }
@@ -672,10 +711,10 @@ $utilities: map-merge(
 
     &.btn-secondary {
         --bs-btn-color: #{$white};
-        --bs-btn-bg: #{$blue-500};
+        --bs-btn-bg: #{$red-500};
         --bs-btn-border-color: transparent;
         --bs-btn-hover-color: var(--bs-btn-color);
-        --bs-btn-hover-bg: #{$blue-600};
+        --bs-btn-hover-bg: #{$red-600};
         --bs-btn-hover-border-color: transparent;
 
         .material-symbol {
@@ -683,18 +722,80 @@ $utilities: map-merge(
                 background: $white;
 
                 .material-symbol__icon {
-                    color: $blue-500;
+                    color: $red-500;
                 }
             }
         }
 
         &:hover {
-            box-shadow: $material-symbol-bg-box-shadow $blue-200;
+            box-shadow: $material-symbol-bg-box-shadow $red-200;
 
             .material-symbol {
                 &__bg {
                     .material-symbol__icon {
-                        color: $blue-600;
+                        color: $red-600;
+                    }
+                }
+            }
+        }
+    }
+
+    &.btn-outline-primary {
+        --bs-btn-color: #{$primary};
+        --bs-btn-bg: #{$white};
+        --bs-btn-border-color: #{$primary};
+        --bs-btn-hover-color: #{$white};
+        --bs-btn-hover-bg: #{$primary};
+        --bs-btn-hover-border-color: #{$primary};
+
+        .material-symbol {
+            &__bg {
+                background: $white;
+
+                .material-symbol__icon {
+                    color: $primary;
+                }
+            }
+        }
+
+        &:hover {
+            box-shadow: $material-symbol-bg-box-shadow transparent;
+
+            .material-symbol {
+                &__bg {
+                    .material-symbol__icon {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    &.btn-outline-light {
+        --bs-btn-color: #{$white};
+        --bs-btn-bg: transparent;
+        --bs-btn-border-color: #{$white};
+        --bs-btn-hover-color: #{$primary};
+        --bs-btn-hover-bg: #{$white};
+        --bs-btn-hover-border-color: #{$white};
+
+        .material-symbol {
+            &__bg {
+                background: $white;
+
+                .material-symbol__icon {
+                    color: $red-500;
+                }
+            }
+        }
+
+        &:hover {
+            box-shadow: $material-symbol-bg-box-shadow transparent;
+
+            .material-symbol {
+                &__bg {
+                    .material-symbol__icon {
+                        color: $red-600;
                     }
                 }
             }
@@ -708,7 +809,7 @@ $utilities: map-merge(
 
         .material-symbol {
             &__bg {
-                background: $green-500;
+                background: $gray-500;
 
                 .material-symbol__icon {
                     color: $white;
@@ -717,12 +818,12 @@ $utilities: map-merge(
         }
 
         &:hover {
-            color: $green-600 !important;
+            color: $gray-600 !important;
 
             .material-symbol {
                 &__bg {
-                    background: $green-600;
-                    box-shadow: $material-symbol-bg-box-shadow $green-200;
+                    background: $gray-600;
+                    box-shadow: $material-symbol-bg-box-shadow $gray-200;
                 }
             }
         }
@@ -733,7 +834,7 @@ $utilities: map-merge(
 
         .material-symbol {
             &__bg {
-                background: $blue-500;
+                background: $red-500;
 
                 .material-symbol__icon {
                     color: $white;
@@ -742,12 +843,12 @@ $utilities: map-merge(
         }
 
         &:hover {
-            color: $blue-600 !important;
+            color: $red-600 !important;
 
             .material-symbol {
                 &__bg {
-                    background: $blue-600;
-                    box-shadow: $material-symbol-bg-box-shadow $blue-200;
+                    background: $red-600;
+                    box-shadow: $material-symbol-bg-box-shadow $red-200;
                 }
             }
         }
@@ -755,11 +856,11 @@ $utilities: map-merge(
 
     &-light {
         transition: $transition-base;
-        color: $blue-50 !important;
+        color: $secondary !important;
 
         .material-symbol {
             &__bg {
-                background: $primary;
+                background: $secondary;
 
                 .material-symbol__icon {
                     color: $white;
@@ -768,12 +869,12 @@ $utilities: map-merge(
         }
 
         &:hover {
-            color: $blue-100 !important;
+            color: $red-600 !important;
 
             .material-symbol {
                 &__bg {
-                    background: $green-600;
-                    box-shadow: $material-symbol-bg-box-shadow $green-200;
+                    background: $red-600;
+                    box-shadow: $material-symbol-bg-box-shadow transparent;
                 }
             }
         }

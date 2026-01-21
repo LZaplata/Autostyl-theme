@@ -1,0 +1,79 @@
+{% set show_details = false %}
+
+<div class="post d-flex h-100">
+    <a href="{{ link ?: item.url }}" class="post__link position-relative row row-cols-1 row-cols-lg-2 g-4">
+        {% if image %}
+            <div class="col col-lg-auto">
+                <p class="post__img mb-0 position-relative overflow-hidden h-100 d-lg-flex">
+                    {% if image.path %}
+                        <picture class="d-lg-flex">
+                            <source media="(min-width:992px)" srcset="{{ image.thumb(170, 127, {"mode": "fit"}) }}">
+
+                            <img src="{{ image.thumb(400, 299, {"mode": "fit"}) }}" alt="{{ image.description }}" class="img-fluid object-fit-lg-cover">
+                        </picture>
+                    {% else %}
+                        <img src="{{ image|media }}" alt="{{ image.description }}" class="img-fluid">
+                    {% endif %}
+
+                    <span class="post__overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                        <span class="post__icon-bg d-inline-flex align-items-center justify-content-center">
+                            <span class="material-symbol__icon post__icon">
+                                eyeglasses
+                            </span>
+                        </span>
+                    </span>
+                </p>
+            </div>
+        {% endif %}
+
+        <div class="col d-flex flex-column gap-3">
+            <h3 class="post__title mb-0">
+                {{ item.title }}
+            </h3>
+
+            {% if item.excerpt or item.perex %}
+                <div class="post__perex mt-n2 text">
+                    <p class="mb-0">
+                        {{ item.excerpt ?: item.perex|raw }}
+                    </p>
+                </div>
+            {% endif %}
+
+            {% if show_details is not defined or show_details %}
+                <div class="post__details d-flex">
+                    <span class="d-inline-flex align-items-center gap-1 pe-2 border-1 border-end lh-1">
+                        <span class="material-symbol__icon">
+                            calendar_today
+                        </span>
+
+                        {{ post.published_at|date("j. n. Y") }}
+                    </span>
+
+                    <span class="d-inline-flex align-items-center gap-1 px-2 lh-1">
+                        <span class="material-symbol__icon">
+                            schedule
+                        </span>
+
+                        {{ post.published_at|date("H:i") }}
+                    </span>
+
+                    {% if post.categories|length %}
+                        <span class="d-inline-flex align-items-center gap-1 ps-2 border-1 border-start lh-1">
+                            {% for category in post.categories %}
+                                {{ category.name }}{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </span>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <div class="d-flex align-items-center gap-1 fs-4 fw-semibold lh-1 mt-auto">
+                Číst více
+
+                <span class="material-symbol__icon">
+                    keyboard_arrow_right
+                </span>
+            </div>
+        </div>
+    </a>
+</div>

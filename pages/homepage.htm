@@ -52,13 +52,13 @@ postPage = "blog/post"
             {% elseif block.type == "posts" %}
                 {% component "posts" categoryFilter=block.blog_category.slug rowCols=block.row_cols postsPerPage=block.items_per_page showPagination=false partial=block.partial sortOrder=block.blog_sort_order moreButtonIsPublished=block.more_button_is_published moreButtonTitle=block.more_button_title moreButtonLink=block.more_button_link %}
             {% elseif block.type == "posts_slider" %}
-                {% component "postsslider" categoryFilter=block.blog_category.slug rowCols=block.row_cols sortOrder=block.blog_sort_order moreButtonTitle=block.more_button_title moreButtonLink=block.more_button_link %}
+                {% component "postsslider" categoryFilter=block.blog_category.slug rowCols=block.row_cols sortOrder=block.blog_sort_order moreButtonTitle=block.more_button_title moreButtonLink=block.more_button_link partial=block.partial %}
             {% elseif block.type == "flash_message" %}
                 {% component "flashmessage" %}
             {% elseif block.type == "partial" %}
                 {% partial block.partial %}
             {% elseif block.type == "links" %}
-                {% partial "_links/default" partial=block.partial row_cols=block.row_cols category=block.links_category %}
+                {% partial "_links/default" partial=block.partial row_cols=block.row_cols category=block.links_category more_button_is_published=block.more_button_is_published more_button_title=block.more_button_title more_button_link=block.more_button_link %}
             {% elseif block.type == "links_slider" %}
                 {% partial "_swiper/scrollable" items=block.links_category.links.toNested.lists("link") slides_per_view=block.row_cols partial=block.partial %}
             {% elseif block.type == "contact_form" %}

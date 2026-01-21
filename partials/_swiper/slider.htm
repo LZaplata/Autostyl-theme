@@ -29,16 +29,20 @@
                             <div class="container-fluid position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                                 <div class="container-lg d-flex flex-column gap-4">
                                     {% if slide.title_type is defined and slide.title_type %}
-                                        <p class="mb-0 text-center lh-sm slider__title">
-                                            {{ slide.title|content }}
+                                        <p class="mb-0 lh-sm slider__title">
+                                            {{ (slide.title_type == "custom" ? slide.title_custom : slide.title)|content }}
                                         </p>
                                     {% endif %}
 
                                     {% if slide.btn %}
-                                        <p class="mb-0 text-center">
+                                        <p class="mb-0">
                                             {% if slide.link and slide.link_type == "btn" %}
-                                                <a href="{{ slide.link|link }}" class="btn btn-primary">
+                                                <a href="{{ slide.link|link }}" class="btn btn-outline-light material-symbol__box">
                                                     {{ slide.btn }}
+
+                                                    <span class="material-symbol__icon">
+                                                        keyboard_arrow_right
+                                                    </span>
                                                 </a>
                                             {% elseif slide.link and slide.link_type == "fluid" %}
                                                 <button class="btn btn-primary">
@@ -59,13 +63,13 @@
 
     <div class="swiper-button-next d-none d-md-flex">
         <span class="material-symbol__icon icon">
-            chevron_right
+            arrow_forward
         </span>
     </div>
 
     <div class="swiper-button-prev d-none d-md-flex">
         <span class="material-symbol__icon icon">
-            chevron_left
+            arrow_back
         </span>
     </div>
 

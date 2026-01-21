@@ -1,0 +1,69 @@
+.scrollable-swiper
+    --swiper-navigation-top-offset: #{$scrollable-navigation-top-offset}
+    --swiper-navigation-sides-offset: #{$scrollable-navigation-sides-offset}
+    --swiper-pagination-color: #{$scrollable-pagination-bg}
+    --swiper-pagination-bullet-inactive-color: #{$scrollable-pagination-inactive-bg}
+    --swiper-pagination-bullet-inactive-opacity: .44
+    --swiper-pagination-bullet-width: #{$scrollable-pagination-inactive-width}
+    --swiper-pagination-bullet-height: #{$scrollable-pagination-height}
+    --swiper-pagination-bullet-border-radius: #{$scrollable-pagination-border-radius}
+    --swiper-pagination-bottom: auto
+    --swiper-pagination-top: #{$scrollable-pagination-top}
+
+    overflow-x: clip !important
+    overflow-y: visible !important
+
+    .swiper-button-next, .swiper-button-prev
+        background-color: $scrollable-navigation-bg
+        border-radius: $scrollable-navigation-border-radius
+        border-width: $scrollable-navigation-border-width
+        border-color: $scrollable-navigation-border-color
+        border-style: solid
+        width: $scrollable-navigation-width
+        height: $scrollable-navigation-height
+        transition: $transition-base
+        margin-top: 0 !important
+        z-index: 20
+        display: $scrollable-navigation-display !important
+
+        .icon
+            color: $scrollable-navigation-color
+            font-size: $scrollable-navigation-font-size
+            transition: $transition-base
+
+        &:after
+            content: none
+
+        &:hover
+            background-color: $scrollable-navigation-hover-bg
+
+            .icon
+                color: $scrollable-navigation-hover-color
+
+    .swiper-button-prev
+        left: auto !important
+        right: calc($scrollable-navigation-sides-offset + $scrollable-navigation-width - $scrollable-navigation-border-width) !important
+
+    .swiper-button-disabled
+        opacity: 1 !important
+        background-color: $scrollable-navigation-disabled-bg
+        border-color: $scrollable-navigation-disabled-border-color
+
+        .icon
+            color: $scrollable-navigation-disabled-color
+
+    .swiper-button-lock
+        display: none !important
+
+    .swiper-pagination
+        display: $scrollable-pagination-display
+        justify-content: center
+
+        &-bullet
+            transition: $transition-base
+
+            &-active
+                width: $scrollable-pagination-width
+
+    .swiper-scrollbar
+        display: $scrollable-scrollbar-display

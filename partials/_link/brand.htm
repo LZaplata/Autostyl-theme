@@ -1,0 +1,21 @@
+<div class="link d-flex h-100">
+    <a href="{{ link ?: item.url }}" class="link__link d-flex flex-column align-items-center justify-content-center w-100 h-100 gap-3">
+        {% if image %}
+            <p class="link__img mb-0 position-relative overflow-hidden text-center">
+                {% if image.path %}
+                    <img src="{{ image.path }}" alt="{{ image.description }}" class="img-fluid">
+                {% else %}
+                    <img src="{{ image|media }}" alt="{{ image.description }}" class="img-fluid">
+                {% endif %}
+            </p>
+        {% endif %}
+
+        {% if item.excerpt or item.perex %}
+            <div class="link__perex text text-center lh-sm">
+                <p class="mb-0">
+                    {{ item.excerpt ?: item.perex|raw }}
+                </p>
+            </div>
+        {% endif %}
+    </a>
+</div>

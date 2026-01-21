@@ -1,49 +1,50 @@
 items:
     -
-        title: Služby
-        nesting: null
+        title: 'ZASTUPOVANÉ ZNAČKY'
         type: page
-        url: null
         code: ''
         reference: '6'
         cmsPage: page
-        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: 'Jak to bylo'
+        title: SERVIS
         type: page
         code: ''
-        reference: '9'
+        reference: '6'
         cmsPage: page
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: Reference
-        nesting: null
+        title: SLUŽBY
         type: page
-        url: null
         code: ''
         reference: '7'
         cmsPage: page
-        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: Kontakt
-        nesting: null
+        title: 'O NÁS'
         type: page
-        url: null
         code: ''
         reference: '8'
         cmsPage: page
-        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: KONTAKTY
+        type: page
+        code: ''
+        reference: '8'
+        cmsPage: page
         viewBag:
             isHidden: '0'
             cssClass: ''

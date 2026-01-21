@@ -66,6 +66,7 @@ footer
             text-decoration: underline
             text-decoration-thickness: $footer-contact-link-underline-height
             text-decoration-color: $footer-contact-link-underline-color
+            font-weight: $footer-contact-link-font-weight
 
             &:hover
                 color: $footer-contact-link-hover-color
@@ -73,9 +74,19 @@ footer
 
     .phone
         font-size: $footer-contact-phone-font-size
+        font-weight: $footer-contact-phone-font-weight
+
+        .material-symbol
+            &__icon
+                font-size: $footer-contact-phone-symbol-font-size
 
     .email
         font-size: $footer-contact-email-font-size
+        font-weight: $footer-contact-email-font-weight
+
+        .material-symbol
+            &__icon
+                font-size: $footer-contact-email-symbol-font-size
 
     .cookies
         font-size: $footer-cookies-font-size

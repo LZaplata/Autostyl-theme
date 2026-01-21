@@ -9,8 +9,12 @@
 
 {% if more_button_link and more_button_title %}
     <p class="mt-5 mb-0 text-center">
-        <a href="{{ more_button_link|link }}" class="btn btn-primary">
+        <a href="{{ more_button_link|link }}" class="btn btn-outline-primary material-symbol__box">
             {{ more_button_title }}
+
+            <span class="material-symbol__icon">
+                keyboard_arrow_right
+            </span>
         </a>
     </p>
 {% endif %}
