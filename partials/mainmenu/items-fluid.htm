@@ -1,8 +1,8 @@
 {% for item in items %}
     {% if not item.viewBag.isHidden %}
-        <li role="presentation" class="col nav-item d-flex align-items-center level-{{ level }} {{ item.viewBag.cssClass }}">
+        <li role="presentation" class="col nav-item d-flex flex-column align-items-start level-{{ level }} {{ item.viewBag.cssClass }}">
             {% if item.url %}
-                <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link position-relative {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
+                <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link position-relative flex-basis-100 {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
                     {{ item.title }}
                 </a>
 
@@ -17,15 +17,15 @@
                 </span>
             {% endif %}
 
-{#            {% if item.items %}#}
-{#                <div class="submenu">#}
-{#                    <div class="container-lg">#}
-{#                        <ul class="nav flex-column">#}
-{#                            {% partial __SELF__ ~ "::items" items=item.items level=3 %}#}
-{#                        </ul>#}
-{#                    </div>#}
-{#                </div>#}
-{#            {% endif %}#}
+            {% if item.items %}
+                <div class="submenu">
+                    <div class="container-lg">
+                        <ul class="nav flex-column">
+                            {% partial __SELF__ ~ "::items" items=item.items level=3 %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
         </li>
     {% endif %}
 {% endfor %}

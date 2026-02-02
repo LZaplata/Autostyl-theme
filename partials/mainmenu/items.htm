@@ -23,27 +23,27 @@
                 </span>
 
                 <div class="submenu">
-                    <div class="container-lg grid">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="h2">
-                                    {{ item.title }}
-                                </p>
-                            </div>
-                        </div>
+{#                    <div class="container-lg grid">#}
+{#                        <div class="d-flex align-items-center">#}
+{#                            <div>#}
+{#                                <p class="h2">#}
+{#                                    {{ item.title }}#}
+{#                                </p>#}
+{#                            </div>#}
+{#                        </div>#}
 
-                        <ul class="nav flex-column">
-                            {% partial __SELF__ ~ "::items" items=item.items level=2 %}
-                        </ul>
-                    </div>
+{#                        <ul class="nav flex-column">#}
+{#                            {% partial __SELF__ ~ "::items" items=item.items level=2 %}#}
+{#                        </ul>#}
+{#                    </div>#}
 
                     <!-- Uncomment below while using fluid submenu and columns + comment above -->
 
-{#                    <div class="container-lg">#}
-{#                        <ul class="nav row row-cols-lg-4 {{ item.code }}">#}
-{#                            {% partial __SELF__ ~ "::items-fluid" items=item.items level=2 %}#}
-{#                        </ul>#}
-{#                    </div>#}
+                    <div class="container-lg py-4">
+                        <ul class="nav row row-cols-lg-4 {{ item.code }}">
+                            {% partial __SELF__ ~ "::items-fluid" items=item.items level=2 %}
+                        </ul>
+                    </div>
                 </div>
             {% endif %}
         </li>

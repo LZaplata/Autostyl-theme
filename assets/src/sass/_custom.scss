@@ -115,33 +115,33 @@ $nav-level-1-min-width:                 false;      // false for fluid
 $nav-level-1-padding-x:                 0;
 $nav-level-1-padding-y:                 40px;
 $nav-level-1-border:                    $header-border-width solid $header-border-color;          // 0 for turn off
-$nav-level-1-link-font-size:            map.get($font-sizes, 4);
-$nav-level-1-link-font-weight:          $font-weight-regular;
-$nav-level-1-link-color:                $primary;
-$nav-level-1-link-hover-color:          $primary;
+$nav-level-1-link-font-size:            $nav-link-font-size;
+$nav-level-1-link-font-weight:          $nav-link-font-weight;
+$nav-level-1-link-color:                $nav-link-color;
+$nav-level-1-link-hover-color:          $nav-link-hover-color;
 $nav-level-1-link-hover-bg:             transparent;
 $nav-level-1-link-hover-underline-color:transparent;
-$nav-level-1-link-active-color:         $primary;
+$nav-level-1-link-active-color:         $nav-pills-link-active-color;
 $nav-level-1-link-active-underline-color:   transparent;
 $nav-level-1-link-active-bg:            transparent;
 $nav-level-1-link-padding-x:            0;
 $nav-level-1-link-padding-y:            3px;
 $nav-level-1-link-underline-height:     1px;        // 0 for turn off
-$nav-level-1-link-underline-color:      $nav-level-1-link-color;
+$nav-level-1-link-underline-color:      transparent;
 $nav-level-1-link-underline-offset:     1px;
-$nav-level-1-link-before-content:       "▪";        // none for turn off | you can use phosporicons
+$nav-level-1-link-before-content:       none;        // none for turn off | you can use phosporicons
 $nav-level-1-link-before-color:         $primary;
 $nav-level-1-link-before-margin-right:  8px;
 $nav-level-1-link-before-font-size:     $nav-level-1-link-font-size;
 
 $nav-level-2-padding-x:                 0;
 $nav-level-2-padding-y:                 0;
-$nav-level-2-link-font-size:            map.get($font-sizes, 4);
+$nav-level-2-link-font-size:            $nav-link-font-size;
 $nav-level-2-link-font-weight:          $font-weight-regular;
-$nav-level-2-link-color:                $gray-500;
-$nav-level-2-link-hover-color:          $primary;
+$nav-level-2-link-color:                $nav-link-color;
+$nav-level-2-link-hover-color:          $nav-link-hover-color;
 $nav-level-2-link-hover-bg:             transparent;
-$nav-level-2-link-active-color:         $primary;
+$nav-level-2-link-active-color:         $nav-pills-link-active-color;
 $nav-level-2-link-active-bg:            transparent;
 $nav-level-2-link-padding-x:            0;
 $nav-level-2-link-padding-y:            3px;
