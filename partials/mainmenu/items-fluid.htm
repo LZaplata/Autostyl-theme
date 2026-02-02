@@ -2,7 +2,9 @@
     {% if not item.viewBag.isHidden %}
         <li role="presentation" class="col nav-item d-flex flex-column align-items-start level-{{ level }} {{ item.viewBag.cssClass }}">
             {% if item.url %}
-                <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link position-relative flex-basis-100 {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
+                <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link position-relative flex-basis-100 d-flex flex-column gap-4 {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
+                    <img src="{{ ('menu/' ~ (item.title|slug) ~ '.png')|media }}" alt="{{ item.title }}">
+
                     {{ item.title }}
                 </a>
 
