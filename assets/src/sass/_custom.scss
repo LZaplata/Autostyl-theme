@@ -59,7 +59,7 @@ $headings-font-weight:                  $font-weight-semibold;
 $headings-color:                        $gray-500;
 
 $header-bg:                             $white;
-$header-border-color:                   $gray-300;
+$header-border-color:                   $gray-50;
 $header-border-width:                   1px;
 
 $header-logo-sm-height:                 auto;           // auto for turn off - this value is relevant from breakpoint below (not included) down
@@ -115,33 +115,33 @@ $nav-level-1-min-width:                 false;      // false for fluid
 $nav-level-1-padding-x:                 0;
 $nav-level-1-padding-y:                 40px;
 $nav-level-1-border:                    $header-border-width solid $header-border-color;          // 0 for turn off
-$nav-level-1-link-font-size:            map.get($font-sizes, 4);
-$nav-level-1-link-font-weight:          $font-weight-regular;
-$nav-level-1-link-color:                $gray-500;
-$nav-level-1-link-hover-color:          $primary;
+$nav-level-1-link-font-size:            $nav-link-font-size;
+$nav-level-1-link-font-weight:          $nav-link-font-weight;
+$nav-level-1-link-color:                $nav-link-color;
+$nav-level-1-link-hover-color:          $nav-link-hover-color;
 $nav-level-1-link-hover-bg:             transparent;
 $nav-level-1-link-hover-underline-color:transparent;
-$nav-level-1-link-active-color:         $primary;
+$nav-level-1-link-active-color:         $nav-pills-link-active-color;
 $nav-level-1-link-active-underline-color:   transparent;
 $nav-level-1-link-active-bg:            transparent;
 $nav-level-1-link-padding-x:            0;
 $nav-level-1-link-padding-y:            3px;
 $nav-level-1-link-underline-height:     1px;        // 0 for turn off
-$nav-level-1-link-underline-color:      $nav-level-1-link-color;
+$nav-level-1-link-underline-color:      transparent;
 $nav-level-1-link-underline-offset:     1px;
-$nav-level-1-link-before-content:       "▪";        // none for turn off | you can use phosporicons
+$nav-level-1-link-before-content:       none;        // none for turn off | you can use phosporicons
 $nav-level-1-link-before-color:         $primary;
 $nav-level-1-link-before-margin-right:  8px;
 $nav-level-1-link-before-font-size:     $nav-level-1-link-font-size;
 
 $nav-level-2-padding-x:                 0;
 $nav-level-2-padding-y:                 0;
-$nav-level-2-link-font-size:            map.get($font-sizes, 4);
+$nav-level-2-link-font-size:            $nav-link-font-size;
 $nav-level-2-link-font-weight:          $font-weight-regular;
-$nav-level-2-link-color:                $gray-500;
-$nav-level-2-link-hover-color:          $primary;
+$nav-level-2-link-color:                $nav-link-color;
+$nav-level-2-link-hover-color:          $nav-link-hover-color;
 $nav-level-2-link-hover-bg:             transparent;
-$nav-level-2-link-active-color:         $primary;
+$nav-level-2-link-active-color:         $nav-pills-link-active-color;
 $nav-level-2-link-active-bg:            transparent;
 $nav-level-2-link-padding-x:            0;
 $nav-level-2-link-padding-y:            3px;
@@ -158,11 +158,11 @@ $offcanvas-toggler-font-size:           $font-size-sm;
 $offcanvas-toggler-color:               $nav-link-color;
 $offcanvas-toggler-icon-font-size:      $h2-font-size;
 $offcanvas-toggler-close-color:         $offcanvas-toggler-color;
-$offcanvas-bg-color:                    $primary;
+$offcanvas-bg-color:                    $body-bg;
 
-$offcanvas-nav-link-color:              $gray-50;
-$offcanvas-nav-link-font-size:          $h3-font-size;
-$offcanvas-nav-link-font-weight:        $font-weight-medium;
+$offcanvas-nav-link-color:              $nav-link-color;
+$offcanvas-nav-link-font-size:          map.get($font-sizes, 4);
+$offcanvas-nav-link-font-weight:        $nav-link-font-weight;
 
 $offcanvas-nav-level-1-link-color:          $offcanvas-nav-link-color;
 $offcanvas-nav-level-1-link-font-size:      map.get($font-sizes, 4);
@@ -479,8 +479,26 @@ $icon-mask-image-height:                $icon-mask-image-width;
 $icon-mask-image-bg:                    $link-color;
 $icon-mask-image-hover-bg:              $link-hover-color;
 
-$input-padding-x:                       map.get($spacers, 3);
-$input-padding-y:                       map.get($spacers, 3);
+$input-padding-x:                       15px;
+$input-padding-y:                       10px;
+$input-font-size:                       map.get($font-sizes, 5);
+$input-border-color:                    $gray-100;
+$input-color:                           $body-color;
+$input-placeholder-color:               $gray-200;
+$input-focus-box-shadow:                none;
+$input-focus-border-color:              $body-color;
+$input-group-addon-border-color:        transparent;
+$input-group-addon-bg:                  transparent;
+$input-group-addon-color:               $input-color;
+$input-group-addon-font-size:           $input-font-size;
+
+$form-check-input-border-radius:        $border-radius;
+$form-check-input-border:               1px solid $body-color;
+$form-check-input-checked-border-color: $body-color;
+$form-check-input-checked-bg-color:     transparent;
+$form-check-input-checked-color:        $body-color;
+$form-check-input-checked-bg-image:     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='currentColor'%3E%3Cpath d='M382-253.85 168.62-467.23 211.38-510 382-339.38 748.62-706l42.76 42.77L382-253.85Z'/%3E%3C/svg%3E");
+$form-check-input-focus-box-shadow:     none;
 
 $gallery-image-border-radius:                   $post-image-border-radius;
 $gallery-image-overlay-bg:                      $post-image-overlay-bg;
@@ -502,9 +520,12 @@ $pagination-active-bg:                          transparent;
 $pagination-active-border-color:                transparent;
 $pagination-focus-bg:                           transparent;
 $pagination-focus-box-shadow:                   none;
-$pagination-link-underline-color:               $nav-level-1-link-underline-color;
-$pagination-link-hover-underline-color:         $nav-level-1-link-hover-underline-color;
-$pagination-link-active-underline-color:        $nav-level-1-link-active-underline-color;
+$pagination-link-underline-color:               transparent;
+$pagination-link-hover-underline-color:         $pagination-hover-color;
+$pagination-link-active-underline-color:        $pagination-link-hover-underline-color;
+$pagination-disabled-color:                     $pagination-color;
+$pagination-disabled-border-color:              $pagination-border-color;
+$pagination-disabled-bg:                        transparent;
 
 $timeline-heading-justify-content:              center;
 $timeline-title-font-size:                      $h2-font-size;
@@ -562,6 +583,29 @@ $link-link-border-color:                    $post-link-border-color;
 $link-link-border-width:                    $post-link-border-width;
 $link-link-border-radius:                   $post-link-border-radius;
 
+$dropdown-border-color:                     $primary;
+$dropdown-border-width:                     1px;
+$dropdown-color:                            $primary;
+$dropdown-font-size:                        map.get($font-sizes, 5);
+$dropdown-padding-y:                        0;
+$dropdown-item-padding-x:                   15px;
+$dropdown-item-padding-y:                   10px;
+$dropdown-link-color:                       $primary;
+$dropdown-link-hover-color:                 $primary;
+$dropdown-link-hover-bg:                    $gray-50;
+$dropdown-link-active-bg:                   $gray-50;
+
+$accordion-border-color:                    $gray-50;
+$accordion-body-padding-x:                  1.25rem;
+$accordion-button-bg:                       $gray-50;
+$accordion-button-padding-x:                $btn-padding-x;
+$accordion-button-padding-y:                $btn-padding-y;
+$accordion-button-active-bg:                $gray-50;
+$accordion-button-focus-box-shadow:         none;
+$accordion-button-icon:                     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='currentColor'%3E%3Cpath d='M480-357.85 253.85-584 296-626.15l184 184 184-184L706.15-584 480-357.85Z'/%3E%3C/svg%3E");
+$accordion-button-active-icon:              url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='currentColor'%3E%3Cpath d='m480-541.85-184 184L253.85-400 480-626.15 706.15-400 664-357.85l-184-184Z'/%3E%3C/svg%3E");
+$accordion-button-padding-x:                $accordion-body-padding-x;
+
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/variables-dark";
@@ -595,6 +639,7 @@ $link-link-border-radius:                   $post-link-border-radius;
 @import "~bootstrap/scss/breadcrumb";
 @import "~bootstrap/scss/pagination";
 @import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/accordion";
 
 $utilities: map-merge(
     $utilities,
@@ -883,4 +928,50 @@ $utilities: map-merge(
 
 a {
     transition: $transition-base;
+}
+
+.dropdown {
+    &-item {
+        font-weight: $font-weight-medium;
+        border-bottom: 1px solid transparent;
+        border-top: 1px solid transparent;
+
+        &.active {
+            border-color: $gray-100;
+        }
+    }
+
+    &-menu {
+        li {
+            &:first-child {
+                .dropdown-item {
+                    border-top: 0;
+                }
+            }
+
+            &:last-child {
+                .dropdown-item {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.input {
+    &-group {
+        border: $input-border-width solid $input-border-color;
+
+        input {
+            border: 0;
+        }
+
+        &-text {
+            padding-left: 0;
+        }
+
+        &:focus-within {
+            border-color: $input-focus-border-color;
+        }
+    }
 }
