@@ -64,25 +64,25 @@
                         </div>
                     {% endif %}
 
-                    {% if sitepicker.isEnabled %}
-                        <ul class="nav nav-pills sitepicker">
-                            <li class="nav-item position-relative">
-                                <span class="nav-link d-flex align-items-center">
-                                    <img src="{{ ['assets/images/locales/', this.site.code, '.svg']|join|theme }}" alt="{{ this.site.code }}" class="me-2">
+{#                    {% if sitepicker.isEnabled %}#}
+{#                        <ul class="nav nav-pills sitepicker">#}
+{#                            <li class="nav-item position-relative">#}
+{#                                <span class="nav-link d-flex align-items-center">#}
+{#                                    <img src="{{ ['assets/images/locales/', this.site.code, '.svg']|join|theme }}" alt="{{ this.site.code }}" class="me-2">#}
 
-                                    {{ this.site.name }}
+{#                                    {{ this.site.name }}#}
 
-                                    <span class="material-symbol__icon sitepicker-toggler ms-1">
-                                        keyboard_arrow_down
-                                    </span>
-                                </span>
+{#                                    <span class="material-symbol__icon sitepicker-toggler ms-1">#}
+{#                                        keyboard_arrow_down#}
+{#                                    </span>#}
+{#                                </span>#}
 
-                                <div class="submenu">
-                                    {% component "sitepicker" %}
-                                </div>
-                            </li>
-                        </ul>
-                    {% endif %}
+{#                                <div class="submenu">#}
+{#                                    {% component "sitepicker" %}#}
+{#                                </div>#}
+{#                            </li>#}
+{#                        </ul>#}
+{#                    {% endif %}#}
                 </div>
 
                 <div class="col text-end d-xxl-none">
