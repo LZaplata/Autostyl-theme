@@ -3,7 +3,7 @@
 <footer>
     <div class="top container-fluid pt-5 pb-sm-5">
         <div class="container-lg">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5">
                 <div class="col d-flex flex-column">
                     <p class="mb-0 d-flex justify-content-between align-items-center">
                         <a href="{{ 'homepage'|page }}" class="logo">
@@ -178,6 +178,38 @@
                                     {% endif %}
                                 </p>
                             {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="toggle d-flex justify-content-between align-items-center mt-4 pt-4 mt-xl-0 pt-xl-0">
+                        <h3 class="heading mb-0">
+                            Dealerské stránky
+                        </h3>
+
+                        <a href="#footer-5" data-bs-toggle="collapse" class="toggler collapsed d-sm-none material-symbol__box">
+                            <span class="material-symbol__icon">
+                                keyboard_arrow_up
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="collapse" id="footer-5">
+                        <div class="pt-4">
+                            <p class="mb-0 d-flex flex-column gap-2">
+                                <a href="https://autostyl.skoda-auto.cz/" target="_blank">
+                                    <img src="{{ 'assets/images/logo-skoda.svg'|theme }}" alt="Škoda" style="max-height: 10px;">
+                                </a>
+
+                                <a href="https://www.toyotatrutnov.cz/" target="_blank">
+                                    <img src="{{ 'assets/images/logo-toyota.svg'|theme }}" alt="Toyota" style="max-height: 20px;">
+                                </a>
+
+                                <a href="https://www.bydtrutnov.cz/" target="_blank">
+                                    <img src="{{ 'assets/images/logo-byd.svg'|theme }}" alt="BYD" style="max-height: 10px;">
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
