@@ -1,4 +1,4 @@
-<div class="d-flex flex-column gap-3">
+<div class="d-flex flex-column gap-3 bg-white p-4">
     {% if item.image %}
         <p class="img mb-0 position-relative overflow-hidden">
             <img src="{{ item.image.thumb(600, 400, {"mode": "crop"}) }}" alt="{{ item.image.description }}" class="img-fluid w-100">
@@ -14,8 +14,8 @@
     </div>
 
     <div class="d-flex flex-column">
-        {% partial "_contact/_mobile" mobile=(itemUpdate.mobile ?: item.mobile) %}
-        {% partial "_contact/_phone" phone=(itemUpdate.phone ?: item.phone) %}
-        {% partial "_contact/_email" email=(itemUpdate.email ?: item.email) %}
+        {% partial "_contact/_mobile" mobile=(itemUpdate.mobile ?: item.mobile) size="small" %}
+        {% partial "_contact/_phone" phone=(itemUpdate.phone ?: item.phone) size="small" %}
+        {% partial "_contact/_email" email=(itemUpdate.email ?: item.email) size="small" %}
     </div>
 </div>
