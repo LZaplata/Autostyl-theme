@@ -1,0 +1,124 @@
+url = "/znacka/:slug*"
+layout = "default"
+title = "Značka"
+
+[products]
+category = ":slug"
+filterComponent = "productsfilter"
+setPageTitle = 1
+includeVariants = 0
+includeChildren = 0
+perPage = 9
+paginate = 1
+sort = "price_low"
+
+[productsFilter productsfilter]
+category = ":slug"
+includeChildren = 0
+includeVariants = 0
+showPriceFilter = 1
+showBrandFilter = 1
+showCategoryFilter = 0
+showOnSaleFilter = 0
+includeSliderAssets = 0
+
+[productsFilter productssorter]
+category = ":slug"
+includeChildren = 0
+includeVariants = 0
+showPriceFilter = 0
+showBrandFilter = 0
+showCategoryFilter = 0
+showOnSaleFilter = 0
+includeSliderAssets = 0
+==
+<?php
+use OFFLINE\Mall\Models\Brand;
+use OFFLINE\Mall\Models\Category;
+
+function onStart()
+{
+    $like = preg_replace("@^(.+?-[^-]+)-[^-]+$@", "$1", $this->param("slug"));
+    $categories = Category::whereLike("slug", "%$like%")
+        ->get()
+        ->map(fn ($category) => str_replace("$like-", "", $category->slug))
+        ->toArray();
+
+    $this["all_brands"] = Brand::whereIn("slug", $categories)
+        ->orderBy("name", "asc")
+        ->get();
+}
+?>
+==
+<div class="container-fluid py-5" id="page">
+    <div class="container-lg pb-xl-4">
+        <div class="row g-0 g-xl-5">
+            <div class="sidebar {#d-none d-xl-block#} col-xl-3">
+                <div class="offcanvas offcanvas-start" id="filter-offcanvas">
+                    <div class="h-100 d-flex flex-column overflow-x-auto">
+                        <div class="container-fluid py-4 d-xl-none">
+                            <div class="container-lg">
+                                <div class="row row-cols-2 align-items-center">
+                                    <div class="col d-flex">
+                                        <a href="{{ 'homepage'|page }}" class="d-flex align-items-center logo">
+                                            <img src="{% if this.theme.logo %}{{ this.theme.logo.path }}{% else %}{{ 'assets/images/logo.svg'|theme }}{% endif %}" alt="logo">
+                                        </a>
+                                    </div>
+
+                                    <div class="col d-flex justify-content-end">
+                                        <a href="#filter-offcanvas" data-bs-dismiss="offcanvas" class="offcanvas-toggler offcanvas-close material-symbol__box">
+                                            Zavřít
+
+                                            <span class="material-symbol__icon icon">
+                                                close
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid d-flex align-items-center p-xl-0">
+                            <div class="container-lg pb-4 p-xl-0">
+                                {% component "productsfilter" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-xl-9">
+                <div class="container-fluid g-0">
+                    <h1 class="mb-4 container-lg g-0">
+                        <span>
+                            {{ products.category.name }}
+                        </span>
+                    </h1>
+                </div>
+
+                <div class="d-flex flex-column gap-5">
+                    <div class="container-fluid g-0">
+                        <div class="container-lg px-0 d-flex flex-column gap-4">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <a href="" class="material-symbol__box d-xl-none fs-4" data-bs-toggle="offcanvas" data-bs-target="#filter-offcanvas">
+                                    <span class="material-symbol__icon fs-2">
+                                        filter_list
+                                    </span>
+
+                                    Filtr
+                                </a>
+
+                                <p class="mb-0 d-none d-xl-block mall-products-count">
+                                    {% partial "products::count" %}
+                                </p>
+
+                                {% component "productssorter" %}
+                            </div>
+                            {% component "products" %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
