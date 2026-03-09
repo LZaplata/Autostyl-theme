@@ -67,7 +67,7 @@ function onEnd()
     </div>
 </div>
 
-<div class="container-fluid py-5{% if sidebarmenu.menuItems is null %} g-0{% endif %}" id="page">
+<div class="container-fluid py-5{% if sidebarmenu.menuItems is null %} g-0{% endif %}{% if skoda_ci %} skoda-ci{% endif %}" id="page">
     <div class="container-{% if sidebarmenu.menuItems is null %}fluid g-0{% else %}lg{% endif %} pb-xl-4">
         <div class="row g-0 g-xl-5">
             {% if sidebarmenu.menuItems is not null %}

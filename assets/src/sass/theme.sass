@@ -379,7 +379,14 @@ footer
         .container-lg
             background-color: $white
             padding: map.get($spacers, 5)
-            
+
     .image-text
-        .container-lg > .row           
+        .container-lg > .row
             background-color: $white
+
+    &.skoda-ci
+        --bs-body-font-family: $font-family-skoda-regular
+
+        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
+            font-family: $font-family-skoda-bold
+            font-weight: inherit
