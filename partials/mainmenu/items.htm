@@ -40,7 +40,7 @@
                     <!-- Uncomment below while using fluid submenu and columns + comment above -->
 
                     <div class="container-lg">
-                        <ul class="nav row row-cols-lg-4 {{ item.code }}">
+                        <ul class="nav row row-cols-lg-4 gy-5 {{ item.code }}">
                             {% partial __SELF__ ~ "::items-fluid" items=item.items level=2 %}
                         </ul>
                     </div>
