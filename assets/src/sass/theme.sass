@@ -231,10 +231,6 @@
                     &:hover
                         border-color: $primary
 
-.oc-progress-bar
-    background-color: $red
-    height: 5px
-
 #map-wrapper
     #map
         *, ::before, ::after
@@ -384,13 +380,65 @@ footer
         .container-lg > .row
             background-color: $white
 
-    &.skoda-ci
-        --bs-body-font-family: #{$font-family-skoda-regular}
-        font-family: $font-family-skoda-regular
 
-        .btn
-            --bs-btn-font-family: #{$font-family-skoda-bold}
+//.pricing-card
+    overflow: hidden
+    transition: transform 0.2s ease, box-shadow 0.2s ease
 
-        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
-            font-family: $font-family-skoda-bold
-            font-weight: inherit
+    &:hover
+        transform: translateY(-4px)
+        box-shadow: 0 0.75rem 1.5rem rgba($black, 0.08)
+
+    &__header
+        position: relative
+        padding: 1rem 1.25rem
+        text-align: center
+        background: var(--bs-secondary-bg)
+        border-bottom: 1px solid var(--bs-border-color)
+
+        strong
+            display: block
+            font-size: 1.25rem
+            font-weight: 800
+            line-height: 1.2
+            letter-spacing: 0.06em
+            text-transform: uppercase
+
+    &__badge
+        display: inline-block
+        margin-bottom: 0.5rem
+        padding: 0.25rem 0.65rem
+        font-size: 0.75rem
+        font-weight: 700
+        letter-spacing: 0.04em
+        text-transform: uppercase
+        color: $white
+        background: rgba($white, 0.2)
+
+    &--success
+        .pricing-card__header
+            background: $green-500
+            color: $white
+            border-bottom-color: $green-500
+
+    &--info
+        .pricing-card__header
+            background: $blue-500
+            color: $white
+            border-bottom-color: $blue-500
+
+    &--featured
+        transform: scale(1.03)
+        box-shadow: 0 1rem 2rem rgba($black, 0.12)
+        z-index: 2
+
+        &:hover
+            transform: scale(1.03) translateY(-4px)
+
+//@media (max-width: 991.98px)
+    .pricing-card
+        &--featured
+            transform: none
+
+            &:hover
+                transform: none
