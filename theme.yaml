@@ -22,6 +22,7 @@ require:
     - lzaplata.openinghours
     - lzaplata.timelines
     - lzaplata.flashmessages
+    - vdlp.redirect
 form:
     tabs:
         fields:
