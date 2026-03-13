@@ -40,9 +40,71 @@
                     <!-- Uncomment below while using fluid submenu and columns + comment above -->
 
                     <div class="container-lg">
-                        <ul class="nav row row-cols-lg-4 gy-5 {{ item.code }}">
-                            {% partial __SELF__ ~ "::items-fluid" items=item.items level=2 %}
-                        </ul>
+                        {% if item.code == "znacky" %}
+                            <ul class="nav row row-cols-lg-4 gy-5 {{ item.code }}">
+                                {% partial __SELF__ ~ "::items-fluid" items=item.items level=2 %}
+                            </ul>
+                        {% else %}
+                            <div class="row row-cols-2 g-5">
+                                <div class="col">
+                                    <ul class="nav flex-column gap-1">
+                                        {% partial __SELF__ ~ "::items" items=item.items level=2 %}
+                                    </ul>
+                                </div>
+
+                                <div class="col">
+                                    <div class="contact-support">
+                                        <p class="h3">
+                                            Kontakt a podpora
+                                        </p>
+
+                                        <p class="mb-4 fs-4">
+                                            Máte nezodpovězené dotazy, potřebujete poradit, nebo se objednat na servis vozidla? Kontaktujte nás.
+                                            <span class="fw-bold">Jsme tu pro vás!</span>
+                                        </p>
+
+                                        <div class="card px-5 py-4 bg-white">
+                                            <div class="card-body">
+                                                <div class="row row-cols-2">
+                                                    <div class="col ">
+                                                        <p class="fs-5 mb-2 fw-medium">
+                                                            Pevná linka
+                                                        </p>
+
+                                                        <p class="text-primary fs-3 fw-semibold mb-2">
+                                                            <a href="tel:+420 499 309 111">
+                                                                +420 499 309 111
+                                                            </a>
+                                                        </p>
+
+                                                        <p class="mb-0 fs-6">
+                                                            Po – Pá (8 - 17 hod) <br>
+                                                            So (8 - 12 hod)
+                                                        </p>
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <p class="fs-5 mb-2 fw-medium">
+                                                            E-mail
+                                                        </p>
+
+                                                        <p class="text-primary fs-3 fw-semibold mb-2">
+                                                            <a href="mailto:info@autostyl.eu">
+                                                                info@autostyl.eu
+                                                            </a>
+                                                        </p>
+
+                                                        <p class="mb-0 fs-6">
+                                                            Odpovídáme do 24 hodin.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             {% endif %}
