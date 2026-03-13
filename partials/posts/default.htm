@@ -28,14 +28,12 @@ function onStart() {
 
 <div class="posts row row-cols-{{ min(1, row_cols) }} g-5 row-cols-sm-{{ min(2, row_cols) }} gx-sm-4 row-cols-lg-{{ min(3, row_cols) }} g-lg-4 row-cols-xl-{{ min(4, row_cols) }} row-cols-xxl-{{ row_cols }}">
     {% for post in posts %}
-        {% set image = post.featured_images.first %}
-
         {% if more_button_link %}
             {% set url = post.setUrl(__SELF__.postPage, __SELF__.controller, {fullslug: page.fullslug}) %}
         {% endif %}
 
         <div class="col">
-            {% partial partial item=post image=image show_details=false %}
+            {% partial partial item=post image=post.thumb show_details=false %}
         </div>
     {% endfor %}
 </div>

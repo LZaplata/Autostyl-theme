@@ -1,11 +1,13 @@
 {% set post = __SELF__.post %}
-{% set image = post.featured_images.first %}
-{% set gallery_images = post.featured_images.skip(1) %}
+{% set image = post.header_image %}
+{% set gallery_images = post.featured_images %}
 
 {% if image %}
     <div class="banner mb-5">
         <picture>
             <source media="(min-width:768px)" srcset="{{ image.thumb(1400, 400, {"mode": "crop"}) }}">
+
+            {% set image = post.header_image_sm ?: image %}
 
             <img src="{{ image.thumb(600, 300, {"mode": "crop"}) }}" alt="{{ image.description }}" class="img-fluid w-100 rounded-4">
         </picture>
