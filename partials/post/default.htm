@@ -9,7 +9,7 @@
 
             {% set image = post.header_image_sm ?: image %}
 
-            <img src="{{ image.thumb(600, 300, {"mode": "crop"}) }}" alt="{{ image.description }}" class="img-fluid w-100 rounded-4">
+            <img src="{{ image.thumb(600, 300, {"mode": "crop"}) }}" alt="{{ image.description }}" class="img-fluid w-100">
         </picture>
     </div>
 {% endif %}
