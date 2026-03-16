@@ -43,6 +43,12 @@ form:
                 commentBelove: 'Toto logo je používané v patičce'
                 maxFiles: 1
                 tab: Nastavení
+            homepage_url:
+                label: 'Odkaz na domovskou stránku'
+                type: text
+                span: left
+                comment: 'Ponechte prázdné pro automatický odkaz na domovskou stránku tohoto webu. Vyplňte pro přesměrování na konkrétní URL (např. jiný web).'
+                tab: Nastavení
             mainmenu_dropdown:
                 label: Zobrazit 2. úroveň hlavního menu
                 type: switch

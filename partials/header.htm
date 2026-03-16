@@ -4,7 +4,7 @@
 {#        <div class="container-fluid">#}
             <div class="d-flex align-items-center justify-content-between row row-cols-lg-3">
                 <div class="col col-lg-2 d-flex py-4">
-                    <a href="{{ 'homepage'|page }}" class="d-flex align-items-center logo">
+                    <a href="{{ this.theme.homepage_url ?: ('homepage'|page) }}" class="d-flex align-items-center logo">
                         <img src="{% if this.theme.logo %}{{ this.theme.logo.path }}{% else %}{{ 'assets/images/logo.svg'|theme }}{% endif %}" alt="logo">
                     </a>
                 </div>
