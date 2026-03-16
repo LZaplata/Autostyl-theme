@@ -45,7 +45,7 @@ form:
                 tab: Nastavení
             homepage_url:
                 label: 'Odkaz na domovskou stránku'
-                type: text
+                type: pagefinder
                 span: left
                 comment: 'Ponechte prázdné pro automatický odkaz na domovskou stránku tohoto webu. Vyplňte pro přesměrování na konkrétní URL (např. jiný web).'
                 tab: Nastavení
