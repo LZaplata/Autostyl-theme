@@ -187,7 +187,6 @@
                 padding-bottom: map.get($spacers, 4)
 
     &--videa
-        border-top: 1px solid $gray-100
         padding-bottom: map.get($spacers, 5)
 
         @include media-breakpoint-up(xl)
@@ -195,6 +194,13 @@
                 padding-bottom: map.get($spacers, 4)
 
 .text
+    &--dealerske-weby
+        background-color: $white
+        padding-bottom: 0 !important
+
+        h2
+            margin-bottom: map.get($spacers, 3) !important
+
     &--partneri
         background-color: $white
 
@@ -214,6 +220,31 @@
             @include media-breakpoint-up(xl)
                 @include make-col(8)
                 @include make-col-offset(2)
+
+.links
+    &--dealerske-weby-odkazy
+        background-color: $white
+        padding-top: 0 !important
+        padding-bottom: map.get($spacers, 5)
+
+        @include media-breakpoint-up(xl)
+            & > div
+                padding-top: 0 !important
+                padding-bottom: map.get($spacers, 4)
+
+        & > div
+            padding-top: 0 !important
+
+            .link
+                height: 100%
+
+                &__link
+                    height: 100%
+                    border: 1px solid $gray-100
+                    padding: map.get($spacers, 4)
+
+                    &:hover
+                        border-color: $primary
 
 .links-slider
     &--partneri
@@ -318,8 +349,8 @@ footer
 
     .content
         .pricelist
-            @include media-breakpoint-up(xl)
-                width: 75%
+        @include media-breakpoint-up(xl)
+            width: 75%
 
 .contacts-category
     h2
@@ -386,7 +417,7 @@ footer
             background-color: $white
 
 
-//.pricing-card
+.pricing-card
     overflow: hidden
     transition: transform 0.2s ease, box-shadow 0.2s ease
 
@@ -422,15 +453,15 @@ footer
 
     &--success
         .pricing-card__header
-            background: $green-500
+            background: #45B43E
             color: $white
-            border-bottom-color: $green-500
+            border-bottom-color: #45B43E
 
     &--info
         .pricing-card__header
-            background: $blue-500
+            background: #CC0133
             color: $white
-            border-bottom-color: $blue-500
+            border-bottom-color: #CC0133
 
     &--featured
         transform: scale(1.03)
@@ -440,7 +471,7 @@ footer
         &:hover
             transform: scale(1.03) translateY(-4px)
 
-//@media (max-width: 991.98px)
+@media (max-width: 991.98px)
     .pricing-card
         &--featured
             transform: none
