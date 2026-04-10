@@ -5,7 +5,7 @@ name: Kategorie kontaktů
 drafts: false
 showImport: false
 showExport: false
-multisite: true
+multisite: false
 
 structure:
     maxDepth: 2

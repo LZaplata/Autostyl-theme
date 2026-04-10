@@ -5,7 +5,7 @@ name: Kontakty
 drafts: false
 showImport: false
 showExport: false
-multisite: true
+multisite: false
 
 primaryNavigation:
     label: Kontakty
