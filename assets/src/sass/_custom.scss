@@ -14,7 +14,6 @@ $primary:                               $gray-500;
 $secondary:                             $red-500;
 $dark:                                  $gray-800;
 $light:                                 $gray-200;
-$success:                               $gray-700;
 $info:                                  $black;
 
 $body-color:                            $gray-400;
@@ -487,6 +486,7 @@ $input-padding-y:                       10px;
 $input-font-size:                       map.get($font-sizes, 5);
 $input-border-color:                    $gray-100;
 $input-color:                           $body-color;
+$input-bg:                              $body-bg;
 $input-placeholder-color:               $gray-200;
 $input-focus-box-shadow:                none;
 $input-focus-border-color:              $body-color;
