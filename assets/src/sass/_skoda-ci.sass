@@ -5,6 +5,34 @@
 
         .btn
             --bs-btn-font-family: #{$font-family-skoda-bold}
+            --bs-btn-border-radius: 50px
+            --bs-btn-padding-x: 24px
+            --bs-btn-padding-y: 14px
+            --bs-btn-font-weight: 700
+            --bs-btn-line-height: 1
+            min-height: 44px
+
+            &:focus-visible
+                outline: 2px solid #161718
+                outline-offset: 3px
+                box-shadow: none
+
+            &:focus
+                box-shadow: none
+
+            &.btn-primary
+                --bs-btn-color: #161718
+                --bs-btn-bg: #78FAAE
+                --bs-btn-border-color: #78FAAE
+                --bs-btn-hover-color: #161718
+                --bs-btn-hover-bg: #A8FFCC
+                --bs-btn-hover-border-color: #A8FFCC
+                --bs-btn-active-color: #161718
+                --bs-btn-active-bg: #A8FFCC
+                --bs-btn-active-border-color: #A8FFCC
+                --bs-btn-disabled-color: #161718
+                --bs-btn-disabled-bg: #D8D8D8
+                --bs-btn-disabled-border-color: #D8D8D8
 
         h1, .h1,
         h2, .h2,
