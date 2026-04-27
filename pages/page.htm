@@ -114,7 +114,7 @@ function onEnd()
                                 {% elseif content.type == "files" %}
                                     {% component "files" category=content.files_category.slug %}
                                 {% elseif content.type == "pricelist" %}
-                                    {% component "pricelist" slug=content.pricelist.slug %}
+                                    {% component "pricelist" slug=content.pricelist.slug partial=content.partial %}
                                 {% elseif content.type == "opening_hours" %}
                                     {% component "openinghours" slug=content.opening_hours.slug %}
                                 {% elseif content.type == "faq" %}
