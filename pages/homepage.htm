@@ -1,6 +1,14 @@
 url = "/"
 layout = "default"
 title = "Úvod"
+seoOptionsMetaTitle = "Autostyl Trutnov - Škoda, Toyota, BYD"
+seoOptionsMetaDescription = "Prodej nových i ojetých vozů, operativní leasing značek Škoda, Toyota, BYD."
+seoOptionsEnabledInSitemap = 1
+seoOptionsUseUpdatedAt = 1
+seoOptionsRobotIndex = "index"
+seoOptionsRobotFollow = "follow"
+seoOptionsOgCard = "summary_large_image"
+seoOptionsIgnoreGlobalTitlePosition = 1
 
 [collection partners]
 handle = "Partners\Partner"
@@ -9,7 +17,9 @@ handle = "Partners\Partner"
 
 [blogPosts posts]
 pageNumber = "{{ :page }}"
+postsPerPage = 10
 noPostsMessage = "Nenalezeny žádné příspěvky"
+sortOrder = "published_at desc"
 categoryPage = "page"
 postPage = "page-post"
 
@@ -17,6 +27,7 @@ postPage = "page-post"
 pageNumber = "{{ :page }}"
 postsPerPage = 10
 noPostsMessage = "Nenalezeny žádné příspěvky"
+sortOrder = "published_at desc"
 categoryPage = "page"
 postPage = "page-post"
 
