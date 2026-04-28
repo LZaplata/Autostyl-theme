@@ -1,7 +1,7 @@
 <div class="swiper scrollable-swiper" data-slides-per-view="{{ slides_per_view }}">
     <div class="swiper-wrapper">
         {% for key, item in items %}
-            {% set image = item.image ?: item.featured_images.first %}
+            {% set image = item.image ?: item.thumb %}
 
             {% if item.link %}
                 {% set link %}
