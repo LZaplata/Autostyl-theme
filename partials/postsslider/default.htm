@@ -5,6 +5,12 @@
 {% set more_button_title = __SELF__.properties.moreButtonTitle %}
 {% set more_button_link = __SELF__.properties.moreButtonLink %}
 
+{% for post in posts %}
+    {% if more_button_link %}
+        {% set url = post.setUrl(__SELF__.postPage, __SELF__.controller, {fullslug: page.fullslug}) %}
+    {% endif %}
+{% endfor %}
+
 {% partial "_swiper/scrollable" items=posts partial=partial slides_per_view=row_cols %}
 
 {% if more_button_link and more_button_title %}
