@@ -230,7 +230,7 @@ $scrollable-pagination-height:          $scrollable-pagination-width;
 $scrollable-pagination-border-radius:   $slider-pagination-border-radius;
 $scrollable-pagination-bottom:          auto;
 $scrollable-pagination-top:             calc($scrollable-navigation-top-offset + ($scrollable-navigation-height / 2) - ($scrollable-pagination-height / 2));
-$scrollable-pagination-display:         none;           // none | flex
+$scrollable-pagination-display:         flex;           // none | flex
 
 $scrollable-scrollbar-display:          none;           // none | block
 

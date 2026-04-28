@@ -179,6 +179,11 @@
                             padding: map.get($spacers, 4)
 
 .posts-slider
+    .swiper
+        &-pagination
+            @include media-breakpoint-only(xs)
+                display: none !important
+
     &--novinky
         background-color: $white
         padding-bottom: map.get($spacers, 5)
@@ -187,12 +192,18 @@
             & > div
                 padding-bottom: map.get($spacers, 4)
 
+        h2
+            text-align: left !important
+
     &--videa
         padding-bottom: map.get($spacers, 5)
 
         @include media-breakpoint-up(xl)
             & > div
                 padding-bottom: map.get($spacers, 4)
+
+        h2
+            text-align: left !important
 
 .text
     &--dealerske-weby
