@@ -5,13 +5,33 @@
 {% set more_button_title = __SELF__.properties.moreButtonTitle %}
 {% set more_button_link = __SELF__.properties.moreButtonLink %}
 
-{% for post in posts %}
-    {% if more_button_link %}
-        {% set url = post.setUrl(__SELF__.postPage, __SELF__.controller, {fullslug: page.fullslug}) %}
-    {% endif %}
-{% endfor %}
+<div class="swiper scrollable-swiper" data-slides-per-view="{{ row_cols }}">
+    <div class="swiper-wrapper">
+        {% for key, post in posts %}
+            {% set url = post.setUrl(__SELF__.postPage, __SELF__.controller, {fullslug: page.fullslug}) %}
 
-{% partial "_swiper/scrollable" items=posts partial=partial slides_per_view=row_cols %}
+            <div class="swiper-slide">
+                {% partial partial key=key item=post image=post.thumb %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="swiper-button-next d-none d-md-flex">
+        <span class="material-symbol__icon icon">
+            arrow_forward
+        </span>
+    </div>
+
+    <div class="swiper-button-prev d-none d-md-flex">
+        <span class="material-symbol__icon icon">
+            arrow_back
+        </span>
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-scrollbar position-relative start-0 end-0 w-100 bottom-0 mt-4 mt-xl-5"></div>
+</div>
 
 {% if more_button_link and more_button_title %}
     <p class="mt-5 mb-0 text-center">
