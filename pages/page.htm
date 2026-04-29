@@ -107,7 +107,9 @@ function onEnd()
                                 {% endif %}
 
                                 {% if content.type == "text" %}
-                                    {{ content.text|bootstrap|content }}
+                                    <div>
+                                        {{ content.text|bootstrap|content }}
+                                    </div>
                                 {% elseif content.type == "image_text" %}
                                     {% partial content.partial image=content.image text=content.text heading=content.heading switched=content.switch_order size=(content.is_fluid ? "lg") %}
                                 {% elseif content.type == "blog" %}
