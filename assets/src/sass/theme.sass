@@ -122,15 +122,6 @@
                 &:hover
                     border-color: $primary
 
-    #page
-        .links
-            &--kategorie-vozu
-                padding-bottom: 0
-
-                @include media-breakpoint-up(xl)
-                    & > div
-                        padding-bottom: 0
-
     &--partneri
         background-color: $white
         padding-top: map.get($spacers, 4) !important
@@ -442,6 +433,14 @@ footer
     .image-text
         .container-lg > .row
             background-color: $white
+
+    .links
+        &--kategorie-vozu
+            padding-bottom: 0
+
+            @include media-breakpoint-up(xl)
+                & > div
+                    padding-bottom: 0
 
 
 .pricing-card
