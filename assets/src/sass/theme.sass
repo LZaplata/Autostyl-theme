@@ -427,8 +427,9 @@ footer
 #page
     .text
         .container-lg
-            background-color: $white
-            padding: map.get($spacers, 5)
+            & > div
+                background-color: $white
+                padding: map.get($spacers, 5)
 
     .image-text
         .container-lg > .row
