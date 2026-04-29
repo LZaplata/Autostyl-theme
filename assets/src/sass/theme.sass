@@ -109,11 +109,12 @@
                                 border-right: 1px solid $gray-100
 
     &--kategorie-vozu
-        padding-bottom: map.get($spacers, 5)
+        &:not(#page &)
+            padding-bottom: map.get($spacers, 5)
 
-        @include media-breakpoint-up(xl)
-            & > div
-                padding-bottom: map.get($spacers, 4)
+            @include media-breakpoint-up(xl)
+                & > div
+                    padding-bottom: map.get($spacers, 4)
 
         .link
             &__link

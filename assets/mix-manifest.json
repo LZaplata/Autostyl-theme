@@ -11,7 +11,6 @@
     "/css/lg-thumbnail.css": "/css/lg-thumbnail.css",
     "/css/lg-zoom.css": "/css/lg-zoom.css",
     "/css/lightgallery.css": "/css/lightgallery.css",
-    "/css/theme.css": "/css/theme.css",
     "/fonts/Inter-Italic-Variable.ttf": "/fonts/Inter-Italic-Variable.ttf",
     "/fonts/Inter-Variable.ttf": "/fonts/Inter-Variable.ttf",
     "/fonts/MaterialSymbolsOutlined.woff2": "/fonts/MaterialSymbolsOutlined.woff2",
@@ -28,5 +27,6 @@
     "/fonts/lg.svg": "/fonts/lg.svg",
     "/fonts/lg.ttf": "/fonts/lg.ttf",
     "/fonts/lg.woff": "/fonts/lg.woff",
-    "/fonts/lg.woff2": "/fonts/lg.woff2"
+    "/fonts/lg.woff2": "/fonts/lg.woff2",
+    "/css/theme.css": "/css/theme.css"
 }
