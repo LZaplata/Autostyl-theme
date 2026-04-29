@@ -97,7 +97,7 @@ $link-decoration:                       none;
 
 $nav-link-color:                        $link-color;
 $nav-link-hover-color:                  $link-hover-color;
-$nav-link-after-height:                 0;        // 0 for turn off
+$nav-link-after-height:                 1px;        // 0 for turn off
 $nav-link-padding-x:                    0;
 $nav-link-padding-y:                    0;
 $nav-link-font-weight:                  $font-weight-semibold;
@@ -122,7 +122,7 @@ $nav-level-1-link-font-weight:          $font-weight-regular;
 $nav-level-1-link-color:                $nav-link-color;
 $nav-level-1-link-hover-color:          $nav-link-hover-color;
 $nav-level-1-link-hover-bg:             transparent;
-$nav-level-1-link-hover-underline-color:transparent;
+$nav-level-1-link-hover-underline-color:$nav-level-1-link-hover-color;
 $nav-level-1-link-active-color:         $nav-pills-link-active-color;
 $nav-level-1-link-active-underline-color:   transparent;
 $nav-level-1-link-active-bg:            transparent;
@@ -147,7 +147,7 @@ $nav-level-2-link-active-color:         $nav-pills-link-active-color;
 $nav-level-2-link-active-bg:            transparent;
 $nav-level-2-link-padding-x:            0;
 $nav-level-2-link-padding-y:            3px;
-$nav-level-2-link-after-height:         0;        // 0 for turn off
+$nav-level-2-link-after-height:         1px;        // 0 for turn off
 
 $border-radius:                         0;
 $border-radius-lg:                      $border-radius * 1.5;
