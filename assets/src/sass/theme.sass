@@ -109,12 +109,11 @@
                                 border-right: 1px solid $gray-100
 
     &--kategorie-vozu
-        &:not(#page &)
-            padding-bottom: map.get($spacers, 5)
+        padding-bottom: map.get($spacers, 5)
 
-            @include media-breakpoint-up(xl)
-                & > div
-                    padding-bottom: map.get($spacers, 4)
+        @include media-breakpoint-up(xl)
+            & > div
+                padding-bottom: map.get($spacers, 4)
 
         .link
             &__link
@@ -122,6 +121,15 @@
 
                 &:hover
                     border-color: $primary
+
+    #page
+        .link
+            &--kategorie-vozu
+                padding-bottom: 0
+
+                @include media-breakpoint-up(xl)
+                    & > div
+                        padding-bottom: 0
 
     &--partneri
         background-color: $white
