@@ -429,11 +429,17 @@ footer
         .container-lg
             & > div
                 background-color: $white
-                padding: map.get($spacers, 5)
+                padding: map.get($spacers, 4)
+
+                @include media-breakpoint-up(sm)
+                    padding: map.get($spacers, 5)
 
     .image-text
-        .container-lg > .row
-            background-color: $white
+        .container-lg
+            .col
+                .flex-column
+                    &.h-100
+                        background-color: $white
 
     .links
         &--kategorie-vozu
