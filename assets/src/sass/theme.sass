@@ -436,13 +436,18 @@ footer
 
     .image-text
         .container-lg
-            .col
-                .flex-column
-                    &.h-100
-                        background-color: $white
+            & > .row
+                @include media-breakpoint-down(lg)
+                    --bs-gutter-y: 0 !important
+                    --bs-gutter-x: 0 !important
 
-                        @include media-breakpoint-only(xs)
-                            padding: map.get($spacers, 4) !important
+                .col
+                    .flex-column
+                        &.h-100
+                            background-color: $white
+
+                            @include media-breakpoint-down(sm)
+                                padding: map.get($spacers, 4) !important
 
     .links
         &--kategorie-vozu
