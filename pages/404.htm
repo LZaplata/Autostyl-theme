@@ -1,4 +1,41 @@
-title = 404
-layout = "default"
 url = "/404"
+layout = "default"
+title = 404
 ==
+<div class="container-fluid g-0">
+    <div class="container-fluid g-0" style="height: 100px; background: #0E1B41;">
+        
+    </div>
+</div>
+
+<div class="container-fluid pt-5{% if sidebarmenu.menuItems is null %} g-0{% endif %} page--{{ page.slug }}" id="page">
+    <div class="container-{% if sidebarmenu.menuItems is null %}fluid g-0{% else %}lg{% endif %}">
+        <div class="row g-0 g-xl-5">
+            {% if sidebarmenu.menuItems is not null %}
+                <div class="sidebar d-none d-xl-block col-xl-3">
+                    {% component "sidebarmenu" %}
+                </div>
+            {% endif %}
+
+            <div class="col {% if sidebarmenu.menuItems is not null %}col-xl-9{% endif %}">
+                <div class="container-fluid{% if sidebarmenu.menuItems is not null %} g-0{% endif %}">
+                    <h1 class="mb-5 container-lg{% if sidebarmenu.menuItems is not null %} g-0{% endif %}">
+                        <span>
+                            Chyba 404 - stránka nebyla nalezena
+                        </span>
+                    </h1>
+                </div>
+
+                <div class="d-flex flex-column">
+                    <div class="container-fluid{% if content.no_gutters %} g-{% if content.no_gutters_breakpoint != "xs" %}{{ content.no_gutters_breakpoint }}-{% endif %}0{% endif %} py-5 content {{ content.type|slug }} {{ content.type|slug }}--{{ content.title|slug }}"{% if str_slug(content.type) == "contact-form" %} id="napiste-nam"{% endif %}>
+                        <div class="container{% if content.is_fluid %}-fluid{% else %}-lg{% endif %}{% if content.no_gutters %} g-{% if content.no_gutters_breakpoint != "xs" %}{{ content.no_gutters_breakpoint }}-{% endif %}0{% endif %} py-xl-4">
+                            <p>
+                                Je nám líto, ale požadovaná stránka není k dispozici.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
